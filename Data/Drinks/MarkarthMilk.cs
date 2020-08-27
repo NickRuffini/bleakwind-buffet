@@ -1,7 +1,7 @@
 ﻿/*
  * Author: Nick Ruffini
- * Class name: SailorSoda.cs
- * Purpose: Class used to represent the Drink Sailor's Soda
+ * Class name: MarkarthMilk.cs
+ * Purpose: Class used to represent the Drink Markarth Milk!
  */
 
 using System;
@@ -11,12 +11,12 @@ using BleakwindBuffet.Data.Enums;
 
 namespace Data.Drinks
 {
-    public class SailorSoda
+    public class MarkarthMilk
     {
         /// <summary>
         /// Gets the price of the item
         /// </summary>
-        private double price = 1.42;
+        private double price = 1.05;
         public double Price
         {
             get { return price; }
@@ -26,7 +26,7 @@ namespace Data.Drinks
         /// <summary>
         /// Gets the calories of the item
         /// </summary>
-        private uint calories = 117;
+        private uint calories = 56;
         public uint Calories
         {
             get { return calories; }
@@ -47,18 +47,18 @@ namespace Data.Drinks
                 size = value;
                 if (value == Size.Small)
                 {
-                    price = 1.42;
-                    calories = 117;
+                    price = 1.05;
+                    calories = 56;
                 }
                 else if (value == Size.Medium)
                 {
-                    price = 1.74;
-                    calories = 153;
+                    price = 1.11;
+                    calories = 72;
                 }
                 else
                 {
-                    price = 2.07;
-                    calories = 205;
+                    price = 1.22;
+                    calories = 93;
                 }
             }
         }
@@ -66,7 +66,7 @@ namespace Data.Drinks
         /// <summary>
         /// Represents ice in the drink
         /// </summary>
-        private bool ice = true;
+        private bool ice = false;
         public bool Ice
         {
             get
@@ -76,25 +76,15 @@ namespace Data.Drinks
             set
             {
                 ice = value;
-                if (value == false)
+                if (value == true)
                 {
-                    specialInstructions.Add("Hold ice");
+                    specialInstructions.Add("Add ice");
                 }
                 else
                 {
-                    specialInstructions.Remove("Hold ice");
+                    specialInstructions.Remove("Add ice");
                 }
             }
-        }
-
-        /// <summary>
-        /// Represents the flavor of the drink!
-        /// </summary>
-        private SodaFlavor flavor = SodaFlavor.Cherry;
-        public SodaFlavor Flavor
-        {
-            get { return flavor; }
-            set { flavor = value; }
         }
 
         private List<string> specialInstructions = new List<string>();
@@ -108,7 +98,7 @@ namespace Data.Drinks
 
         public override string ToString()
         {
-            return String.Format("{0} {1} Sailor Soda", size.ToString(), flavor.ToString());
+            return String.Format("{0} Markarth Milk", size.ToString());
         }
     }
 }

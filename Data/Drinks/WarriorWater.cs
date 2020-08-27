@@ -1,7 +1,7 @@
 ﻿/*
  * Author: Nick Ruffini
- * Class name: SailorSoda.cs
- * Purpose: Class used to represent the Drink Sailor's Soda
+ * Class name: WarriorWater.cs
+ * Purpose: Class used to represent the Drink Warrior Water!
  */
 
 using System;
@@ -11,12 +11,12 @@ using BleakwindBuffet.Data.Enums;
 
 namespace Data.Drinks
 {
-    public class SailorSoda
+    public class WarriorWater
     {
         /// <summary>
         /// Gets the price of the item
         /// </summary>
-        private double price = 1.42;
+        private double price = 0.00;
         public double Price
         {
             get { return price; }
@@ -26,7 +26,7 @@ namespace Data.Drinks
         /// <summary>
         /// Gets the calories of the item
         /// </summary>
-        private uint calories = 117;
+        private uint calories = 0;
         public uint Calories
         {
             get { return calories; }
@@ -45,21 +45,6 @@ namespace Data.Drinks
             set
             {
                 size = value;
-                if (value == Size.Small)
-                {
-                    price = 1.42;
-                    calories = 117;
-                }
-                else if (value == Size.Medium)
-                {
-                    price = 1.74;
-                    calories = 153;
-                }
-                else
-                {
-                    price = 2.07;
-                    calories = 205;
-                }
             }
         }
 
@@ -88,13 +73,27 @@ namespace Data.Drinks
         }
 
         /// <summary>
-        /// Represents the flavor of the drink!
+        /// Represents lemon in the drink
         /// </summary>
-        private SodaFlavor flavor = SodaFlavor.Cherry;
-        public SodaFlavor Flavor
+        private bool lemon = false;
+        public bool Lemon
         {
-            get { return flavor; }
-            set { flavor = value; }
+            get
+            {
+                return lemon;
+            }
+            set
+            {
+                lemon = value;
+                if (value == true)
+                {
+                    specialInstructions.Add("Add cream");
+                }
+                else
+                {
+                    specialInstructions.Remove("Add cream");
+                }
+            }
         }
 
         private List<string> specialInstructions = new List<string>();
@@ -108,7 +107,7 @@ namespace Data.Drinks
 
         public override string ToString()
         {
-            return String.Format("{0} {1} Sailor Soda", size.ToString(), flavor.ToString());
+            return String.Format("{0} Warrior Water", size.ToString());
         }
     }
 }

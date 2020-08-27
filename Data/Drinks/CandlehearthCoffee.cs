@@ -1,7 +1,7 @@
 ﻿/*
  * Author: Nick Ruffini
- * Class name: SailorSoda.cs
- * Purpose: Class used to represent the Drink Sailor's Soda
+ * Class name: CandlehearthCoffee.cs
+ * Purpose: Class used to represent the Drink Candlehearth Coffee!
  */
 
 using System;
@@ -11,12 +11,12 @@ using BleakwindBuffet.Data.Enums;
 
 namespace Data.Drinks
 {
-    public class SailorSoda
+    public class CandlehearthCoffee
     {
         /// <summary>
         /// Gets the price of the item
         /// </summary>
-        private double price = 1.42;
+        private double price = 0.75;
         public double Price
         {
             get { return price; }
@@ -26,7 +26,7 @@ namespace Data.Drinks
         /// <summary>
         /// Gets the calories of the item
         /// </summary>
-        private uint calories = 117;
+        private uint calories = 7;
         public uint Calories
         {
             get { return calories; }
@@ -47,18 +47,18 @@ namespace Data.Drinks
                 size = value;
                 if (value == Size.Small)
                 {
-                    price = 1.42;
-                    calories = 117;
+                    price = 0.75;
+                    calories = 7;
                 }
                 else if (value == Size.Medium)
                 {
-                    price = 1.74;
-                    calories = 153;
+                    price = 1.25;
+                    calories = 10;
                 }
                 else
                 {
-                    price = 2.07;
-                    calories = 205;
+                    price = 1.75;
+                    calories = 20;
                 }
             }
         }
@@ -66,7 +66,7 @@ namespace Data.Drinks
         /// <summary>
         /// Represents ice in the drink
         /// </summary>
-        private bool ice = true;
+        private bool ice = false;
         public bool Ice
         {
             get
@@ -76,25 +76,49 @@ namespace Data.Drinks
             set
             {
                 ice = value;
-                if (value == false)
+                if (value == true)
                 {
-                    specialInstructions.Add("Hold ice");
+                    specialInstructions.Add("Add ice");
                 }
                 else
                 {
-                    specialInstructions.Remove("Hold ice");
+                    specialInstructions.Remove("Add ice");
                 }
             }
         }
 
         /// <summary>
-        /// Represents the flavor of the drink!
+        /// Represents cream in the drink
         /// </summary>
-        private SodaFlavor flavor = SodaFlavor.Cherry;
-        public SodaFlavor Flavor
+        private bool roomForCream = false;
+        public bool RoomForCream
         {
-            get { return flavor; }
-            set { flavor = value; }
+            get
+            {
+                return roomForCream;
+            }
+            set
+            {
+                roomForCream = value;
+                if (value == true)
+                {
+                    specialInstructions.Add("Add cream");
+                }
+                else
+                {
+                    specialInstructions.Remove("Add cream");
+                }
+            }
+        }
+
+        /// <summary>
+        /// Represents whether or not the coffee is decaf
+        /// </summary>
+        private bool decaf = false;
+        public bool Decaf
+        {
+            get { return decaf; }
+            set { decaf = value; }
         }
 
         private List<string> specialInstructions = new List<string>();
@@ -108,7 +132,14 @@ namespace Data.Drinks
 
         public override string ToString()
         {
-            return String.Format("{0} {1} Sailor Soda", size.ToString(), flavor.ToString());
+            if (decaf == false)
+            {
+                return String.Format("{0} Candlehearth Coffee", size.ToString());
+            }
+            else
+            {
+                return String.Format("{0} Decaf Candlehearth Coffee", size.ToString());
+            }
         }
     }
 }
