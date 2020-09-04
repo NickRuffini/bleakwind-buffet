@@ -64,6 +64,9 @@ namespace BleakwindBuffet.Data.Sides
             }
         }
 
+        /// <summary>
+        /// List containing instructions in string form regarding the addition of properties
+        /// </summary>
         private List<string> specialInstructions = new List<string>();
         public List<string> SpecialInstructions
         {
@@ -73,6 +76,10 @@ namespace BleakwindBuffet.Data.Sides
             }
         }
 
+        /// <summary>
+        /// Override method that converts the side into a string
+        /// </summary>
+        /// <returns>The size of the side, followed by the name of the side</returns>
         public override string ToString()
         {
             return String.Format("{0} Fried Miraak", size.ToString());

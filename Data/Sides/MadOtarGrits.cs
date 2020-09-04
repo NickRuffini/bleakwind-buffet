@@ -64,6 +64,9 @@ namespace BleakwindBuffet.Data.Sides
             }
         }
 
+        /// <summary>
+        /// List containing instructions in string form regarding the addition of properties
+        /// </summary>
         private List<string> specialInstructions = new List<string>();
         public List<string> SpecialInstructions
         {
@@ -73,6 +76,10 @@ namespace BleakwindBuffet.Data.Sides
             }
         }
 
+        /// <summary>
+        /// Override method converts the grits into a string
+        /// </summary>
+        /// <returns>Size of the grits, followed by the name of the grits</returns>
         public override string ToString()
         {
             return String.Format("{0} Mad Otar Grits", size.ToString());
