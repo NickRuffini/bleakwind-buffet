@@ -1,7 +1,7 @@
 ﻿/*
  * Author: Nick Ruffini
  * Class name: ArentinoAppleJuice.cs
- * Purpose: Class used to represent the Drink Arentino Apple Juice!
+ * Purpose: Class used to represent the Drink Aretino Apple Juice!
  */
 
 using System;
@@ -9,9 +9,9 @@ using System.Collections.Generic;
 using System.Text;
 using BleakwindBuffet.Data.Enums;
 
-namespace Data.Drinks
+namespace BleakwindBuffet.Data.Drinks
 {
-    public class ArentinoAppleJuice
+    public class AretinoAppleJuice
     {
         /// <summary>
         /// Gets the price of the item
@@ -98,7 +98,7 @@ namespace Data.Drinks
 
         public override string ToString()
         {
-            return String.Format("{0} Arentino Apple Juice", size.ToString());
+            return String.Format("{0} Aretino Apple Juice", size.ToString());
         }
     }
 }

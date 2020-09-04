@@ -9,9 +9,9 @@ using System.Collections.Generic;
 using System.Text;
 using BleakwindBuffet.Data.Enums;
 
-namespace Data.Sides
+namespace BleakwindBuffet.Data.Sides
 {
-    class FriedMiraak
+    public class FriedMiraak
     {
         /// <summary>
         /// Gets the price of the item

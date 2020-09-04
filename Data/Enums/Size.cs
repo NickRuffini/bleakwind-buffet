@@ -16,17 +16,4 @@ namespace BleakwindBuffet.Data.Enums
         Medium,
         Large
     }
-
-    /// <summary>
-    /// Provides available soda flavors!
-    /// </summary>
-    public enum SodaFlavor
-    {
-        Blackberry,
-        Cherry,
-        Grapefruit,
-        Lemon,
-        Peach,
-        Watermelon
-    }
 }
