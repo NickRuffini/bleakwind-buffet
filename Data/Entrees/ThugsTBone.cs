@@ -28,6 +28,9 @@ namespace BleakwindBuffet.Data.Entrees
             get { return 982; }
         }
 
+        /// <summary>
+        /// List containing instructions in string form regarding the addition of properties
+        /// </summary>
         private List<string> specialInstructions = new List<string>();
         public List<string> SpecialInstructions
         {
@@ -37,6 +40,10 @@ namespace BleakwindBuffet.Data.Entrees
             }
         }
 
+        /// <summary>
+        /// Override that converts the steak into a string
+        /// </summary>
+        /// <returns>Name of the steak</returns>
         public override string ToString()
         {
             return "Thugs T-Bone";

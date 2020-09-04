@@ -28,6 +28,9 @@ namespace BleakwindBuffet.Data.Entrees
             get { return 784; }
         }
 
+        /// <summary>
+        /// Represents the sirloin in the sandwich
+        /// </summary>
         private bool sirloin = true;
         public bool Sirloin
         {
@@ -49,6 +52,9 @@ namespace BleakwindBuffet.Data.Entrees
             }
         }
 
+        /// <summary>
+        /// Represents onion in the sandwich
+        /// </summary>
         private bool onion = true;
         public bool Onion
         {
@@ -70,6 +76,9 @@ namespace BleakwindBuffet.Data.Entrees
             }
         }
 
+        /// <summary>
+        /// Represents the roll of the sandwich
+        /// </summary>
         private bool roll = true;
         public bool Roll
         {
@@ -91,6 +100,9 @@ namespace BleakwindBuffet.Data.Entrees
             }
         }
 
+        /// <summary>
+        /// List containing instructions in string form regarding the addition of properties
+        /// </summary>
         private List<string> specialInstructions = new List<string>();
         public List<string> SpecialInstructions
         {
@@ -100,6 +112,10 @@ namespace BleakwindBuffet.Data.Entrees
             }
         }
 
+        /// <summary>
+        /// Override method that converts the sandwich into a string
+        /// </summary>
+        /// <returns>The name of the sandwich</returns>
         public override string ToString()
         {
             return "Philly Poacher";

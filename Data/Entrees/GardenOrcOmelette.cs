@@ -28,6 +28,9 @@ namespace BleakwindBuffet.Data.Entrees
             get { return 404; }
         }
 
+        /// <summary>
+        /// Represents the broccoli in the omelette
+        /// </summary>
         private bool broccoli = true;
         public bool Broccoli
         {
@@ -49,6 +52,9 @@ namespace BleakwindBuffet.Data.Entrees
             }
         }
 
+        /// <summary>
+        /// Represents mushrooms in the omelette
+        /// </summary>
         private bool mushrooms = true;
         public bool Mushrooms
         {
@@ -70,6 +76,9 @@ namespace BleakwindBuffet.Data.Entrees
             }
         }
 
+        /// <summary>
+        /// Represents tomato in the omelette
+        /// </summary>
         private bool tomato = true;
         public bool Tomato
         {
@@ -91,6 +100,9 @@ namespace BleakwindBuffet.Data.Entrees
             }
         }
 
+        /// <summary>
+        /// Represents cheddar in the omelette
+        /// </summary>
         private bool cheddar = true;
         public bool Cheddar
         {
@@ -112,6 +124,9 @@ namespace BleakwindBuffet.Data.Entrees
             }
         }
 
+        /// <summary>
+        /// List containing instructions in string form regarding the addition of properties
+        /// </summary>
         private List<string> specialInstructions = new List<string>();
         public List<string> SpecialInstructions
         {
@@ -121,6 +136,10 @@ namespace BleakwindBuffet.Data.Entrees
             }
         }
 
+        /// <summary>
+        /// Override method that converts the omelette into string form
+        /// </summary>
+        /// <returns>The name of the omelette</returns>
         public override string ToString()
         {
             return "Garden Orc Omelette";

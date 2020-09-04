@@ -28,6 +28,9 @@ namespace BleakwindBuffet.Data.Entrees
             get { return 602; }
         }
 
+        /// <summary>
+        /// Represents sausage in the meal
+        /// </summary>
         private bool sausageLink = true;
         public bool SausageLink
         {
@@ -49,6 +52,9 @@ namespace BleakwindBuffet.Data.Entrees
             }
         }
 
+        /// <summary>
+        /// Represents egg in the meal
+        /// </summary>
         private bool egg = true;
         public bool Egg
         {
@@ -70,6 +76,9 @@ namespace BleakwindBuffet.Data.Entrees
             }
         }
 
+        /// <summary>
+        /// Represents hash browns in the meal
+        /// </summary>
         private bool hashBrowns = true;
         public bool HashBrowns
         {
@@ -91,6 +100,9 @@ namespace BleakwindBuffet.Data.Entrees
             }
         }
 
+        /// <summary>
+        /// Represents pancakes in the meal
+        /// </summary>
         private bool pancake = true;
         public bool Pancake
         {
@@ -112,6 +124,9 @@ namespace BleakwindBuffet.Data.Entrees
             }
         }
 
+        /// <summary>
+        /// List containing instructions in string form regarding the addition of properties
+        /// </summary>
         private List<string> specialInstructions = new List<string>();
         public List<string> SpecialInstructions
         {
@@ -121,6 +136,10 @@ namespace BleakwindBuffet.Data.Entrees
             }
         }
 
+        /// <summary>
+        /// Override method that converts the meal into a string
+        /// </summary>
+        /// <returns>Name of the meal</returns>
         public override string ToString()
         {
             return "Smokehouse Skeleton";

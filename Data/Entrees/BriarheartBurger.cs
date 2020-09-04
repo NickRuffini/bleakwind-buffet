@@ -28,6 +28,9 @@ namespace BleakwindBuffet.Data.Entrees
             get { return 732; }
         }
 
+        /// <summary>
+        /// Represents ketchup on the burger!
+        /// </summary>
         private bool ketchup = true;
         public bool Ketchup
         {
@@ -49,6 +52,9 @@ namespace BleakwindBuffet.Data.Entrees
             }
         }
 
+        /// <summary>
+        /// Represents the bun of the burger!
+        /// </summary>
         private bool bun = true;
         public bool Bun
         {
@@ -70,6 +76,9 @@ namespace BleakwindBuffet.Data.Entrees
             }
         }
 
+        /// <summary>
+        /// Represents the mustard on the burger
+        /// </summary>
         private bool mustard = true;
         public bool Mustard
         {
@@ -91,6 +100,9 @@ namespace BleakwindBuffet.Data.Entrees
             }
         }
 
+        /// <summary>
+        /// Represents the pickles on the burger
+        /// </summary>
         private bool pickle = true;
         public bool Pickle
         {
@@ -112,6 +124,9 @@ namespace BleakwindBuffet.Data.Entrees
             }
         }
 
+        /// <summary>
+        /// Represents the cheese on the burger
+        /// </summary>
         private bool cheese = true;
         public bool Cheese
         {
@@ -133,6 +148,9 @@ namespace BleakwindBuffet.Data.Entrees
             }
         }
 
+        /// <summary>
+        /// List containing instructions in string form regarding the addition of properties
+        /// </summary>
         private List<string> specialInstructions = new List<string>();
         public List<string> SpecialInstructions
         {
@@ -142,6 +160,10 @@ namespace BleakwindBuffet.Data.Entrees
             }
         }
 
+        /// <summary>
+        /// Override method that converts the burger into string form
+        /// </summary>
+        /// <returns>The name of the burger</returns>
         public override string ToString()
         {
             return "Briarheart Burger";

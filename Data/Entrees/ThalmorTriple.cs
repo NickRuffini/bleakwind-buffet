@@ -28,6 +28,9 @@ namespace BleakwindBuffet.Data.Entrees
             get { return 943; }
         }
 
+        /// <summary>
+        /// Represents ketchup in the burger
+        /// </summary>
         private bool ketchup = true;
         public bool Ketchup
         {
@@ -49,6 +52,9 @@ namespace BleakwindBuffet.Data.Entrees
             }
         }
 
+        /// <summary>
+        /// Represents the bun of the burger
+        /// </summary>
         private bool bun = true;
         public bool Bun
         {
@@ -70,6 +76,9 @@ namespace BleakwindBuffet.Data.Entrees
             }
         }
 
+        /// <summary>
+        /// Represents the mustard of the burger
+        /// </summary>
         private bool mustard = true;
         public bool Mustard
         {
@@ -91,6 +100,9 @@ namespace BleakwindBuffet.Data.Entrees
             }
         }
 
+        /// <summary>
+        /// Represents the pickles on the burger
+        /// </summary>
         private bool pickle = true;
         public bool Pickle
         {
@@ -112,6 +124,9 @@ namespace BleakwindBuffet.Data.Entrees
             }
         }
 
+        /// <summary>
+        /// Represents the cheese on the burger
+        /// </summary>
         private bool cheese = true;
         public bool Cheese
         {
@@ -133,6 +148,9 @@ namespace BleakwindBuffet.Data.Entrees
             }
         }
 
+        /// <summary>
+        /// Represents the tomato on the burger
+        /// </summary>
         private bool tomato = true;
         public bool Tomato
         {
@@ -154,6 +172,9 @@ namespace BleakwindBuffet.Data.Entrees
             }
         }
 
+        /// <summary>
+        /// Represents the lettuce on the burger
+        /// </summary>
         private bool lettuce = true;
         public bool Lettuce
         {
@@ -175,6 +196,9 @@ namespace BleakwindBuffet.Data.Entrees
             }
         }
 
+        /// <summary>
+        /// Represents the mayo on the burger
+        /// </summary>
         private bool mayo = true;
         public bool Mayo
         {
@@ -196,6 +220,9 @@ namespace BleakwindBuffet.Data.Entrees
             }
         }
 
+        /// <summary>
+        /// Represents the bacon on the burger
+        /// </summary>
         private bool bacon = true;
         public bool Bacon
         {
@@ -217,6 +244,9 @@ namespace BleakwindBuffet.Data.Entrees
             }
         }
 
+        /// <summary>
+        /// Represents egg on the burger
+        /// </summary>
         private bool egg = true;
         public bool Egg
         {
@@ -238,6 +268,9 @@ namespace BleakwindBuffet.Data.Entrees
             }
         }
 
+        /// <summary>
+        /// List containing instructions in string form regarding the addition of properties
+        /// </summary>
         private List<string> specialInstructions = new List<string>();
         public List<string> SpecialInstructions
         {
@@ -247,6 +280,10 @@ namespace BleakwindBuffet.Data.Entrees
             }
         }
 
+        /// <summary>
+        /// Override method that converts the burger into a string
+        /// </summary>
+        /// <returns>Name of the burger</returns>
         public override string ToString()
         {
             return "Thalmor Triple";
