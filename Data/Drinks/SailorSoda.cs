@@ -32,6 +32,7 @@ namespace BleakwindBuffet.Data.Drinks
             get { return calories; }
             set { calories = value; }
         }
+
         /// <summary>
         /// Represents the size of the drink
         /// </summary>
@@ -97,6 +98,9 @@ namespace BleakwindBuffet.Data.Drinks
             set { flavor = value; }
         }
 
+        /// <summary>
+        /// List containing instructions in string form regarding the addition of properties
+        /// </summary>
         private List<string> specialInstructions = new List<string>();
         public List<string> SpecialInstructions
         {
@@ -106,6 +110,10 @@ namespace BleakwindBuffet.Data.Drinks
             }
         }
 
+        /// <summary>
+        /// Override method that converts the drink into string form
+        /// </summary>
+        /// <returns>The size of the drink, followed by the flavor of the drink, followed by the name of the drink</returns>
         public override string ToString()
         {
             return String.Format("{0} {1} Sailor Soda", size.ToString(), flavor.ToString());
