@@ -88,11 +88,11 @@ namespace BleakwindBuffet.Data.Drinks
                 lemon = value;
                 if (value == true)
                 {
-                    specialInstructions.Add("Add cream");
+                    specialInstructions.Add("Add lemon");
                 }
                 else
                 {
-                    specialInstructions.Remove("Add cream");
+                    specialInstructions.Remove("Add lemon");
                 }
             }
         }
