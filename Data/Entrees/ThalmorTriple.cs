@@ -10,12 +10,12 @@ using System.Text;
 
 namespace BleakwindBuffet.Data.Entrees
 {
-    public class ThalmorTriple
+    public class ThalmorTriple : Entree
     {
         /// <summary>
         /// Gets the price of the item
         /// </summary>
-        public double Price
+        public override double Price
         {
             get { return 8.32; }
         }
@@ -23,7 +23,7 @@ namespace BleakwindBuffet.Data.Entrees
         /// <summary>
         /// Gets the calories of the item
         /// </summary>
-        public uint Calories
+        public override uint Calories
         {
             get { return 943; }
         }
@@ -272,7 +272,7 @@ namespace BleakwindBuffet.Data.Entrees
         /// List containing instructions in string form regarding the addition of properties
         /// </summary>
         private List<string> specialInstructions = new List<string>();
-        public List<string> SpecialInstructions
+        public override List<string> SpecialInstructions
         {
             get
             {
