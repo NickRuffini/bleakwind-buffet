@@ -11,7 +11,7 @@ using BleakwindBuffet.Data.Enums;
 
 namespace BleakwindBuffet.Data.Drinks
 {
-    public class AretinoAppleJuice : Drink
+    public class AretinoAppleJuice : Drink, IOrderItem
     {
         /// <summary>
         /// Gets the price of the item

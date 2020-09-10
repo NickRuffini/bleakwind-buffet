@@ -15,6 +15,13 @@ namespace BleakwindBuffet.DataTests.UnitTests.SideTests
     public class MadOtarGritsTests
     {
         [Fact]
+        public void ShouldBeAOrderItem()
+        {
+            MadOtarGrits mog = new MadOtarGrits();
+            Assert.IsAssignableFrom<IOrderItem>(mog);
+        }
+
+        [Fact]
         public void ShouldBeASide()
         {
             MadOtarGrits mog = new MadOtarGrits();

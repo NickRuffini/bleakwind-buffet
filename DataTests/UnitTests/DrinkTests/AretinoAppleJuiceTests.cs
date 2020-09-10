@@ -15,6 +15,13 @@ namespace BleakwindBuffet.DataTests.UnitTests.DrinkTests
     public class AretinoAppleJuiceTests
     {
         [Fact]
+        public void ShouldBeAOrderItem()
+        {
+            AretinoAppleJuice aj = new AretinoAppleJuice();
+            Assert.IsAssignableFrom<IOrderItem>(aj);
+        }
+
+        [Fact]
         public void ShouldBeADrink()
         {
             AretinoAppleJuice aj = new AretinoAppleJuice();

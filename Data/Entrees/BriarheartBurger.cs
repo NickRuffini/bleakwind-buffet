@@ -10,7 +10,7 @@ using System.Text;
 
 namespace BleakwindBuffet.Data.Entrees
 {
-    public class BriarheartBurger : Entree
+    public class BriarheartBurger : Entree, IOrderItem
     {
         /// <summary>
         /// Gets the price of the item

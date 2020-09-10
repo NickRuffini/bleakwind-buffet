@@ -11,7 +11,7 @@ using BleakwindBuffet.Data.Enums;
 
 namespace BleakwindBuffet.Data.Sides
 {
-    public class DragonbornWaffleFries : Side
+    public class DragonbornWaffleFries : Side, IOrderItem
     {
         /// <summary>
         /// Gets the price of the item
