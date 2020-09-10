@@ -10,6 +10,8 @@ using System.Text;
 using BleakwindBuffet.Data.Enums;
 using BleakwindBuffet.Data.Entrees;
 using BleakwindBuffet.Data.Sides;
+using BleakwindBuffet.Data.Drinks;
+using System.Linq;
 
 namespace BleakwindBuffet.Data
 {
@@ -70,7 +72,52 @@ namespace BleakwindBuffet.Data
         /// <returns> An enumerable containing an instance of all available drinks </returns>
         public static IEnumerable<IOrderItem> Drinks()
         {
+            List<IOrderItem> drinkList = new List<IOrderItem>();
 
+            foreach (Size size in Enum.GetValues(typeof(Size)))
+            {
+                AretinoAppleJuice aj = new AretinoAppleJuice();
+                aj.Size = size;
+                drinkList.Add(aj);
+
+                CandlehearthCoffee cc = new CandlehearthCoffee();
+                cc.Size = size;
+                drinkList.Add(cc);
+
+                MarkarthMilk mm = new MarkarthMilk();
+                mm.Size = size;
+                drinkList.Add(mm);
+
+                WarriorWater ww = new WarriorWater();
+                ww.Size = size;
+                drinkList.Add(ww);
+
+                foreach (SodaFlavor sodaFlavor in Enum.GetValues(typeof(SodaFlavor)))
+                {
+                    SailorSoda ss = new SailorSoda();
+                    ss.Size = size;
+                    ss.Flavor = sodaFlavor;
+                    drinkList.Add(ss);
+                }
+            }
+
+            return drinkList;
+        }
+
+        /// <summary>
+        /// Populates a list with all the available items at Bleakwind Buffet!
+        /// </summary>
+        /// <returns> An enumerable containing an instance of all available items </returns>
+        public static IEnumerable<IOrderItem> FullMenu()
+        {
+            IEnumerable<IOrderItem> drinks = Drinks();
+            IEnumerable<IOrderItem> entrees = Entrees();
+            IEnumerable<IOrderItem> sides = Sides();
+
+            IEnumerable<IOrderItem> list1 = drinks.Concat(entrees);
+            IEnumerable<IOrderItem> list2 = list1.Concat(sides);
+
+            return list2;
         }
     }
 }
