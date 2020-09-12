@@ -8,7 +8,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace BleakwindBuffet.Data
+namespace BleakwindBuffet.Data.Generic
 {
     public interface IOrderItem
     {

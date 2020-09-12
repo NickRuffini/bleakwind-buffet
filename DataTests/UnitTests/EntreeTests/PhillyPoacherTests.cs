@@ -8,6 +8,7 @@ using Xunit;
 
 using BleakwindBuffet.Data;
 using BleakwindBuffet.Data.Entrees;
+using BleakwindBuffet.Data.Generic;
 
 namespace BleakwindBuffet.DataTests.UnitTests.EntreeTests
 {

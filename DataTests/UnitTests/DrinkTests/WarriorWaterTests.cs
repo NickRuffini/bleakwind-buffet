@@ -9,6 +9,7 @@ using Xunit;
 using BleakwindBuffet.Data;
 using BleakwindBuffet.Data.Enums;
 using BleakwindBuffet.Data.Drinks;
+using BleakwindBuffet.Data.Generic;
 
 namespace BleakwindBuffet.DataTests.UnitTests.DrinkTests
 {

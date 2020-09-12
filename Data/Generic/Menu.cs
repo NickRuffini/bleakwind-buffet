@@ -11,9 +11,10 @@ using BleakwindBuffet.Data.Enums;
 using BleakwindBuffet.Data.Entrees;
 using BleakwindBuffet.Data.Sides;
 using BleakwindBuffet.Data.Drinks;
+using BleakwindBuffet.Data.Generic;
 using System.Linq;
 
-namespace BleakwindBuffet.Data
+namespace BleakwindBuffet.Data.Generic
 {
     public static class Menu
     {

@@ -11,8 +11,9 @@ using System.Collections.Generic;
 using System.Text;
 using BleakwindBuffet.Data;
 using BleakwindBuffet.Data.Entrees;
+using BleakwindBuffet.Data.Generic;
 
-namespace BleakwindBuffet.DataTests.UnitTests
+namespace BleakwindBuffet.DataTests.UnitTests.GenericTests
 {
     public class MenuTests
     {
