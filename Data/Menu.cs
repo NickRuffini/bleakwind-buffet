@@ -84,6 +84,11 @@ namespace BleakwindBuffet.Data
                 cc.Size = size;
                 drinkList.Add(cc);
 
+                CandlehearthCoffee ccd = new CandlehearthCoffee();
+                ccd.Size = size;
+                ccd.Decaf = true;
+                drinkList.Add(ccd);
+
                 MarkarthMilk mm = new MarkarthMilk();
                 mm.Size = size;
                 drinkList.Add(mm);
