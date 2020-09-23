@@ -1,0 +1,44 @@
+﻿<UserControl x:Class="PointOfSale.OrderComponent"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:PointOfSale"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <Grid x:Name="OrderComponentGrid">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="100"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="20"/>
+            <RowDefinition Height="6*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="20"/>
+        </Grid.RowDefinitions>
+        
+        <Border Grid.Column="1" Grid.RowSpan="4" 
+                BorderBrush="Black" 
+        BorderThickness="1,0,0,0" Background="{x:Null}" />
+
+        <StackPanel Grid.Column= "1" Grid.Row="1" 
+                    HorizontalAlignment="Center">
+            <TextBlock>
+                Order:
+            </TextBlock>
+        </StackPanel>
+
+        <Button Grid.Row="2" Grid.Column="1" Margin="10" >
+            <Viewbox Stretch="Fill">
+                <TextBlock Text="Complete Order"/>
+            </Viewbox>
+        </Button>
+        <Button Grid.Row="3" Grid.Column="1" Margin="10">
+            <Viewbox Stretch="Fill">
+                <TextBlock Text="Cancel Order"/>
+            </Viewbox>
+        </Button>
+    </Grid>
+</UserControl>

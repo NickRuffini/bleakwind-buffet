@@ -6,43 +6,9 @@
         xmlns:local="clr-namespace:PointOfSale"
         mc:Ignorable="d" FontSize="16"
         Title="MainWindow" Height="450" Width="800">
-    <Grid x:Name="OrderComponent">
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="*"/>
-            <ColumnDefinition Width="100"/>
-        </Grid.ColumnDefinitions>
-        <Grid.RowDefinitions>
-            <RowDefinition Height="20"/>
-            <RowDefinition Height="*"/>
-            <RowDefinition Height="20"/>
-        </Grid.RowDefinitions>
-        <Grid x:Name="MenuSelectionComponent">
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="20"/>
-                <ColumnDefinition Width="auto"/>
-                <ColumnDefinition Width="auto"/>
-                <ColumnDefinition Width="auto"/>
-                <ColumnDefinition Width="*"/>
-                <ColumnDefinition Width="20"/>
-            </Grid.ColumnDefinitions>
-            <Grid.RowDefinitions>
-                <RowDefinition Height="20"/>
-                <RowDefinition Height="auto"/>
-                <RowDefinition Height="auto"/>
-                <RowDefinition Height="*"/>
-                <RowDefinition Height="20"/>
-            </Grid.RowDefinitions>
-        </Grid>
-
-        <Border Grid.Column="1" Grid.RowSpan="4" 
-                BorderBrush="Black" 
-        BorderThickness="1,0,0,0" Background="{x:Null}" />
-
-        <StackPanel Grid.Column= "1" Grid.Row="1" 
-                    HorizontalAlignment="Center">
-            <TextBlock>
-                Order:
-            </TextBlock>
-        </StackPanel>
+    <Grid>
+        <local:OrderComponent/>
+        <local:MenuSelectionComponent/>
+        <ContentControl x:Name="menuContentControl"/>
     </Grid>
 </Window>
