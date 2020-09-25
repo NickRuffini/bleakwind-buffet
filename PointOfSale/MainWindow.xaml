@@ -7,8 +7,6 @@
         mc:Ignorable="d" FontSize="16"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
-        <local:OrderComponent/>
-        <local:MenuSelectionComponent/>
-        <ContentControl x:Name="menuContentControl"/>
+        <local:OrderComponent Visibility="Visible"/>
     </Grid>
 </Window>

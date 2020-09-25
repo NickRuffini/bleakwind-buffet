@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Windows;
 using System.Windows.Controls;
@@ -10,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using PointOfSale.ExtensionMethod;
 
 namespace PointOfSale
 {
@@ -23,9 +26,24 @@ namespace PointOfSale
             InitializeComponent();
         }
 
-        private void briarheartBurger_Click(object sender, RoutedEventArgs e)
+        void briarheartBurger_Click(object sender, RoutedEventArgs e)
         {
-            //MainWindow..Visibility = Visibility.Collapsed;
+            this.SwitchScreen(sender);
+            /*if(sender is Button)
+            {
+                FrameworkElement switchToScreen;
+                var orderControl = this.FindAncestor<OrderComponent>();
+
+                switch(((Button)sender).Name)
+                {
+                    case "briarheartBurgerButton":
+                        switchToScreen = new BriarheartBurgerComponent();
+                        break;
+                    default:
+                        throw new NotImplementedException("Unknown category selected");
+                }
+                orderControl?.SwapScreen(switchToScreen);
+            }*/
         }
     }
 }

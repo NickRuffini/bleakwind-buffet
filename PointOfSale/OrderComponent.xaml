@@ -40,5 +40,6 @@
                 <TextBlock Text="Cancel Order"/>
             </Viewbox>
         </Button>
+        <Border Name="containerBorder" Grid.ColumnSpan="1" Grid.RowSpan="5"/>
     </Grid>
 </UserControl>

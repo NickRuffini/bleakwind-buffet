@@ -24,7 +24,9 @@
             <RowDefinition Height="5*"/>
             <RowDefinition Height="20"/>
         </Grid.RowDefinitions>
-        <Button x:Name="briarheartBurger" Grid.Row="1" Grid.Column="1" Margin="10, 10, 10, 10" Click="briarheartBurger_Click">
+        <Button x:Name="briarheartBurgerButton" Grid.Row="1" 
+                Grid.Column="1" Margin="10, 10, 10, 10" 
+                Click="briarheartBurger_Click">
             <Viewbox Stretch="Fill">
                 <TextBlock Text="Briarheart Burger"/>
             </Viewbox>

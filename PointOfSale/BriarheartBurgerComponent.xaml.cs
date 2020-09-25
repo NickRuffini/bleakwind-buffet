@@ -1,6 +1,6 @@
-﻿using System;
+﻿using PointOfSale.ExtensionMethod;
+using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Text;
 using System.Windows;
 using System.Windows.Controls;
@@ -15,19 +15,18 @@ using System.Windows.Shapes;
 namespace PointOfSale
 {
     /// <summary>
-    /// Interaction logic for OrderComponent.xaml
+    /// Interaction logic for BriarheartBurger.xaml
     /// </summary>
-    public partial class OrderComponent : UserControl
+    public partial class BriarheartBurgerComponent : UserControl
     {
-        public OrderComponent()
+        public BriarheartBurgerComponent()
         {
             InitializeComponent();
-            containerBorder.Child = new MenuSelectionComponent();
         }
 
-        public void SwapScreen(UIElement obj)
+        private void returnButton_Click(object sender, RoutedEventArgs e)
         {
-            containerBorder.Child = obj;
+            this.SwitchScreen(sender);
         }
     }
 }
