@@ -12,20 +12,39 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace PointOfSale
+namespace PointOfSale.Entrees
 {
     /// <summary>
     /// Interaction logic for BriarheartBurger.xaml
     /// </summary>
     public partial class BriarheartBurgerComponent : UserControl
     {
+        /// <summary>
+        /// Initializes the XAML
+        /// </summary>
         public BriarheartBurgerComponent()
         {
             InitializeComponent();
         }
 
+        /// <summary>
+        /// Click event for the return button that brings us back to the menu screen!
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void returnButton_Click(object sender, RoutedEventArgs e)
         {
+            this.SwitchScreen(sender);
+        }
+
+        /// <summary>
+        /// Click event for the add button that adds a item to the listbox and switches the screen back to the menu
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void addButton_Click(object sender, RoutedEventArgs e)
+        {
+            this.AddItem(sender, "Briarheart Burger");
             this.SwitchScreen(sender);
         }
     }

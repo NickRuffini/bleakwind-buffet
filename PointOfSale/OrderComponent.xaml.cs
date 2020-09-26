@@ -19,15 +19,32 @@ namespace PointOfSale
     /// </summary>
     public partial class OrderComponent : UserControl
     {
+        /// <summary>
+        /// Initializes our XAML and starts us off on the Menu Screen
+        /// </summary>
         public OrderComponent()
         {
             InitializeComponent();
             containerBorder.Child = new MenuSelectionComponent();
         }
 
+        /// <summary>
+        /// Changes what screen we are displaying in our border
+        /// </summary>
+        /// <param name="obj">Menu Screen/Item Screen we are changing to</param>
         public void SwapScreen(UIElement obj)
         {
             containerBorder.Child = obj;
+        }
+
+        /// <summary>
+        /// Cancel button event handler that clears out the list of items in the "cart"
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void cancelButton_Click(object sender, RoutedEventArgs e)
+        {
+            this.orderList.Items.Clear();
         }
     }
 }

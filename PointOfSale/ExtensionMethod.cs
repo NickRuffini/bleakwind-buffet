@@ -13,6 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using PointOfSale.ExtensionMethod;
+using PointOfSale.Entrees;
 
 namespace PointOfSale.ExtensionMethod
 {
@@ -52,10 +53,30 @@ namespace PointOfSale.ExtensionMethod
                     case "returnButton":
                         switchToScreen = new MenuSelectionComponent();
                         break;
+                    case "addButton":
+                        switchToScreen = new MenuSelectionComponent();
+                        break;
+                    case "doubleDraugrButton":
+                        switchToScreen = new DoubleDraugrComponent();
+                        break;
                     default:
                         throw new NotImplementedException("Unknown category selected");
                 }
                 orderControl?.SwapScreen(switchToScreen);
+            }
+        }
+
+        public static void AddItem(this DependencyObject elem, object sender, string itemName)
+        {
+            if (sender is Button)
+            {
+                var orderControl = elem.FindAncestor<OrderComponent>();
+
+                if (orderControl is OrderComponent)
+                {
+                    orderControl.orderList.Items.Add(itemName);
+                }
+                
             }
         }
     }

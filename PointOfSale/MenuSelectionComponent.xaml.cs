@@ -26,24 +26,9 @@ namespace PointOfSale
             InitializeComponent();
         }
 
-        void briarheartBurger_Click(object sender, RoutedEventArgs e)
+        void menuButtonClickEvent(object sender, RoutedEventArgs e)
         {
             this.SwitchScreen(sender);
-            /*if(sender is Button)
-            {
-                FrameworkElement switchToScreen;
-                var orderControl = this.FindAncestor<OrderComponent>();
-
-                switch(((Button)sender).Name)
-                {
-                    case "briarheartBurgerButton":
-                        switchToScreen = new BriarheartBurgerComponent();
-                        break;
-                    default:
-                        throw new NotImplementedException("Unknown category selected");
-                }
-                orderControl?.SwapScreen(switchToScreen);
-            }*/
         }
     }
 }

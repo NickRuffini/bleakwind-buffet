@@ -9,7 +9,7 @@
     <Grid x:Name="OrderComponentGrid">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*"/>
-            <ColumnDefinition Width="100"/>
+            <ColumnDefinition Width="150"/>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
             <RowDefinition Height="20"/>
@@ -28,6 +28,9 @@
             <TextBlock>
                 Order:
             </TextBlock>
+            <ListBox x:Name="orderList">
+                
+            </ListBox>
         </StackPanel>
 
         <Button Grid.Row="2" Grid.Column="1" Margin="10" >
@@ -35,7 +38,9 @@
                 <TextBlock Text="Complete Order"/>
             </Viewbox>
         </Button>
-        <Button Grid.Row="3" Grid.Column="1" Margin="10">
+        <Button x:Name="cancelButton" Grid.Row="3" 
+                Grid.Column="1" Margin="10"
+                Click="cancelButton_Click">
             <Viewbox Stretch="Fill">
                 <TextBlock Text="Cancel Order"/>
             </Viewbox>
