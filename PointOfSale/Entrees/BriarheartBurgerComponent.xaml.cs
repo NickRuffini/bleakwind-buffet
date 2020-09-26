@@ -1,4 +1,10 @@
-﻿using PointOfSale.ExtensionMethod;
+﻿/*
+ * Author: Nick Ruffini
+ * Class name: BriarheartBurgerComponent.xaml.cs
+ * Purpose: Class used to represent the GUI of the Entree Briarheart Burger
+ */
+
+using PointOfSale.ExtensionMethod;
 using System;
 using System.Collections.Generic;
 using System.Text;

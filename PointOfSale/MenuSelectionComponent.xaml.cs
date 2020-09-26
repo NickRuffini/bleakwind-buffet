@@ -1,4 +1,10 @@
-﻿using System;
+﻿/*
+ * Author: Nick Ruffini
+ * Class name: MenuSelectionComponent.xaml.cs
+ * Purpose: Class used to represent the GUI of the Menu Selection Component
+ */
+
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
@@ -26,6 +32,11 @@ namespace PointOfSale
             InitializeComponent();
         }
 
+        /// <summary>
+        /// Click event for any button press on the Menu Screen. Switches to the User Control correlating to the button pressed!
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         void menuButtonClickEvent(object sender, RoutedEventArgs e)
         {
             this.SwitchScreen(sender);

@@ -1,4 +1,10 @@
-﻿using System;
+﻿/*
+ * Author: Nick Ruffini
+ * Class name: OrderComponent.xaml.cs
+ * Purpose: Class used to represent the GUI of the Order Component. Oversees the overall Order (2nd level)
+ */
+
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Text;

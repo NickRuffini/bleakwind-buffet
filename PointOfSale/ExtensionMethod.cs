@@ -1,4 +1,10 @@
-﻿using System;
+﻿/*
+ * Author: Nick Ruffini
+ * Class name: ExtensionMethod.xaml.cs
+ * Purpose: Class used to store helper methods that are useful for the program flow!
+ */
+
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
@@ -38,6 +44,11 @@ namespace PointOfSale.ExtensionMethod
             }
             return parent.FindAncestor<T>();
         }
+        /// <summary>
+        /// Switches the screen from the current User Control to another by going up to the OrderComponent level!
+        /// </summary>
+        /// <param name="elem"></param>
+        /// <param name="sender">Button Pressed</param>
         public static void SwitchScreen(this DependencyObject elem, object sender)
         {
             if (sender is Button)
@@ -59,13 +70,33 @@ namespace PointOfSale.ExtensionMethod
                     case "doubleDraugrButton":
                         switchToScreen = new DoubleDraugrComponent();
                         break;
+                    case "thalmorTripleButton":
+                        switchToScreen = new ThalmorTripleComponent();
+                        break;
+                    case "smokehouseSkeletonButton":
+                        switchToScreen = new SmokehouseSkeletonComponent();
+                        break;
+                    case "gardenOrcOmeletteButton":
+                        switchToScreen = new GardenOrcOmeletteComponent();
+                        break;
+                    case "phillyPoacherButton":
+                        switchToScreen = new PhillyPoacherComponent();
+                        break;
+                    case "thugsTBoneButton":
+                        switchToScreen = new ThugsTBoneComponent();
+                        break;
                     default:
                         throw new NotImplementedException("Unknown category selected");
                 }
                 orderControl?.SwapScreen(switchToScreen);
             }
         }
-
+        /// <summary>
+        /// Adds an item to the listbox in OrderComponent
+        /// </summary>
+        /// <param name="elem"></param>
+        /// <param name="sender">Button Pressed</param>
+        /// <param name="itemName">String of the item name</param>
         public static void AddItem(this DependencyObject elem, object sender, string itemName)
         {
             if (sender is Button)

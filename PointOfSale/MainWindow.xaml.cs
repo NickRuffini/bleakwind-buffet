@@ -1,4 +1,10 @@
-﻿using System;
+﻿/*
+ * Author: Nick Ruffini
+ * Class name: MainWindowComponent.xaml.cs
+ * Purpose: Class used to represent the GUI of the Main Window Component. Top level User Control
+ */
+
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;

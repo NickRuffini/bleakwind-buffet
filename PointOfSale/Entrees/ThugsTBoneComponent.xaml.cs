@@ -1,7 +1,7 @@
 ﻿/*
  * Author: Nick Ruffini
- * Class name: DoubleDraugrComponent.xaml.cs
- * Purpose: Class used to represent the GUI of the Entree Double Draugr
+ * Class name: ThugsTBoneComponent.xaml.cs
+ * Purpose: Class used to represent the GUI of the Entree Thugs T-Bone
  */
 
 using System;
@@ -21,15 +21,14 @@ using PointOfSale.ExtensionMethod;
 namespace PointOfSale.Entrees
 {
     /// <summary>
-    /// Interaction logic for DoubleDraugrComponent.xaml
+    /// Interaction logic for ThugsTBoneComponent.xaml
     /// </summary>
-    public partial class DoubleDraugrComponent : UserControl
+    public partial class ThugsTBoneComponent : UserControl
     {
-        public DoubleDraugrComponent()
+        public ThugsTBoneComponent()
         {
             InitializeComponent();
         }
-
         /// <summary>
         /// Click event for the return button that brings us back to the menu screen!
         /// </summary>
@@ -47,7 +46,7 @@ namespace PointOfSale.Entrees
         /// <param name="e"></param>
         private void addButton_Click(object sender, RoutedEventArgs e)
         {
-            this.AddItem(sender, "Double Draugr");
+            this.AddItem(sender, "Thugs T-Bone");
             this.SwitchScreen(sender);
         }
     }

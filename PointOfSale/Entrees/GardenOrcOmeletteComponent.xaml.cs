@@ -1,7 +1,7 @@
 ﻿/*
  * Author: Nick Ruffini
- * Class name: DoubleDraugrComponent.xaml.cs
- * Purpose: Class used to represent the GUI of the Entree Double Draugr
+ * Class name: GardenOrcOmeletteComponent.xaml.cs
+ * Purpose: Class used to represent the GUI of the Entree Garden Orc Omelette
  */
 
 using System;
@@ -21,15 +21,14 @@ using PointOfSale.ExtensionMethod;
 namespace PointOfSale.Entrees
 {
     /// <summary>
-    /// Interaction logic for DoubleDraugrComponent.xaml
+    /// Interaction logic for GardenOrcOmeletteComponent.xaml
     /// </summary>
-    public partial class DoubleDraugrComponent : UserControl
+    public partial class GardenOrcOmeletteComponent : UserControl
     {
-        public DoubleDraugrComponent()
+        public GardenOrcOmeletteComponent()
         {
             InitializeComponent();
         }
-
         /// <summary>
         /// Click event for the return button that brings us back to the menu screen!
         /// </summary>
@@ -47,7 +46,7 @@ namespace PointOfSale.Entrees
         /// <param name="e"></param>
         private void addButton_Click(object sender, RoutedEventArgs e)
         {
-            this.AddItem(sender, "Double Draugr");
+            this.AddItem(sender, "Garden Orc Omelette");
             this.SwitchScreen(sender);
         }
     }
