@@ -78,47 +78,74 @@
                 <TextBlock Text="Thugs T-Bone"/>
             </Viewbox>
         </Button>
-        <Button Grid.Row="3" Grid.Column="1" Margin="10, 10, 10, 10">
+        <Button x:Name="sailorSodaButton" 
+                Grid.Row="3" Grid.Column="1" 
+                Margin="10, 10, 10, 10"
+                Click="menuButtonClickEvent">
             <Viewbox Stretch="Fill">
                 <TextBlock Text="Sailor's Soda"/>
             </Viewbox>
         </Button>
-        <Button Grid.Row="3" Grid.Column="2" Margin="10, 10, 10, 10">
+        <Button x:Name="markarthMilkButton" 
+                Grid.Row="3" Grid.Column="2" 
+                Margin="10, 10, 10, 10"
+                Click="menuButtonClickEvent">
             <Viewbox Stretch="Fill">
                 <TextBlock Text="Markarth Milk"/>
             </Viewbox>
         </Button>
-        <Button Grid.Row="3" Grid.Column="3" Margin="10, 10, 10, 10">
+        <Button x:Name="aretinoAppleJuiceButton"
+                Grid.Row="3" Grid.Column="3" 
+                Margin="10, 10, 10, 10"
+                Click="menuButtonClickEvent">
             <Viewbox Stretch="Fill">
                 <TextBlock Text="Aretino Apple Juice"/>
             </Viewbox>
         </Button>
-        <Button Grid.Row="3" Grid.Column="4" Margin="10, 10, 10, 10">
+        <Button x:Name="candlehearthCoffeeButton"
+                Grid.Row="3" Grid.Column="4" 
+                Margin="10, 10, 10, 10"
+                Click="menuButtonClickEvent">
             <Viewbox Stretch="Fill">
                 <TextBlock Text="Candlehearth Coffee"/>
             </Viewbox>
         </Button>
-        <Button Grid.Row="4" Grid.Column="1" Margin="10, 10, 10, 10">
+        <Button x:Name="warriorWaterButton"
+                Grid.Row="4" Grid.Column="1" 
+                Margin="10, 10, 10, 10"
+                Click="menuButtonClickEvent">
             <Viewbox Stretch="Fill">
                 <TextBlock Text="Warrior Water"/>
             </Viewbox>
         </Button>
-        <Button Grid.Row="5" Grid.Column="1" Margin="10, 10, 10, 10">
+        <Button x:Name="vokunSaladButton" 
+                Grid.Row="5" Grid.Column="1" 
+                Margin="10, 10, 10, 10"
+                Click="menuButtonClickEvent">
             <Viewbox Stretch="Fill">
                 <TextBlock Text="Vokun Salad"/>
             </Viewbox>
         </Button>
-        <Button Grid.Row="5" Grid.Column="2" Margin="10, 10, 10, 10">
+        <Button x:Name="friedMiraakButton" 
+                Grid.Row="5" Grid.Column="2" 
+                Margin="10, 10, 10, 10"
+                Click="menuButtonClickEvent">
             <Viewbox Stretch="Fill">
                 <TextBlock Text="Fried Miraak"/>
             </Viewbox>
         </Button>
-        <Button Grid.Row="5" Grid.Column="3" Margin="10, 10, 10, 10">
+        <Button x:Name="madOtarGritsButton" 
+                Grid.Row="5" Grid.Column="3" 
+                Margin="10, 10, 10, 10"
+                Click="menuButtonClickEvent">
             <Viewbox Stretch="Fill">
                 <TextBlock Text="Mad Otar Grits"/>
             </Viewbox>
         </Button>
-        <Button Grid.Row="5" Grid.Column="4" Margin="10, 10, 10, 10">
+        <Button x:Name="dragonbornWaffleFriesButton"
+                Grid.Row="5" Grid.Column="4" 
+                Margin="10, 10, 10, 10"
+                Click="menuButtonClickEvent">
             <Viewbox Stretch="Fill">
                 <TextBlock Text="Dragonborn Waffle Fries"/>
             </Viewbox>

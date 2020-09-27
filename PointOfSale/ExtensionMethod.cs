@@ -20,6 +20,9 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using PointOfSale.ExtensionMethod;
 using PointOfSale.Entrees;
+using PointOfSale.Drinks;
+using BleakwindBuffet.Data.Drinks;
+using PointOfSale.Sides;
 
 namespace PointOfSale.ExtensionMethod
 {
@@ -84,6 +87,33 @@ namespace PointOfSale.ExtensionMethod
                         break;
                     case "thugsTBoneButton":
                         switchToScreen = new ThugsTBoneComponent();
+                        break;
+                    case "sailorSodaButton":
+                        switchToScreen = new SailorSodaComponent();
+                        break;
+                    case "markarthMilkButton":
+                        switchToScreen = new MarkarthMilkComponent();
+                        break;
+                    case "aretinoAppleJuiceButton":
+                        switchToScreen = new AretinoAppleJuiceComponent();
+                        break;
+                    case "candlehearthCoffeeButton":
+                        switchToScreen = new CandlehearthCoffeeComponent();
+                        break;
+                    case "warriorWaterButton":
+                        switchToScreen = new WarriorWaterComponent();
+                        break;
+                    case "vokunSaladButton":
+                        switchToScreen = new VokunSaladComponent();
+                        break;
+                    case "friedMiraakButton":
+                        switchToScreen = new FriedMiraakComponent();
+                        break;
+                    case "madOtarGritsButton":
+                        switchToScreen = new MadOtarGritsComponent();
+                        break;
+                    case "dragonbornWaffleFriesButton":
+                        switchToScreen = new DragonbornWaffleFriesComponent();
                         break;
                     default:
                         throw new NotImplementedException("Unknown category selected");
