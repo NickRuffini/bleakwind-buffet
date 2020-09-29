@@ -9,11 +9,14 @@ using System.Collections.Generic;
 using System.Text;
 using BleakwindBuffet.Data.Enums;
 using BleakwindBuffet.Data.Generic;
+using System.ComponentModel;
 
 namespace BleakwindBuffet.Data.Drinks
 {
-    public class MarkarthMilk : Drink, IOrderItem
+    public class MarkarthMilk : Drink, IOrderItem, INotifyPropertyChanged
     {
+        public event PropertyChangedEventHandler PropertyChanged;
+
         /// <summary>
         /// Gets the price of the item
         /// </summary>
@@ -49,16 +52,25 @@ namespace BleakwindBuffet.Data.Drinks
                 {
                     price = 1.05;
                     calories = 56;
+                    PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Size"));
+                    PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Price"));
+                    PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Calories"));
                 }
                 else if (value == Size.Medium)
                 {
                     price = 1.11;
                     calories = 72;
+                    PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Size"));
+                    PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Price"));
+                    PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Calories"));
                 }
                 else
                 {
                     price = 1.22;
                     calories = 93;
+                    PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Size"));
+                    PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Price"));
+                    PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Calories"));
                 }
             }
         }
@@ -79,10 +91,12 @@ namespace BleakwindBuffet.Data.Drinks
                 if (value == true)
                 {
                     specialInstructions.Add("Add ice");
+                    PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Ice"));
                 }
                 else
                 {
                     specialInstructions.Remove("Add ice");
+                    PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Ice"));
                 }
             }
         }

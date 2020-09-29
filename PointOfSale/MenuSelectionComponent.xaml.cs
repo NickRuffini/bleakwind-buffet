@@ -37,7 +37,7 @@ namespace PointOfSale
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        void menuButtonClickEvent(object sender, RoutedEventArgs e)
+        public void menuButtonClickEvent(object sender, RoutedEventArgs e)
         {
             this.SwitchScreen(sender);
         }

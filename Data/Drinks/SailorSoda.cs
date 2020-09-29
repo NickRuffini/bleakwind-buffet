@@ -9,11 +9,14 @@ using System.Collections.Generic;
 using System.Text;
 using BleakwindBuffet.Data.Enums;
 using BleakwindBuffet.Data.Generic;
+using System.ComponentModel;
 
 namespace BleakwindBuffet.Data.Drinks
 {
-    public class SailorSoda : Drink, IOrderItem
+    public class SailorSoda : Drink, IOrderItem, INotifyPropertyChanged
     {
+        public event PropertyChangedEventHandler PropertyChanged;
+
         /// <summary>
         /// Gets the price of the item
         /// </summary>
@@ -49,16 +52,25 @@ namespace BleakwindBuffet.Data.Drinks
                 {
                     price = 1.42;
                     calories = 117;
+                    PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Size"));
+                    PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Price"));
+                    PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Calories"));
                 }
                 else if (value == Size.Medium)
                 {
                     price = 1.74;
                     calories = 153;
+                    PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Size"));
+                    PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Price"));
+                    PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Calories"));
                 }
                 else
                 {
                     price = 2.07;
                     calories = 205;
+                    PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Size"));
+                    PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Price"));
+                    PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Calories"));
                 }
             }
         }
@@ -79,10 +91,12 @@ namespace BleakwindBuffet.Data.Drinks
                 if (value == false)
                 {
                     specialInstructions.Add("Hold ice");
+                    PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Ice"));
                 }
                 else
                 {
                     specialInstructions.Remove("Hold ice");
+                    PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Ice"));
                 }
             }
         }
@@ -94,7 +108,11 @@ namespace BleakwindBuffet.Data.Drinks
         public SodaFlavor Flavor
         {
             get { return flavor; }
-            set { flavor = value; }
+            set 
+            { 
+                flavor = value;
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Flavor"));
+            }
         }
 
         /// <summary>
