@@ -199,5 +199,33 @@ namespace BleakwindBuffet.DataTests.UnitTests.DrinkTests
             });
         }
 
+        [Fact]
+        public void ChangingIceNotifiesSpecialInstructionsProperty()
+        {
+            WarriorWater ww = new WarriorWater();
+            Assert.PropertyChanged(ww, "SpecialInstructions", () =>
+            {
+                ww.Ice = true;
+            });
+            Assert.PropertyChanged(ww, "SpecialInstructions", () =>
+            {
+                ww.Ice = false;
+            });
+        }
+
+        [Fact]
+        public void ChangingLemonNotifiesSpecialInstructionsProperty()
+        {
+            WarriorWater ww = new WarriorWater();
+            Assert.PropertyChanged(ww, "SpecialInstructions", () =>
+            {
+                ww.Lemon = true;
+            });
+            Assert.PropertyChanged(ww, "SpecialInstructions", () =>
+            {
+                ww.Lemon = false;
+            });
+        }
+
     }
 }

@@ -260,5 +260,19 @@ namespace BleakwindBuffet.DataTests.UnitTests.DrinkTests
                 ss.Flavor = SodaFlavor.Watermelon;
             });
         }
+
+        [Fact]
+        public void ChangingIceNotifiesSpecialInstructionsProperty()
+        {
+            SailorSoda ss = new SailorSoda();
+            Assert.PropertyChanged(ss, "SpecialInstructions", () =>
+            {
+                ss.Ice = true;
+            });
+            Assert.PropertyChanged(ss, "SpecialInstructions", () =>
+            {
+                ss.Ice = false;
+            });
+        }
     }
 }

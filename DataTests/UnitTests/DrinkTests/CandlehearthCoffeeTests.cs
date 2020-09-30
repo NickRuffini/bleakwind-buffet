@@ -268,5 +268,33 @@ namespace BleakwindBuffet.DataTests.UnitTests.DrinkTests
                 cc.Decaf = true;
             });
         }
+
+        [Fact]
+        public void ChangingIceNotifiesSpecialInstructionsProperty()
+        {
+            CandlehearthCoffee cc = new CandlehearthCoffee();
+            Assert.PropertyChanged(cc, "SpecialInstructions", () =>
+            {
+                cc.Ice = true;
+            });
+            Assert.PropertyChanged(cc, "SpecialInstructions", () =>
+            {
+                cc.Ice = false;
+            });
+        }
+
+        [Fact]
+        public void ChangingRoomForCreamNotifiesSpecialInstructionsProperty()
+        {
+            CandlehearthCoffee cc = new CandlehearthCoffee();
+            Assert.PropertyChanged(cc, "SpecialInstructions", () =>
+            {
+                cc.RoomForCream = true;
+            });
+            Assert.PropertyChanged(cc, "SpecialInstructions", () =>
+            {
+                cc.RoomForCream = false;
+            });
+        }
     }
 }
