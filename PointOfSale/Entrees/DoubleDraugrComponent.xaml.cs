@@ -17,6 +17,8 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using PointOfSale.ExtensionMethod;
+using BleakwindBuffet.Data;
+using BleakwindBuffet.Data.Entrees;
 
 namespace PointOfSale.Entrees
 {
@@ -25,9 +27,13 @@ namespace PointOfSale.Entrees
     /// </summary>
     public partial class DoubleDraugrComponent : UserControl
     {
+        DoubleDraugr dd;
+
         public DoubleDraugrComponent()
         {
             InitializeComponent();
+            dd = new DoubleDraugr();
+            this.DataContext = dd;
         }
 
         /// <summary>

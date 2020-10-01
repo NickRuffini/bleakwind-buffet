@@ -17,6 +17,8 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using PointOfSale.ExtensionMethod;
+using BleakwindBuffet.Data;
+using BleakwindBuffet.Data.Entrees;
 
 namespace PointOfSale.Entrees
 {
@@ -25,9 +27,13 @@ namespace PointOfSale.Entrees
     /// </summary>
     public partial class SmokehouseSkeletonComponent : UserControl
     {
+        SmokehouseSkeleton ss;
+
         public SmokehouseSkeletonComponent()
         {
             InitializeComponent();
+            ss = new SmokehouseSkeleton();
+            this.DataContext = ss;
         }
         /// <summary>
         /// Click event for the return button that brings us back to the menu screen!

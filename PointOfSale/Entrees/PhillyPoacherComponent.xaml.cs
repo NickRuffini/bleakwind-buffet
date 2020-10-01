@@ -17,6 +17,8 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using PointOfSale.ExtensionMethod;
+using BleakwindBuffet.Data;
+using BleakwindBuffet.Data.Entrees;
 
 namespace PointOfSale.Entrees
 {
@@ -25,9 +27,13 @@ namespace PointOfSale.Entrees
     /// </summary>
     public partial class PhillyPoacherComponent : UserControl
     {
+        PhillyPoacher pp;
+
         public PhillyPoacherComponent()
         {
             InitializeComponent();
+            pp = new PhillyPoacher();
+            this.DataContext = pp;
         }
         /// <summary>
         /// Click event for the return button that brings us back to the menu screen!

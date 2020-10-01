@@ -36,16 +36,16 @@
                 <TextBlock Text="Add"/>
             </Viewbox>
         </Button>
-        <CheckBox Grid.Column="2" Grid.Row="1">
+        <CheckBox IsChecked="{Binding Path=SausageLink}" Grid.Column="2" Grid.Row="1">
             Sausage Link
         </CheckBox>
-        <CheckBox Grid.Column="2" Grid.Row="2">
+        <CheckBox IsChecked="{Binding Path=Egg}" Grid.Column="2" Grid.Row="2">
             Egg
         </CheckBox>
-        <CheckBox Grid.Column="2" Grid.Row="3">
+        <CheckBox IsChecked="{Binding Path=HashBrowns}" Grid.Column="2" Grid.Row="3">
             Hash Browns
         </CheckBox>
-        <CheckBox Grid.Column="2" Grid.Row="4">
+        <CheckBox IsChecked="{Binding Path=Pancake}" Grid.Column="2" Grid.Row="4">
             Pancake
         </CheckBox>
     </Grid>
