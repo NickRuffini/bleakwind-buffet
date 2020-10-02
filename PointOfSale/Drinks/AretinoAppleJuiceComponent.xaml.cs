@@ -17,6 +17,8 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using PointOfSale.ExtensionMethod;
+using BleakwindBuffet.Data;
+using BleakwindBuffet.Data.Drinks;
 
 namespace PointOfSale.Drinks
 {
@@ -25,9 +27,13 @@ namespace PointOfSale.Drinks
     /// </summary>
     public partial class AretinoAppleJuiceComponent : UserControl
     {
+        AretinoAppleJuice aj;
+
         public AretinoAppleJuiceComponent()
         {
             InitializeComponent();
+            aj = new AretinoAppleJuice();
+            this.DataContext = aj;
         }
         /// <summary>
         /// Click event for the return button that brings us back to the menu screen!
