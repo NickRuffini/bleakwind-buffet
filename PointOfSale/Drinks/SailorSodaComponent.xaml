@@ -37,28 +37,20 @@
                 <TextBlock Text="Add"/>
             </Viewbox>
         </Button>
-        <CheckBox Grid.Column="2" Grid.Row="1">
+        <CheckBox IsChecked="{Binding Path=Ice}" Grid.Column="2" Grid.Row="1">
             Ice
         </CheckBox>
-        <ComboBox Grid.Column="2" Grid.Row="3"
-                  Text="Flavor" 
+        <ComboBox SelectionChanged="SSFlavorComboBox_Changed" 
+                  x:Name="SSFlavorComboBox" Grid.Column="2" Grid.Row="3"
                   Margin= "0, 20, 20, 20"
                   >
-            <ComboBoxItem>Blackberry</ComboBoxItem>
-            <ComboBoxItem>Cherry</ComboBoxItem>
-            <ComboBoxItem>Grapefruit</ComboBoxItem>
-            <ComboBoxItem>Lemon</ComboBoxItem>
-            <ComboBoxItem>Peach</ComboBoxItem>
-            <ComboBoxItem>Watermelon</ComboBoxItem>
         </ComboBox>
         <TextBlock Grid.Column="2" Grid.Row="2">
             Flavor
         </TextBlock>
-        <ComboBox Grid.Column="2" Grid.Row="5"
+        <ComboBox SelectionChanged="SSSizeComboBox_Changed" 
+                  x:Name="SSSizeComboBox" Grid.Column="2" Grid.Row="5"
                   Margin= "0, 20, 20, 20">
-            <ComboBoxItem>Small</ComboBoxItem>
-            <ComboBoxItem>Medium</ComboBoxItem>
-            <ComboBoxItem>Large</ComboBoxItem>
         </ComboBox>
         <TextBlock Grid.Column="2" Grid.Row="4">
             Size

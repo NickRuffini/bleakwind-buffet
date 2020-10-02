@@ -37,11 +37,9 @@
                 <TextBlock Text="Add"/>
             </Viewbox>
         </Button>
-        <ComboBox Grid.Column="2" Grid.Row="2"
+        <ComboBox SelectionChanged="FMComboBox_Changed" 
+                  x:Name="FMComboBox" Grid.Column="2" Grid.Row="2"
                   Margin= "0, 20, 20, 20">
-            <ComboBoxItem>Small</ComboBoxItem>
-            <ComboBoxItem>Medium</ComboBoxItem>
-            <ComboBoxItem>Large</ComboBoxItem>
         </ComboBox>
         <TextBlock Grid.Column="2" Grid.Row="1">
             Size

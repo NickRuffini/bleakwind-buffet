@@ -17,6 +17,8 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using PointOfSale.ExtensionMethod;
+using BleakwindBuffet.Data.Drinks;
+using BleakwindBuffet.Data.Enums;
 
 namespace PointOfSale.Drinks
 {
@@ -25,10 +27,42 @@ namespace PointOfSale.Drinks
     /// </summary>
     public partial class MarkarthMilkComponent : UserControl
     {
+        MarkarthMilk mm;
+
         public MarkarthMilkComponent()
         {
             InitializeComponent();
+            mm = new MarkarthMilk();
+            this.DataContext = mm;
+
+            foreach (string enumValue in Enum.GetNames(typeof(BleakwindBuffet.Data.Enums.Size)))
+            {
+                MMComboBox.Items.Add(enumValue);
+                if (enumValue == "Small")
+                {
+                    MMComboBox.SelectedItem = enumValue;
+                }
+            }
         }
+
+        /// <summary>
+        /// Event handler for changing the combo box's size value
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void MMComboBox_Changed(object sender, SelectionChangedEventArgs e)
+        {
+            if (DataContext is MarkarthMilk)
+            {
+                foreach (string s in e.AddedItems)
+                {
+                    if (s == "Small") mm.Size = BleakwindBuffet.Data.Enums.Size.Small;
+                    if (s == "Medium") mm.Size = BleakwindBuffet.Data.Enums.Size.Medium;
+                    if (s == "Large") mm.Size = BleakwindBuffet.Data.Enums.Size.Large;
+                }
+            }
+        }
+
         /// <summary>
         /// Click event for the return button that brings us back to the menu screen!
         /// </summary>

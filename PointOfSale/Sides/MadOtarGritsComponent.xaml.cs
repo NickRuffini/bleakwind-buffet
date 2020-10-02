@@ -17,6 +17,8 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using PointOfSale.ExtensionMethod;
+using BleakwindBuffet.Data.Sides;
+using BleakwindBuffet.Data.Enums;
 
 namespace PointOfSale.Sides
 {
@@ -25,10 +27,42 @@ namespace PointOfSale.Sides
     /// </summary>
     public partial class MadOtarGritsComponent : UserControl
     {
+        MadOtarGrits mog;
+
         public MadOtarGritsComponent()
         {
             InitializeComponent();
+            mog = new MadOtarGrits();
+            this.DataContext = mog;
+
+            foreach (string enumValue in Enum.GetNames(typeof(BleakwindBuffet.Data.Enums.Size)))
+            {
+                MOGComboBox.Items.Add(enumValue);
+                if (enumValue == "Small")
+                {
+                    MOGComboBox.SelectedItem = enumValue;
+                }
+            }
         }
+
+        /// <summary>
+        /// Event handler for changing the combo box's size value
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void MOGComboBox_Changed(object sender, SelectionChangedEventArgs e)
+        {
+            if (DataContext is MadOtarGrits)
+            {
+                foreach (string s in e.AddedItems)
+                {
+                    if (s == "Small") mog.Size = BleakwindBuffet.Data.Enums.Size.Small;
+                    if (s == "Medium") mog.Size = BleakwindBuffet.Data.Enums.Size.Medium;
+                    if (s == "Large") mog.Size = BleakwindBuffet.Data.Enums.Size.Large;
+                }
+            }
+        }
+
         /// <summary>
         /// Click event for the return button that brings us back to the menu screen!
         /// </summary>

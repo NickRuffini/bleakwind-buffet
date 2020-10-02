@@ -37,20 +37,18 @@
                 <TextBlock Text="Add"/>
             </Viewbox>
         </Button>
-        <CheckBox Grid.Column="2" Grid.Row="1">
+        <CheckBox IsChecked="{Binding Path=Ice}" Grid.Column="2" Grid.Row="1">
             Ice
         </CheckBox>
-        <CheckBox Grid.Column="2" Grid.Row="2">
+        <CheckBox IsChecked="{Binding Path=RoomForCream}" Grid.Column="2" Grid.Row="2">
             Room for Cream
         </CheckBox>
-        <CheckBox Grid.Column="2" Grid.Row="3">
+        <CheckBox IsChecked="{Binding Path=Decaf}" Grid.Column="2" Grid.Row="3">
             Decaf
         </CheckBox>
-        <ComboBox Grid.Column="2" Grid.Row="5"
+        <ComboBox SelectionChanged="CCComboBox_Changed" 
+                  x:Name="CCComboBox" Grid.Column="2" Grid.Row="5"
                   Margin= "0, 20, 20, 20">
-            <ComboBoxItem>Small</ComboBoxItem>
-            <ComboBoxItem>Medium</ComboBoxItem>
-            <ComboBoxItem>Large</ComboBoxItem>
         </ComboBox>
         <TextBlock Grid.Column="2" Grid.Row="4">
             Size

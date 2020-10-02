@@ -37,14 +37,12 @@
                 <TextBlock Text="Add"/>
             </Viewbox>
         </Button>
-        <CheckBox Grid.Column="2" Grid.Row="1">
+        <CheckBox IsChecked="{Binding Path=Ice}" Grid.Column="2" Grid.Row="1">
             Ice
         </CheckBox>
-        <ComboBox Grid.Column="2" Grid.Row="3"
+        <ComboBox SelectionChanged="MMComboBox_Changed" 
+                  x:Name="MMComboBox" Grid.Column="2" Grid.Row="3"
                   Margin= "0, 20, 20, 20">
-            <ComboBoxItem>Small</ComboBoxItem>
-            <ComboBoxItem>Medium</ComboBoxItem>
-            <ComboBoxItem>Large</ComboBoxItem>
         </ComboBox>
         <TextBlock Grid.Column="2" Grid.Row="2">
             Size

@@ -17,6 +17,8 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using PointOfSale.ExtensionMethod;
+using BleakwindBuffet.Data.Drinks;
+using BleakwindBuffet.Data.Enums;
 
 namespace PointOfSale.Drinks
 {
@@ -25,10 +27,71 @@ namespace PointOfSale.Drinks
     /// </summary>
     public partial class SailorSodaComponent : UserControl
     {
+        SailorSoda ss;
+
         public SailorSodaComponent()
         {
             InitializeComponent();
+            ss = new SailorSoda();
+            this.DataContext = ss;
+
+            foreach (string enumValue in Enum.GetNames(typeof(BleakwindBuffet.Data.Enums.Size)))
+            {
+                SSSizeComboBox.Items.Add(enumValue);
+                if (enumValue == "Small")
+                {
+                    SSSizeComboBox.SelectedItem = enumValue;
+                }
+            }
+            foreach (string enumValue in Enum.GetNames(typeof(BleakwindBuffet.Data.Enums.SodaFlavor)))
+            {
+                SSFlavorComboBox.Items.Add(enumValue);
+                if (enumValue == "Cherry")
+                {
+                    SSFlavorComboBox.SelectedItem = enumValue;
+                }
+            }
         }
+
+        /// <summary>
+        /// Event handler for changing the combo box's size value
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void SSSizeComboBox_Changed(object sender, SelectionChangedEventArgs e)
+        {
+            if (DataContext is SailorSoda)
+            {
+                foreach (string s in e.AddedItems)
+                {
+                    if (s == "Small") ss.Size = BleakwindBuffet.Data.Enums.Size.Small;
+                    if (s == "Medium") ss.Size = BleakwindBuffet.Data.Enums.Size.Medium;
+                    if (s == "Large") ss.Size = BleakwindBuffet.Data.Enums.Size.Large;
+                }
+            }
+        }
+
+        /// <summary>
+        /// Event handler for changing the combo box's flavor value
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void SSFlavorComboBox_Changed(object sender, SelectionChangedEventArgs e)
+        {
+            if (DataContext is SailorSoda)
+            {
+                foreach (string s in e.AddedItems)
+                {
+                    if (s == "Blackberry") ss.Flavor = BleakwindBuffet.Data.Enums.SodaFlavor.Blackberry;
+                    if (s == "Cherry") ss.Flavor = BleakwindBuffet.Data.Enums.SodaFlavor.Cherry;
+                    if (s == "Grapefruit") ss.Flavor = BleakwindBuffet.Data.Enums.SodaFlavor.Grapefruit;
+                    if (s == "Lemon") ss.Flavor = BleakwindBuffet.Data.Enums.SodaFlavor.Lemon;
+                    if (s == "Peach") ss.Flavor = BleakwindBuffet.Data.Enums.SodaFlavor.Peach;
+                    if (s == "Watermelon") ss.Flavor = BleakwindBuffet.Data.Enums.SodaFlavor.Watermelon;
+                }
+            }
+        }
+
         /// <summary>
         /// Click event for the return button that brings us back to the menu screen!
         /// </summary>

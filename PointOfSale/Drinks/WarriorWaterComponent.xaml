@@ -37,17 +37,15 @@
                 <TextBlock Text="Add"/>
             </Viewbox>
         </Button>
-        <CheckBox Grid.Column="2" Grid.Row="1">
+        <CheckBox IsChecked="{Binding Path=Ice}" Grid.Column="2" Grid.Row="1">
             Ice
         </CheckBox>
-        <CheckBox Grid.Column="2" Grid.Row="2">
+        <CheckBox IsChecked="{Binding Path=Lemon}" Grid.Column="2" Grid.Row="2">
             Lemon
         </CheckBox>
-        <ComboBox Grid.Column="2" Grid.Row="4"
+        <ComboBox SelectionChanged="WWComboBox_Changed" 
+                  x:Name="WWComboBox" Grid.Column="2" Grid.Row="4"
                   Margin= "0, 20, 20, 20">
-            <ComboBoxItem>Small</ComboBoxItem>
-            <ComboBoxItem>Medium</ComboBoxItem>
-            <ComboBoxItem>Large</ComboBoxItem>
         </ComboBox>
         <TextBlock Grid.Column="2" Grid.Row="3">
             Size

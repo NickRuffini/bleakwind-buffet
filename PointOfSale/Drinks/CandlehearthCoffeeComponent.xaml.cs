@@ -17,6 +17,8 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using PointOfSale.ExtensionMethod;
+using BleakwindBuffet.Data.Drinks;
+using BleakwindBuffet.Data.Enums;
 
 namespace PointOfSale.Drinks
 {
@@ -25,10 +27,42 @@ namespace PointOfSale.Drinks
     /// </summary>
     public partial class CandlehearthCoffeeComponent : UserControl
     {
+        CandlehearthCoffee cc;
+
         public CandlehearthCoffeeComponent()
         {
             InitializeComponent();
+            cc = new CandlehearthCoffee();
+            this.DataContext = cc;
+
+            foreach (string enumValue in Enum.GetNames(typeof(BleakwindBuffet.Data.Enums.Size)))
+            {
+                CCComboBox.Items.Add(enumValue);
+                if (enumValue == "Small")
+                {
+                    CCComboBox.SelectedItem = enumValue;
+                }
+            }
         }
+
+        /// <summary>
+        /// Event handler for changing the combo box's size value
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void CCComboBox_Changed(object sender, SelectionChangedEventArgs e)
+        {
+            if (DataContext is CandlehearthCoffee)
+            {
+                foreach (string s in e.AddedItems)
+                {
+                    if (s == "Small") cc.Size = BleakwindBuffet.Data.Enums.Size.Small;
+                    if (s == "Medium") cc.Size = BleakwindBuffet.Data.Enums.Size.Medium;
+                    if (s == "Large") cc.Size = BleakwindBuffet.Data.Enums.Size.Large;
+                }
+            }
+        }
+
         /// <summary>
         /// Click event for the return button that brings us back to the menu screen!
         /// </summary>
