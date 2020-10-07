@@ -24,19 +24,17 @@ namespace BleakwindBuffet.Data.Generic
         /// <summary>
         /// Gets the price of the item
         /// </summary>
-        private double price = 0.00;
         public double Price
         {
-            get { return price; }
+            get { return drink.Price + entree.Price + side.Price; }
         }
 
         /// <summary>
         /// Gets the calories of the items in the combo
         /// </summary>
-        private uint calories = 0;
         public uint Calories
         {
-            get { return calories; }
+            get { return drink.Calories + entree.Calories + side.Calories; }
         }
 
         /// <summary>
@@ -48,38 +46,23 @@ namespace BleakwindBuffet.Data.Generic
             get { return drink; }
             set
             {
-                // If a drink already exists, we need to subtract it's calories and price before adding new drink
-                if (drink != null)
-                {
-                    price -= drink.Price;
-                    calories -= drink.Calories;
-                    PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Price"));
-                    PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Calories"));
-                    specialInstructions.Remove(drink.ToString());
-                    PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("SpecialInstructions"));
-                    foreach (string var in drink.SpecialInstructions)
-                    {
-                        specialInstructions.Remove(var);
-                        PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("SpecialInstructions"));
-                    }
-                }
-                // Set the drink value equal to the new drink
                 drink = value;
                 PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Drink"));
-                // Add on the new drink's calories and price
-                price += drink.Price;
-                calories += drink.Calories;
-                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Price"));
                 PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Calories"));
-                // Add the name of the drink to the special instructions
-                specialInstructions.Add(drink.ToString());
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Price"));
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("SideName"));
                 PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("SpecialInstructions"));
-                // Adds the special instructions of the drink after the name!
-                foreach (string var in drink.SpecialInstructions)
-                {
-                    specialInstructions.Add(var);
-                    PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("SpecialInstructions"));
-                }
+            }
+        }
+
+        /// <summary>
+        /// Property getter for the name of the side
+        /// </summary>
+        public string DrinkName
+        {
+            get
+            {
+                return drink.ToString();
             }
         }
 
@@ -92,38 +75,23 @@ namespace BleakwindBuffet.Data.Generic
             get { return entree; }
             set
             {
-                // If a entree already exists, we need to subtract it's calories and price before adding new entree
-                if (entree != null)
-                {
-                    price -= entree.Price;
-                    calories -= entree.Calories;
-                    PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Price"));
-                    PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Calories"));
-                    specialInstructions.Remove(entree.ToString());
-                    PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("SpecialInstructions"));
-                    foreach (string var in entree.SpecialInstructions)
-                    {
-                        specialInstructions.Remove(var);
-                        PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("SpecialInstructions"));
-                    }
-                }
-                // Set the entree value equal to the new entree
                 entree = value;
                 PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Entree"));
-                // Add on the new entree's calories and price
-                price += entree.Price;
-                calories += entree.Calories;
-                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Price"));
                 PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Calories"));
-                // Add the name of the entree to the special instructions
-                specialInstructions.Add(entree.ToString());
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Price"));
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("SideName"));
                 PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("SpecialInstructions"));
-                // Adds the special instructions of the entree after the name!
-                foreach (string var in entree.SpecialInstructions)
-                {
-                    specialInstructions.Add(var);
-                    PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("SpecialInstructions"));
-                }
+            }
+        }
+
+        /// <summary>
+        /// Property getter for the name of the side
+        /// </summary>
+        public string EntreeName
+        {
+            get
+            {
+                return entree.ToString();
             }
         }
 
@@ -136,50 +104,41 @@ namespace BleakwindBuffet.Data.Generic
             get { return side; }
             set
             {
-                // If a entree already exists, we need to subtract it's calories and price before adding new entree
-                if (side != null)
-                {
-                    price -= side.Price;
-                    calories -= side.Calories;
-                    PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Price"));
-                    PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Calories"));
-                    specialInstructions.Remove(side.ToString());
-                    PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("SpecialInstructions"));
-                    foreach (string var in side.SpecialInstructions)
-                    {
-                        specialInstructions.Remove(var);
-                        PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("SpecialInstructions"));
-                    }
-                }
-                // Set the entree value equal to the new entree
                 side = value;
                 PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Side"));
-                // Add on the new entree's calories and price
-                price += side.Price;
-                calories += side.Calories;
-                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Price"));
                 PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Calories"));
-                // Add the name of the entree to the special instructions
-                specialInstructions.Add(side.ToString());
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Price"));
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("SideName"));
                 PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("SpecialInstructions"));
-                // Adds the special instructions of the entree after the name!
-                foreach (string var in side.SpecialInstructions)
-                {
-                    specialInstructions.Add(var);
-                    PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("SpecialInstructions"));
-                }
+            }
+        }
+
+        /// <summary>
+        /// Property getter for the name of the side
+        /// </summary>
+        public string SideName
+        {
+            get
+            {
+                return side.ToString();
             }
         }
 
         /// <summary>
         /// List containing instructions in string form regarding the addition of properties
         /// </summary>
-        private List<string> specialInstructions = new List<string>();
         public List<string> SpecialInstructions
         {
             get
             {
-                return new List<string>(specialInstructions);
+                List<string> list = new List<string>();
+                list.Add(EntreeName);
+                list.AddRange(Entree.SpecialInstructions);
+                list.Add(DrinkName);
+                list.AddRange(Drink.SpecialInstructions);
+                list.Add(SideName);
+                list.AddRange(Side.SpecialInstructions);
+                return list;
             }
         }
     }

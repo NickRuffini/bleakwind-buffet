@@ -21,27 +21,6 @@ namespace BleakwindBuffet.DataTests.UnitTests.GenericTests
         }
 
         [Fact]
-        public void CaloriesAreZeroByDefault()
-        {
-            Combo c = new Combo();
-            Assert.Equal((uint)0, c.Calories);
-        }
-
-        [Fact]
-        public void PriceIsZeroByDefault()
-        {
-            Combo c = new Combo();
-            Assert.Equal(0, c.Price);
-        }
-
-        [Fact]
-        public void SpecialInstructionsAreEmptyByDefault()
-        {
-            Combo c = new Combo();
-            Assert.Empty(c.SpecialInstructions);
-        }
-
-        [Fact]
         public void CanAssignDrink()
         {
             Combo c = new Combo();
@@ -52,13 +31,20 @@ namespace BleakwindBuffet.DataTests.UnitTests.GenericTests
         }
 
         [Fact]
-        public void ShouldAddCorrectCaloriesForDrink()
+        public void ShouldAddCorrectCaloriesForCombo()
         {
             Combo c = new Combo();
 
             AretinoAppleJuice aj = new AretinoAppleJuice();
             c.Drink = aj;
-            Assert.Equal((uint)44, c.Calories);
+
+            BriarheartBurger bb = new BriarheartBurger();
+            c.Entree = bb;
+
+            DragonbornWaffleFries dwf = new DragonbornWaffleFries();
+            c.Side = dwf;
+
+            Assert.Equal((uint)853, c.Calories);
         }
 
         [Fact]
@@ -68,21 +54,35 @@ namespace BleakwindBuffet.DataTests.UnitTests.GenericTests
 
             AretinoAppleJuice aj = new AretinoAppleJuice();
             c.Drink = aj;
-            Assert.Equal((uint)44, c.Calories);
 
-            CandlehearthCoffee cc = new CandlehearthCoffee();
-            c.Drink = cc;
-            Assert.Equal((uint)7, c.Calories);
+            BriarheartBurger bb = new BriarheartBurger();
+            c.Entree = bb;
+
+            DragonbornWaffleFries dwf = new DragonbornWaffleFries();
+            c.Side = dwf;
+
+            Assert.Equal((uint)853, c.Calories);
+
+            c.Drink.Size = Data.Enums.Size.Medium;
+
+            Assert.Equal((uint)897, c.Calories);
         }
 
         [Fact]
-        public void ShouldAddCorrectPriceForDrink()
+        public void ShouldAddCorrectPriceForCombo()
         {
             Combo c = new Combo();
 
             AretinoAppleJuice aj = new AretinoAppleJuice();
             c.Drink = aj;
-            Assert.Equal(0.62, c.Price);
+
+            BriarheartBurger bb = new BriarheartBurger();
+            c.Entree = bb;
+
+            DragonbornWaffleFries dwf = new DragonbornWaffleFries();
+            c.Side = dwf;
+
+            Assert.Equal(7.36, c.Price);
         }
 
         [Fact]
@@ -92,17 +92,24 @@ namespace BleakwindBuffet.DataTests.UnitTests.GenericTests
 
             AretinoAppleJuice aj = new AretinoAppleJuice();
             c.Drink = aj;
-            Assert.Equal(0.62, c.Price);
 
-            CandlehearthCoffee cc = new CandlehearthCoffee();
-            c.Drink = cc;
-            Assert.Equal(0.75, c.Price);
+            BriarheartBurger bb = new BriarheartBurger();
+            c.Entree = bb;
+
+            DragonbornWaffleFries dwf = new DragonbornWaffleFries();
+            c.Side = dwf;
+
+            Assert.Equal(7.36, c.Price);
+
+            c.Drink.Size = Data.Enums.Size.Medium;
+
+            Assert.Equal(7.61, c.Price);
         }
 
         [Theory]
         [InlineData(true)]
         [InlineData(false)]
-        public void SettingDrinkUpdatesSpecialInstructions(bool includeIce)
+        public void SettingComboUpdatesSpecialInstructions(bool includeIce)
         {
             Combo c = new Combo();
 
@@ -110,14 +117,25 @@ namespace BleakwindBuffet.DataTests.UnitTests.GenericTests
             aj.Ice = includeIce;
             c.Drink = aj;
 
+            BriarheartBurger bb = new BriarheartBurger();
+            c.Entree = bb;
+
+            DragonbornWaffleFries dwf = new DragonbornWaffleFries();
+            c.Side = dwf;
+
             if (includeIce == true)
             {
                 Assert.Contains("Add ice", c.SpecialInstructions);
                 Assert.Contains("Small Aretino Apple Juice", c.SpecialInstructions);
+                Assert.Contains("Briarheart Burger", c.SpecialInstructions);
+                Assert.Contains("Small Dragonborn Waffle Fries", c.SpecialInstructions);
             }
             else
             {
                 Assert.Contains("Small Aretino Apple Juice", c.SpecialInstructions);
+                Assert.Contains("Briarheart Burger", c.SpecialInstructions);
+                Assert.Contains("Small Dragonborn Waffle Fries", c.SpecialInstructions);
+                Assert.DoesNotContain("Add ice", c.SpecialInstructions);
             }
         }
 
@@ -125,6 +143,12 @@ namespace BleakwindBuffet.DataTests.UnitTests.GenericTests
         public void ChangingDrinkUpdatesSpecialInstructions()
         {
             Combo c = new Combo();
+
+            BriarheartBurger bb = new BriarheartBurger();
+            c.Entree = bb;
+
+            DragonbornWaffleFries dwf = new DragonbornWaffleFries();
+            c.Side = dwf;
 
             AretinoAppleJuice aj = new AretinoAppleJuice();
             c.Drink = aj;
@@ -156,37 +180,25 @@ namespace BleakwindBuffet.DataTests.UnitTests.GenericTests
         }
 
         [Fact]
-        public void ShouldAddCorrectCaloriesForEntree()
-        {
-            Combo c = new Combo();
-
-            BriarheartBurger bb = new BriarheartBurger();
-            c.Entree = bb;
-            Assert.Equal((uint)732, c.Calories);
-        }
-
-        [Fact]
         public void ChangingEntreeCorrectlyUpdatesCalories()
         {
             Combo c = new Combo();
 
+            AretinoAppleJuice aj = new AretinoAppleJuice();
+            c.Drink = aj;
+
             BriarheartBurger bb = new BriarheartBurger();
             c.Entree = bb;
-            Assert.Equal((uint)732, c.Calories);
+
+            DragonbornWaffleFries dwf = new DragonbornWaffleFries();
+            c.Side = dwf;
+
+            Assert.Equal((uint)853, c.Calories);
 
             DoubleDraugr dd = new DoubleDraugr();
             c.Entree = dd;
-            Assert.Equal((uint)843, c.Calories);
-        }
 
-        [Fact]
-        public void ShouldAddCorrectPriceForEntree()
-        {
-            Combo c = new Combo();
-
-            BriarheartBurger bb = new BriarheartBurger();
-            c.Entree = bb;
-            Assert.Equal(6.32, c.Price);
+            Assert.Equal((uint)964, c.Calories);
         }
 
         [Fact]
@@ -194,26 +206,21 @@ namespace BleakwindBuffet.DataTests.UnitTests.GenericTests
         {
             Combo c = new Combo();
 
+            AretinoAppleJuice aj = new AretinoAppleJuice();
+            c.Drink = aj;
+
             BriarheartBurger bb = new BriarheartBurger();
             c.Entree = bb;
-            Assert.Equal(6.32, c.Price);
+
+            DragonbornWaffleFries dwf = new DragonbornWaffleFries();
+            c.Side = dwf;
+
+            Assert.Equal(7.36, c.Price);
 
             DoubleDraugr dd = new DoubleDraugr();
             c.Entree = dd;
-            Assert.Equal(7.32, c.Price);
-        }
 
-        [Fact]
-        public void SettingEntreeUpdatesSpecialInstructions()
-        {
-            Combo c = new Combo();
-
-            BriarheartBurger bb = new BriarheartBurger();
-            bb.Ketchup = false;
-            c.Entree = bb;
-
-            Assert.Contains("Hold ketchup", c.SpecialInstructions);
-            Assert.Contains("Briarheart Burger", c.SpecialInstructions);
+            Assert.Equal(8.36, c.Price);
         }
 
         [Fact]
@@ -225,8 +232,14 @@ namespace BleakwindBuffet.DataTests.UnitTests.GenericTests
             bb.Ketchup = false;
             c.Entree = bb;
 
-            Assert.Contains("Hold ketchup", c.SpecialInstructions);
+            DragonbornWaffleFries dwf = new DragonbornWaffleFries();
+            c.Side = dwf;
+
+            AretinoAppleJuice aj = new AretinoAppleJuice();
+            c.Drink = aj;
+
             Assert.Contains("Briarheart Burger", c.SpecialInstructions);
+            Assert.Contains("Hold ketchup", c.SpecialInstructions);
 
             DoubleDraugr dd = new DoubleDraugr();
             c.Entree = dd;
@@ -255,37 +268,24 @@ namespace BleakwindBuffet.DataTests.UnitTests.GenericTests
         }
 
         [Fact]
-        public void ShouldAddCorrectCaloriesForSide()
-        {
-            Combo c = new Combo();
-
-            DragonbornWaffleFries dwf = new DragonbornWaffleFries();
-            c.Side = dwf;
-            Assert.Equal((uint)77, c.Calories);
-        }
-
-        [Fact]
         public void ChangingSideCorrectlyUpdatesCalories()
         {
             Combo c = new Combo();
 
-            DragonbornWaffleFries dwf = new DragonbornWaffleFries();
-            c.Side = dwf;
-            Assert.Equal((uint)77, c.Calories);
+            AretinoAppleJuice aj = new AretinoAppleJuice();
+            c.Drink = aj;
 
-            FriedMiraak fm = new FriedMiraak();
-            c.Side = fm;
-            Assert.Equal((uint)151, c.Calories);
-        }
-
-        [Fact]
-        public void ShouldAddCorrectPriceForSide()
-        {
-            Combo c = new Combo();
+            BriarheartBurger bb = new BriarheartBurger();
+            c.Entree = bb;
 
             DragonbornWaffleFries dwf = new DragonbornWaffleFries();
             c.Side = dwf;
-            Assert.Equal(0.42, c.Price);
+
+            Assert.Equal((uint)853, c.Calories);
+
+            c.Side.Size = Data.Enums.Size.Medium;
+
+            Assert.Equal((uint)865, c.Calories);
         }
 
         [Fact]
@@ -293,24 +293,20 @@ namespace BleakwindBuffet.DataTests.UnitTests.GenericTests
         {
             Combo c = new Combo();
 
-            DragonbornWaffleFries dwf = new DragonbornWaffleFries();
-            c.Side = dwf;
-            Assert.Equal(0.42, c.Price);
+            AretinoAppleJuice aj = new AretinoAppleJuice();
+            c.Drink = aj;
 
-            FriedMiraak fm = new FriedMiraak();
-            c.Side = fm;
-            Assert.Equal(1.78, c.Price);
-        }
-
-        [Fact]
-        public void SettingSideUpdatesSpecialInstructions()
-        {
-            Combo c = new Combo();
+            BriarheartBurger bb = new BriarheartBurger();
+            c.Entree = bb;
 
             DragonbornWaffleFries dwf = new DragonbornWaffleFries();
             c.Side = dwf;
 
-            Assert.Contains("Small Dragonborn Waffle Fries", c.SpecialInstructions);
+            Assert.Equal(7.36, c.Price);
+
+            c.Side.Size = Data.Enums.Size.Medium;
+
+            Assert.Equal(7.70, c.Price);
         }
 
         [Fact]
@@ -318,16 +314,22 @@ namespace BleakwindBuffet.DataTests.UnitTests.GenericTests
         {
             Combo c = new Combo();
 
+            BriarheartBurger bb = new BriarheartBurger();
+            bb.Ketchup = false;
+            c.Entree = bb;
+
             DragonbornWaffleFries dwf = new DragonbornWaffleFries();
-            dwf.Size = Data.Enums.Size.Medium;
             c.Side = dwf;
 
-            Assert.Contains("Medium Dragonborn Waffle Fries", c.SpecialInstructions);
+            AretinoAppleJuice aj = new AretinoAppleJuice();
+            c.Drink = aj;
 
-            FriedMiraak fm = new FriedMiraak();
-            c.Side = fm;
-            Assert.Contains("Small Fried Miraak", c.SpecialInstructions);
-            Assert.DoesNotContain("Medium Dragonborn Waffle Fries", c.SpecialInstructions);
+            Assert.Contains("Small Dragonborn Waffle Fries", c.SpecialInstructions);
+
+            c.Side.Size = Data.Enums.Size.Medium;
+
+            Assert.Contains("Medium Dragonborn Waffle Fries", c.SpecialInstructions);
+            Assert.DoesNotContain("Small Dragonborn Waffle Fries", c.SpecialInstructions);
         }
     }
 }
