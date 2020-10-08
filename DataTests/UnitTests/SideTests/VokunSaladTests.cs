@@ -141,5 +141,12 @@ namespace BleakwindBuffet.DataTests.UnitTests.SideTests
                 vs.Size = Size.Large;
             });
         }
+
+        [Fact]
+        public void IsOfTypeINotifyPropertyChanged()
+        {
+            VokunSalad vs = new VokunSalad();
+            Assert.IsAssignableFrom<System.ComponentModel.INotifyPropertyChanged>(vs);
+        }
     }
 }

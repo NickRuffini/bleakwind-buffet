@@ -255,5 +255,12 @@ namespace BleakwindBuffet.DataTests.UnitTests.EntreeTests
                 ss.Pancake = false;
             });
         }
+
+        [Fact]
+        public void IsOfTypeINotifyPropertyChanged()
+        {
+            SmokehouseSkeleton ss = new SmokehouseSkeleton();
+            Assert.IsAssignableFrom<System.ComponentModel.INotifyPropertyChanged>(ss);
+        }
     }
 }

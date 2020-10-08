@@ -141,5 +141,12 @@ namespace BleakwindBuffet.DataTests.UnitTests.SideTests
                 mog.Size = Size.Large;
             });
         }
+
+        [Fact]
+        public void IsOfTypeINotifyPropertyChanged()
+        {
+            MadOtarGrits mog = new MadOtarGrits();
+            Assert.IsAssignableFrom<System.ComponentModel.INotifyPropertyChanged>(mog);
+        }
     }
 }

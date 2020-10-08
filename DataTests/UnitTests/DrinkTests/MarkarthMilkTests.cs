@@ -197,5 +197,12 @@ namespace BleakwindBuffet.DataTests.UnitTests.DrinkTests
                 mm.Ice = false;
             });
         }
+
+        [Fact]
+        public void IsOfTypeINotifyPropertyChanged()
+        {
+            MarkarthMilk mm = new MarkarthMilk();
+            Assert.IsAssignableFrom<System.ComponentModel.INotifyPropertyChanged>(mm);
+        }
     }
 }

@@ -511,5 +511,12 @@ namespace BleakwindBuffet.DataTests.UnitTests.GenericTests
                 c.Side = dwf;
             });
         }
+
+        [Fact]
+        public void IsOfTypeINotifyPropertyChanged()
+        {
+            Combo c = new Combo();
+            Assert.IsAssignableFrom<System.ComponentModel.INotifyPropertyChanged>(c);
+        }
     }
 }

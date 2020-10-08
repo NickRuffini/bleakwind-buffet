@@ -255,5 +255,12 @@ namespace BleakwindBuffet.DataTests.UnitTests.EntreeTests
                 go.Cheddar = false;
             });
         }
+
+        [Fact]
+        public void IsOfTypeINotifyPropertyChanged()
+        {
+            GardenOrcOmelette go = new GardenOrcOmelette();
+            Assert.IsAssignableFrom<System.ComponentModel.INotifyPropertyChanged>(go);
+        }
     }
 }

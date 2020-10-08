@@ -207,5 +207,12 @@ namespace BleakwindBuffet.DataTests.UnitTests.EntreeTests
                 pp.Roll = false;
             });
         }
+
+        [Fact]
+        public void IsOfTypeINotifyPropertyChanged()
+        {
+            PhillyPoacher pp = new PhillyPoacher();
+            Assert.IsAssignableFrom<System.ComponentModel.INotifyPropertyChanged>(pp);
+        }
     }
 }

@@ -141,5 +141,12 @@ namespace BleakwindBuffet.DataTests.UnitTests.SideTests
                 dwf.Size = Size.Large;
             });
         }
+
+        [Fact]
+        public void IsOfTypeINotifyPropertyChanged()
+        {
+            DragonbornWaffleFries dwf = new DragonbornWaffleFries();
+            Assert.IsAssignableFrom<System.ComponentModel.INotifyPropertyChanged>(dwf);
+        }
     }
 }

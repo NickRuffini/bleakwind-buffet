@@ -296,5 +296,12 @@ namespace BleakwindBuffet.DataTests.UnitTests.DrinkTests
                 cc.RoomForCream = false;
             });
         }
+
+        [Fact]
+        public void IsOfTypeINotifyPropertyChanged()
+        {
+            CandlehearthCoffee cc = new CandlehearthCoffee();
+            Assert.IsAssignableFrom<System.ComponentModel.INotifyPropertyChanged>(cc);
+        }
     }
 }

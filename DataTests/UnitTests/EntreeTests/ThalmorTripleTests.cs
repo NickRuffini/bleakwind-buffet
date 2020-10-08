@@ -546,5 +546,12 @@ namespace BleakwindBuffet.DataTests.UnitTests.EntreeTests
                 tt.Egg = false;
             });
         }
+
+        [Fact]
+        public void IsOfTypeINotifyPropertyChanged()
+        {
+            ThalmorTriple tt = new ThalmorTriple();
+            Assert.IsAssignableFrom<System.ComponentModel.INotifyPropertyChanged>(tt);
+        }
     }
 }

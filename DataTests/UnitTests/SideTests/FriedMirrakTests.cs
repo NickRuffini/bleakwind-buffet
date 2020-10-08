@@ -141,5 +141,12 @@ namespace BleakwindBuffet.DataTests.UnitTests.SideTests
                 fm.Size = Size.Large;
             });
         }
+
+        [Fact]
+        public void IsOfTypeINotifyPropertyChanged()
+        {
+            FriedMiraak fm = new FriedMiraak();
+            Assert.IsAssignableFrom<System.ComponentModel.INotifyPropertyChanged>(fm);
+        }
     }
 }

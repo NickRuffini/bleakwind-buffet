@@ -227,5 +227,12 @@ namespace BleakwindBuffet.DataTests.UnitTests.DrinkTests
             });
         }
 
+        [Fact]
+        public void IsOfTypeINotifyPropertyChanged()
+        {
+            WarriorWater ww = new WarriorWater();
+            Assert.IsAssignableFrom<System.ComponentModel.INotifyPropertyChanged>(ww);
+        }
+
     }
 }

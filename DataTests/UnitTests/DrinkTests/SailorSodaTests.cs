@@ -274,5 +274,12 @@ namespace BleakwindBuffet.DataTests.UnitTests.DrinkTests
                 ss.Ice = false;
             });
         }
+
+        [Fact]
+        public void IsOfTypeINotifyPropertyChanged()
+        {
+            SailorSoda ss = new SailorSoda();
+            Assert.IsAssignableFrom<System.ComponentModel.INotifyPropertyChanged>(ss);
+        }
     }
 }

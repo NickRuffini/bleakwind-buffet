@@ -303,5 +303,12 @@ namespace BleakwindBuffet.DataTests.UnitTests.EntreeTests
                 bb.Cheese = false;
             });
         }
+
+        [Fact]
+        public void IsOfTypeINotifyPropertyChanged()
+        {
+            BriarheartBurger bb = new BriarheartBurger();
+            Assert.IsAssignableFrom<System.ComponentModel.INotifyPropertyChanged>(bb);
+        }
     }
 }
