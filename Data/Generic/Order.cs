@@ -4,6 +4,7 @@ using System.Collections.Specialized;
 using System.ComponentModel;
 using System.Text;
 using System.Collections.ObjectModel;
+using BleakwindBuffet.Data.Generic;
 
 namespace BleakwindBuffet.Data.Generic
 {
