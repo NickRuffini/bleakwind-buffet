@@ -140,7 +140,7 @@ namespace PointOfSale.ExtensionMethod
                     if (item.SpecialInstructions.Count > 0)
                     {
                         string concat = String.Join(", ", item.SpecialInstructions);
-                        orderControl.orderList.Items.Add("$" + item.Price + ":   " + itemName + "\n- " + concat);
+                        orderControl.orderList.Items.Add("$" + item.Price + ": " + itemName + " - " + concat);
                     }
                     else
                     {

@@ -5,7 +5,19 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:PointOfSale"
              mc:Ignorable="d" 
-             d:DesignHeight="450" d:DesignWidth="800">
+             d:DesignHeight="450" d:DesignWidth="800"
+             x:Name="Window">
+            
+    <UserControl.Resources>
+        <DataTemplate x:Key="ListBoxItemTemplate">
+            <StackPanel Orientation="Vertical">
+                <TextBlock x:Name ="textBlock" Text="{Binding}"/>
+                <Button Margin="0,0,0,0" Width="80" 
+                        Click="removeButton_Click">Remove</Button>
+            </StackPanel>
+        </DataTemplate>
+    </UserControl.Resources>
+    
     <Grid x:Name="OrderComponentGrid">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="2*"/>
@@ -31,12 +43,19 @@
             <TextBlock>
                 Order:
             </TextBlock>
+            <!--
             <ListBox x:Name="orderList"
                      SelectionChanged="EditItem"
                      IsSynchronizedWithCurrentItem="True">
-                
+
             </ListBox>
-            
+            -->
+            <ListBox x:Name="orderList"
+                     SelectionChanged="EditItem"
+                     IsSynchronizedWithCurrentItem="True"
+                     ItemTemplate="{StaticResource ListBoxItemTemplate}">
+
+            </ListBox>
         </StackPanel>
 
         <Viewbox Grid.Row="2" Grid.Column="0">

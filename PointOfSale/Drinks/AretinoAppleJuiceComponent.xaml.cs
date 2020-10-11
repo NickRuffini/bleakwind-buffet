@@ -82,7 +82,7 @@ namespace PointOfSale.Drinks
         /// <param name="e"></param>
         private void addButton_Click(object sender, RoutedEventArgs e)
         {
-            // Issue starts here
+            // Issue starts here; not adding the data context, but another aj?
             this.AddItem(sender, aj.ToString(), aj);
             this.SwitchScreen(sender);
         }
