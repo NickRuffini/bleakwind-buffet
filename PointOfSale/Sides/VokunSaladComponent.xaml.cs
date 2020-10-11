@@ -80,7 +80,7 @@ namespace PointOfSale.Sides
         /// <param name="e"></param>
         private void addButton_Click(object sender, RoutedEventArgs e)
         {
-            this.AddItem(sender, "Vokun Salad");
+            this.AddItem(sender, vs.ToString(), vs);
             this.SwitchScreen(sender);
         }
     }

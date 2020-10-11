@@ -23,6 +23,7 @@ using PointOfSale.Entrees;
 using PointOfSale.Drinks;
 using BleakwindBuffet.Data.Drinks;
 using PointOfSale.Sides;
+using BleakwindBuffet.Data.Generic;
 
 namespace PointOfSale.ExtensionMethod
 {
@@ -127,17 +128,27 @@ namespace PointOfSale.ExtensionMethod
         /// <param name="elem"></param>
         /// <param name="sender">Button Pressed</param>
         /// <param name="itemName">String of the item name</param>
-        public static void AddItem(this DependencyObject elem, object sender, string itemName)
+        public static void AddItem(this DependencyObject elem, object sender, string itemName, IOrderItem item)
         {
             if (sender is Button)
             {
                 var orderControl = elem.FindAncestor<OrderComponent>();
+                Order listOfItems = (Order)orderControl.DataContext;
 
                 if (orderControl is OrderComponent)
                 {
-                    orderControl.orderList.Items.Add(itemName);
+                    if (item.SpecialInstructions.Count > 0)
+                    {
+                        string concat = String.Join(", ", item.SpecialInstructions);
+                        orderControl.orderList.Items.Add("$" + item.Price + ":   " + itemName + "\n- " + concat);
+                    }
+                    else
+                    {
+                        orderControl.orderList.Items.Add("$" + item.Price + ":   " + itemName);
+                    }
+                    
+                    listOfItems.Add(item);
                 }
-                
             }
         }
     }

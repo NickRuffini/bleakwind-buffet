@@ -17,6 +17,9 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using BleakwindBuffet.Data.Drinks;
+using BleakwindBuffet.Data.Generic;
+using PointOfSale.Drinks;
 
 namespace PointOfSale
 {
@@ -25,6 +28,8 @@ namespace PointOfSale
     /// </summary>
     public partial class OrderComponent : UserControl
     {
+        Order o;
+
         /// <summary>
         /// Initializes our XAML and starts us off on the Menu Screen
         /// </summary>
@@ -32,6 +37,8 @@ namespace PointOfSale
         {
             InitializeComponent();
             containerBorder.Child = new MenuSelectionComponent();
+            o = new Order();
+            this.DataContext = o;
         }
 
         /// <summary>
@@ -51,6 +58,40 @@ namespace PointOfSale
         private void cancelButton_Click(object sender, RoutedEventArgs e)
         {
             this.orderList.Items.Clear();
+        }
+
+        // Maybe try setting the combo box directly with the Order item's size?
+        void EditItem(object sender, SelectionChangedEventArgs args)
+        {
+            ListBoxItem lbi = (((sender as ListBox).SelectedItem) as ListBoxItem);
+            //IOrderItem item = lbi.DataContext as IOrderItem;
+            // index of the item in the order we are interacting with
+            int index = ((sender as ListBox).SelectedIndex);
+
+            if (o[index] is AretinoAppleJuice)
+            {
+                AretinoAppleJuiceComponent ajc = new AretinoAppleJuiceComponent();
+                ajc.DataContext = o[index];
+
+                AretinoAppleJuice aj = ajc.DataContext as AretinoAppleJuice;
+                switch(aj.Size)
+                {
+                    case BleakwindBuffet.Data.Enums.Size.Small:
+                        ajc.AAComboBox.SelectedItem = "Small";
+                        break;
+                    case BleakwindBuffet.Data.Enums.Size.Medium:
+                        ajc.AAComboBox.SelectedItem = "Medium";
+                        break;
+                    case BleakwindBuffet.Data.Enums.Size.Large:
+                        ajc.AAComboBox.SelectedItem = "Large";
+                        break;
+                }
+                containerBorder.Child = ajc;
+            }
+            /*if (o[index] is AretinoAppleJuice)
+            {
+                containerBorder.Child = new AretinoAppleJuiceComponent();
+            }*/
         }
     }
 }

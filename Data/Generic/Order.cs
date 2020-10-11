@@ -42,7 +42,7 @@ namespace BleakwindBuffet.Data.Generic
                 {
                     total += item.Price;
                 }
-                return total;
+                return Math.Round(total, 2);
             }
         }
 
@@ -53,7 +53,8 @@ namespace BleakwindBuffet.Data.Generic
         {
             get
             {
-                return Subtotal * SalesTaxRate;
+                double numNotRounded = Subtotal * SalesTaxRate;
+                return Math.Round(numNotRounded, 2);
             }
         }
 
@@ -64,7 +65,7 @@ namespace BleakwindBuffet.Data.Generic
         {
             get
             {
-                return Subtotal + Tax;
+                return Math.Round(Subtotal + Tax, 2);
             }
         }
 

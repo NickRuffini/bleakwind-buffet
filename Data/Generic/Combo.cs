@@ -26,7 +26,7 @@ namespace BleakwindBuffet.Data.Generic
         /// </summary>
         public double Price
         {
-            get { return drink.Price + entree.Price + side.Price; }
+            get { return drink.Price + entree.Price + side.Price - 1; }
         }
 
         /// <summary>

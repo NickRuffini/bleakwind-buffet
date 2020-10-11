@@ -53,7 +53,7 @@ namespace PointOfSale.Entrees
         /// <param name="e"></param>
         private void addButton_Click(object sender, RoutedEventArgs e)
         {
-            this.AddItem(sender, "Thalmor Triple");
+            this.AddItem(sender, tt.ToString(), tt);
             this.SwitchScreen(sender);
         }
     }

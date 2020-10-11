@@ -80,7 +80,7 @@ namespace PointOfSale.Sides
         /// <param name="e"></param>
         private void addButton_Click(object sender, RoutedEventArgs e)
         {
-            this.AddItem(sender, "Dragonborn Waffle Fries");
+            this.AddItem(sender, dwf.ToString(), dwf);
             this.SwitchScreen(sender);
         }
     }

@@ -8,43 +8,81 @@
              d:DesignHeight="450" d:DesignWidth="800">
     <Grid x:Name="OrderComponentGrid">
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="*"/>
-            <ColumnDefinition Width="150"/>
+            <ColumnDefinition Width="2*"/>
+            <ColumnDefinition Width="2*"/>
+            <ColumnDefinition Width="2*"/>
+            <ColumnDefinition Width="2*"/>
+            <ColumnDefinition Width="3*"/>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
             <RowDefinition Height="20"/>
-            <RowDefinition Height="6*"/>
+            <RowDefinition Height="10*"/>
             <RowDefinition Height="*"/>
             <RowDefinition Height="*"/>
-            <RowDefinition Height="20"/>
+            <RowDefinition Height="10"/>
         </Grid.RowDefinitions>
         
-        <Border Grid.Column="1" Grid.RowSpan="4" 
+        <Border Grid.Column="4" Grid.RowSpan="4" 
                 BorderBrush="Black" 
         BorderThickness="1,0,0,0" Background="{x:Null}" />
 
-        <StackPanel Grid.Column= "1" Grid.Row="1" 
+        <StackPanel Grid.Column= "4" Grid.Row="1" 
                     HorizontalAlignment="Center">
             <TextBlock>
                 Order:
             </TextBlock>
-            <ListBox x:Name="orderList">
+            <ListBox x:Name="orderList"
+                     SelectionChanged="EditItem"
+                     IsSynchronizedWithCurrentItem="True">
                 
             </ListBox>
+            
         </StackPanel>
 
-        <Button Grid.Row="2" Grid.Column="1" Margin="10" >
+        <Viewbox Grid.Row="2" Grid.Column="0">
+            <TextBlock Text="Order #"/>
+        </Viewbox>
+        <Viewbox Grid.Row="2" Grid.Column="1" 
+                 >
+            <TextBlock Text="{Binding Path=Number}"/>
+        </Viewbox>
+
+        <Viewbox Grid.Row="2" Grid.Column="2">
+            <TextBlock Text="Subtotal:"/>
+        </Viewbox>
+        <Viewbox Grid.Row="2" Grid.Column="3" 
+                 >
+            <TextBlock Text="{Binding Path=Subtotal}"/>
+        </Viewbox>
+
+        <Viewbox Grid.Row="3" Grid.Column="0">
+            <TextBlock Text="Tax:"/>
+        </Viewbox>
+        <Viewbox Grid.Row="3" Grid.Column="1" 
+                 >
+            <TextBlock Text="{Binding Path=Tax}"/>
+        </Viewbox>
+
+        <Viewbox Grid.Row="3" Grid.Column="2">
+            <TextBlock Text="Total:"/>
+        </Viewbox>
+        <Viewbox Grid.Row="3" Grid.Column="3" 
+                 >
+            <TextBlock Text="{Binding Path=Total}"/>
+        </Viewbox>
+
+        <Button Grid.Row="2" Grid.Column="4" Margin="5">
             <Viewbox Stretch="Fill">
                 <TextBlock Text="Complete Order"/>
             </Viewbox>
         </Button>
         <Button x:Name="cancelButton" Grid.Row="3" 
-                Grid.Column="1" Margin="10"
+                Grid.Column="4" Margin="5"
                 Click="cancelButton_Click">
             <Viewbox Stretch="Fill">
                 <TextBlock Text="Cancel Order"/>
             </Viewbox>
         </Button>
-        <Border Name="containerBorder" Grid.ColumnSpan="1" Grid.RowSpan="5"/>
+        <Border Name="containerBorder" Grid.ColumnSpan="4" Grid.Row="1"/>
     </Grid>
 </UserControl>

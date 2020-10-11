@@ -80,7 +80,7 @@ namespace PointOfSale.Drinks
         /// <param name="e"></param>
         private void addButton_Click(object sender, RoutedEventArgs e)
         {
-            this.AddItem(sender, "Markarth Milk");
+            this.AddItem(sender, mm.ToString(), mm);
             this.SwitchScreen(sender);
         }
     }

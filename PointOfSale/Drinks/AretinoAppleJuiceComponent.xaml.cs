@@ -20,6 +20,7 @@ using PointOfSale.ExtensionMethod;
 using BleakwindBuffet.Data;
 using BleakwindBuffet.Data.Drinks;
 using BleakwindBuffet.Data.Enums;
+using BleakwindBuffet.Data.Generic;
 
 namespace PointOfSale.Drinks
 {
@@ -81,7 +82,8 @@ namespace PointOfSale.Drinks
         /// <param name="e"></param>
         private void addButton_Click(object sender, RoutedEventArgs e)
         {
-            this.AddItem(sender, "Aretino Apple Juice");
+            // Issue starts here
+            this.AddItem(sender, aj.ToString(), aj);
             this.SwitchScreen(sender);
         }
     }

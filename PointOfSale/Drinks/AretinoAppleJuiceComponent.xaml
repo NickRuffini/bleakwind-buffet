@@ -40,7 +40,7 @@
         <CheckBox IsChecked="{Binding Path=Ice}" Grid.Column="2" Grid.Row="1">
             Ice
         </CheckBox>
-        <ComboBox SelectionChanged="AAComboBox_Changed" 
+        <ComboBox SelectionChanged="AAComboBox_Changed"
                   x:Name="AAComboBox" Grid.Column="2" Grid.Row="3"
                   Margin= "0, 20, 20, 20">
         </ComboBox>
