@@ -96,7 +96,7 @@ namespace PointOfSale.ExtensionMethod
                         switchToScreen = new MarkarthMilkComponent();
                         break;
                     case "aretinoAppleJuiceButton":
-                        switchToScreen = new AretinoAppleJuiceComponent();
+                        switchToScreen = new AretinoAppleJuiceComponent(new AretinoAppleJuice());
                         break;
                     case "candlehearthCoffeeButton":
                         switchToScreen = new CandlehearthCoffeeComponent();

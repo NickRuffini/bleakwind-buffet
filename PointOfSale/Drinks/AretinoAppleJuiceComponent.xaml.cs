@@ -29,12 +29,9 @@ namespace PointOfSale.Drinks
     /// </summary>
     public partial class AretinoAppleJuiceComponent : UserControl
     {
-        AretinoAppleJuice aj;
-
-        public AretinoAppleJuiceComponent()
+        public AretinoAppleJuiceComponent(AretinoAppleJuice aj)
         {
             InitializeComponent();
-            aj = new AretinoAppleJuice();
             this.DataContext = aj;
 
             foreach(string enumValue in Enum.GetNames(typeof(BleakwindBuffet.Data.Enums.Size)))
@@ -54,7 +51,7 @@ namespace PointOfSale.Drinks
         /// <param name="e"></param>
         private void AAComboBox_Changed(object sender, SelectionChangedEventArgs e)
         {
-            if (DataContext is AretinoAppleJuice)
+            if (DataContext is AretinoAppleJuice aj)
             {
                 foreach(string s in e.AddedItems)
                 {
@@ -83,7 +80,7 @@ namespace PointOfSale.Drinks
         private void addButton_Click(object sender, RoutedEventArgs e)
         {
             // Issue starts here; not adding the data context, but another aj?
-            this.AddItem(sender, aj.ToString(), aj);
+            this.AddItem(sender, this.DataContext.ToString(), this.DataContext as IOrderItem);
             this.SwitchScreen(sender);
         }
     }

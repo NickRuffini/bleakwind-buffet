@@ -71,10 +71,10 @@ namespace PointOfSale
             // index of the item in the order we are interacting with
             int index = ((sender as ListBox).SelectedIndex);
 
-            if (o[index] is AretinoAppleJuice)
+            if (index > -1 && o[index] is AretinoAppleJuice)
             {
-                AretinoAppleJuiceComponent ajc = new AretinoAppleJuiceComponent();
-                ajc.DataContext = o[index];
+                AretinoAppleJuice test = o[index] as AretinoAppleJuice;
+                AretinoAppleJuiceComponent ajc = new AretinoAppleJuiceComponent(test);
 
                 AretinoAppleJuice aj = ajc.DataContext as AretinoAppleJuice;
                 switch(aj.Size)
