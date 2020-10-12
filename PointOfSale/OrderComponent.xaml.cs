@@ -18,9 +18,13 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using BleakwindBuffet.Data.Drinks;
+using BleakwindBuffet.Data.Entrees;
 using BleakwindBuffet.Data.Generic;
+using BleakwindBuffet.Data.Sides;
 using PointOfSale.Drinks;
+using PointOfSale.Entrees;
 using PointOfSale.ExtensionMethod;
+using PointOfSale.Sides;
 
 namespace PointOfSale
 {
@@ -75,26 +79,98 @@ namespace PointOfSale
             {
                 AretinoAppleJuice test = lbi as AretinoAppleJuice;
                 AretinoAppleJuiceComponent ajc = new AretinoAppleJuiceComponent(test);
-
-                /*AretinoAppleJuice aj = ajc.DataContext as AretinoAppleJuice;
-                switch(aj.Size)
-                {
-                    case BleakwindBuffet.Data.Enums.Size.Small:
-                        ajc.AAComboBox.SelectedItem = "Small";
-                        break;
-                    case BleakwindBuffet.Data.Enums.Size.Medium:
-                        ajc.AAComboBox.SelectedItem = "Medium";
-                        break;
-                    case BleakwindBuffet.Data.Enums.Size.Large:
-                        ajc.AAComboBox.SelectedItem = "Large";
-                        break;
-                }*/
                 containerBorder.Child = ajc;
             }
-            /*if (o[index] is AretinoAppleJuice)
+            if (index > -1 && lbi is CandlehearthCoffee)
             {
-                containerBorder.Child = new AretinoAppleJuiceComponent();
-            }*/
+                CandlehearthCoffee cc = lbi as CandlehearthCoffee;
+                CandlehearthCoffeeComponent ccc = new CandlehearthCoffeeComponent(cc);
+                containerBorder.Child = ccc;
+            }
+            if (index > -1 && lbi is MarkarthMilk)
+            {
+                MarkarthMilk mm = lbi as MarkarthMilk;
+                MarkarthMilkComponent mmc = new MarkarthMilkComponent(mm);
+                containerBorder.Child = mmc;
+            }
+            if (index > -1 && lbi is SailorSoda)
+            {
+                SailorSoda test = lbi as SailorSoda;
+                SailorSodaComponent ssc = new SailorSodaComponent(test);
+                containerBorder.Child = ssc;
+            }
+            if (index > -1 && lbi is WarriorWater)
+            {
+                WarriorWater test = lbi as WarriorWater;
+                WarriorWaterComponent wwc = new WarriorWaterComponent(test);
+                containerBorder.Child = wwc;
+            }
+            if (index > -1 && lbi is BriarheartBurger)
+            {
+                BriarheartBurger test = lbi as BriarheartBurger;
+                BriarheartBurgerComponent bbc = new BriarheartBurgerComponent(test);
+                containerBorder.Child = bbc;
+            }
+            if (index > -1 && lbi is DoubleDraugr)
+            {
+                DoubleDraugr test = lbi as DoubleDraugr;
+                DoubleDraugrComponent ddc = new DoubleDraugrComponent(test);
+                containerBorder.Child = ddc;
+            }
+            if (index > -1 && lbi is GardenOrcOmelette)
+            {
+                GardenOrcOmelette test = lbi as GardenOrcOmelette;
+                GardenOrcOmeletteComponent gooc = new GardenOrcOmeletteComponent(test);
+                containerBorder.Child = gooc;
+            }
+            if (index > -1 && lbi is PhillyPoacher)
+            {
+                PhillyPoacher test = lbi as PhillyPoacher;
+                PhillyPoacherComponent ppc = new PhillyPoacherComponent(test);
+                containerBorder.Child = ppc;
+            }
+            if (index > -1 && lbi is SmokehouseSkeleton)
+            {
+                SmokehouseSkeleton test = lbi as SmokehouseSkeleton;
+                SmokehouseSkeletonComponent ssc = new SmokehouseSkeletonComponent(test);
+                containerBorder.Child = ssc;
+            }
+            if (index > -1 && lbi is ThalmorTriple)
+            {
+                ThalmorTriple test = lbi as ThalmorTriple;
+                ThalmorTripleComponent ttc = new ThalmorTripleComponent(test);
+                containerBorder.Child = ttc;
+            }
+            if (index > -1 && lbi is ThugsTBone)
+            {
+                ThugsTBone test = lbi as ThugsTBone;
+                ThugsTBoneComponent ttc = new ThugsTBoneComponent(test);
+                containerBorder.Child = ttc;
+            }
+            if (index > -1 && lbi is DragonbornWaffleFries)
+            {
+                DragonbornWaffleFries test = lbi as DragonbornWaffleFries;
+                DragonbornWaffleFriesComponent dwfc = new DragonbornWaffleFriesComponent(test);
+                containerBorder.Child = dwfc;
+            }
+            if (index > -1 && lbi is FriedMiraak)
+            {
+                FriedMiraak test = lbi as FriedMiraak;
+                FriedMiraakComponent fmc = new FriedMiraakComponent(test);
+                containerBorder.Child = fmc;
+            }
+            if (index > -1 && lbi is MadOtarGrits)
+            {
+                MadOtarGrits test = lbi as MadOtarGrits;
+                MadOtarGritsComponent mogc = new MadOtarGritsComponent(test);
+                containerBorder.Child = mogc;
+            }
+            if (index > -1 && lbi is VokunSalad)
+            {
+                VokunSalad test = lbi as VokunSalad;
+                VokunSaladComponent vsc = new VokunSaladComponent(test);
+                containerBorder.Child = vsc;
+            }
         }
 
         private void removeButton_Click(object sender, RoutedEventArgs e)

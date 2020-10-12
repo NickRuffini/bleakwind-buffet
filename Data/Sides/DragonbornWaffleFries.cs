@@ -54,6 +54,7 @@ namespace BleakwindBuffet.Data.Sides
                     PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Size"));
                     PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Price"));
                     PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Calories"));
+                    PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Name"));
                 }
                 else if (value == Size.Medium)
                 {
@@ -62,6 +63,7 @@ namespace BleakwindBuffet.Data.Sides
                     PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Size"));
                     PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Price"));
                     PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Calories"));
+                    PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Name"));
                 }
                 else
                 {
@@ -70,6 +72,7 @@ namespace BleakwindBuffet.Data.Sides
                     PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Size"));
                     PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Price"));
                     PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Calories"));
+                    PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Name"));
                 }
             }
         }

@@ -11,7 +11,7 @@
     <UserControl.Resources>
         <DataTemplate x:Key="ListBoxItemTemplate">
             <StackPanel Orientation="Vertical">
-                <TextBlock x:Name ="textBlock" Text="{Binding}"/>
+                <TextBlock x:Name ="textBlock" Text="{Binding Path=Name}"/>
                 <TextBlock x:Name ="textBlock2" Text="{Binding Path=Price}"/>
                 <ListView ItemsSource="{Binding Path=SpecialInstructions}"/>
                 <Button Margin="0,0,0,0" Width="80" 

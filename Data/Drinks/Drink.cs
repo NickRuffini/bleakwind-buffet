@@ -34,6 +34,14 @@ namespace BleakwindBuffet.Data.Drinks
         /// </summary>
         public abstract uint Calories { get; }
 
+        public string Name
+        {
+            get
+            {
+                return ToString();
+            }
+        }
+
         /// <summary>
         /// Special instructions to prepare the drink
         /// </summary>
