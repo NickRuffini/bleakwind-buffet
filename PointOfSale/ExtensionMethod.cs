@@ -63,7 +63,7 @@ namespace PointOfSale.ExtensionMethod
                 switch (((Button)sender).Name)
                 {
                     case "briarheartBurgerButton":
-                        switchToScreen = new BriarheartBurgerComponent();
+                        switchToScreen = new BriarheartBurgerComponent(new BleakwindBuffet.Data.Entrees.BriarheartBurger());
                         break;
                     case "returnButton":
                         switchToScreen = new MenuSelectionComponent();
@@ -75,49 +75,49 @@ namespace PointOfSale.ExtensionMethod
                         switchToScreen = new MenuSelectionComponent();
                         break;
                     case "doubleDraugrButton":
-                        switchToScreen = new DoubleDraugrComponent();
+                        switchToScreen = new DoubleDraugrComponent(new BleakwindBuffet.Data.Entrees.DoubleDraugr());
                         break;
                     case "thalmorTripleButton":
-                        switchToScreen = new ThalmorTripleComponent();
+                        switchToScreen = new ThalmorTripleComponent(new BleakwindBuffet.Data.Entrees.ThalmorTriple());
                         break;
                     case "smokehouseSkeletonButton":
-                        switchToScreen = new SmokehouseSkeletonComponent();
+                        switchToScreen = new SmokehouseSkeletonComponent(new BleakwindBuffet.Data.Entrees.SmokehouseSkeleton());
                         break;
                     case "gardenOrcOmeletteButton":
-                        switchToScreen = new GardenOrcOmeletteComponent();
+                        switchToScreen = new GardenOrcOmeletteComponent(new BleakwindBuffet.Data.Entrees.GardenOrcOmelette());
                         break;
                     case "phillyPoacherButton":
-                        switchToScreen = new PhillyPoacherComponent();
+                        switchToScreen = new PhillyPoacherComponent(new BleakwindBuffet.Data.Entrees.PhillyPoacher());
                         break;
                     case "thugsTBoneButton":
-                        switchToScreen = new ThugsTBoneComponent();
+                        switchToScreen = new ThugsTBoneComponent(new BleakwindBuffet.Data.Entrees.ThugsTBone());
                         break;
                     case "sailorSodaButton":
-                        switchToScreen = new SailorSodaComponent();
+                        switchToScreen = new SailorSodaComponent(new SailorSoda());
                         break;
                     case "markarthMilkButton":
-                        switchToScreen = new MarkarthMilkComponent();
+                        switchToScreen = new MarkarthMilkComponent(new MarkarthMilk());
                         break;
                     case "aretinoAppleJuiceButton":
                         switchToScreen = new AretinoAppleJuiceComponent(new AretinoAppleJuice());
                         break;
                     case "candlehearthCoffeeButton":
-                        switchToScreen = new CandlehearthCoffeeComponent();
+                        switchToScreen = new CandlehearthCoffeeComponent(new CandlehearthCoffee());
                         break;
                     case "warriorWaterButton":
-                        switchToScreen = new WarriorWaterComponent();
+                        switchToScreen = new WarriorWaterComponent(new WarriorWater());
                         break;
                     case "vokunSaladButton":
-                        switchToScreen = new VokunSaladComponent();
+                        switchToScreen = new VokunSaladComponent(new BleakwindBuffet.Data.Sides.VokunSalad());
                         break;
                     case "friedMiraakButton":
-                        switchToScreen = new FriedMiraakComponent();
+                        switchToScreen = new FriedMiraakComponent(new BleakwindBuffet.Data.Sides.FriedMiraak());
                         break;
                     case "madOtarGritsButton":
-                        switchToScreen = new MadOtarGritsComponent();
+                        switchToScreen = new MadOtarGritsComponent(new BleakwindBuffet.Data.Sides.MadOtarGrits());
                         break;
                     case "dragonbornWaffleFriesButton":
-                        switchToScreen = new DragonbornWaffleFriesComponent();
+                        switchToScreen = new DragonbornWaffleFriesComponent(new BleakwindBuffet.Data.Sides.DragonbornWaffleFries());
                         break;
                     case "comboButton":
                         Combo c = new Combo();

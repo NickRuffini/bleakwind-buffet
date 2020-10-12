@@ -19,6 +19,7 @@ using System.Windows.Shapes;
 using PointOfSale.ExtensionMethod;
 using BleakwindBuffet.Data.Sides;
 using BleakwindBuffet.Data.Enums;
+using BleakwindBuffet.Data.Generic;
 
 namespace PointOfSale.Sides
 {
@@ -27,22 +28,13 @@ namespace PointOfSale.Sides
     /// </summary>
     public partial class VokunSaladComponent : UserControl
     {
-        VokunSalad vs;
 
-        public VokunSaladComponent()
+        public VokunSaladComponent(VokunSalad vs)
         {
             InitializeComponent();
-            vs = new VokunSalad();
             this.DataContext = vs;
 
-            foreach (string enumValue in Enum.GetNames(typeof(BleakwindBuffet.Data.Enums.Size)))
-            {
-                VSComboBox.Items.Add(enumValue);
-                if (enumValue == "Small")
-                {
-                    VSComboBox.SelectedItem = enumValue;
-                }
-            }
+
         }
 
         /// <summary>
@@ -52,7 +44,7 @@ namespace PointOfSale.Sides
         /// <param name="e"></param>
         private void VSComboBox_Changed(object sender, SelectionChangedEventArgs e)
         {
-            if (DataContext is VokunSalad)
+            /*if (DataContext is VokunSalad)
             {
                 foreach (string s in e.AddedItems)
                 {
@@ -60,7 +52,7 @@ namespace PointOfSale.Sides
                     if (s == "Medium") vs.Size = BleakwindBuffet.Data.Enums.Size.Medium;
                     if (s == "Large") vs.Size = BleakwindBuffet.Data.Enums.Size.Large;
                 }
-            }
+            }*/
         }
 
         /// <summary>
@@ -80,7 +72,7 @@ namespace PointOfSale.Sides
         /// <param name="e"></param>
         private void addButton_Click(object sender, RoutedEventArgs e)
         {
-            this.AddItem(sender, vs);
+            this.AddItem(sender, this.DataContext as IOrderItem);
             this.SwitchScreen(sender);
         }
     }

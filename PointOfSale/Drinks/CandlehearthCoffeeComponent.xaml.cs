@@ -19,6 +19,7 @@ using System.Windows.Shapes;
 using PointOfSale.ExtensionMethod;
 using BleakwindBuffet.Data.Drinks;
 using BleakwindBuffet.Data.Enums;
+using BleakwindBuffet.Data.Generic;
 
 namespace PointOfSale.Drinks
 {
@@ -27,22 +28,12 @@ namespace PointOfSale.Drinks
     /// </summary>
     public partial class CandlehearthCoffeeComponent : UserControl
     {
-        CandlehearthCoffee cc;
-
-        public CandlehearthCoffeeComponent()
+        public CandlehearthCoffeeComponent(CandlehearthCoffee cc)
         {
             InitializeComponent();
-            cc = new CandlehearthCoffee();
+
             this.DataContext = cc;
 
-            foreach (string enumValue in Enum.GetNames(typeof(BleakwindBuffet.Data.Enums.Size)))
-            {
-                CCComboBox.Items.Add(enumValue);
-                if (enumValue == "Small")
-                {
-                    CCComboBox.SelectedItem = enumValue;
-                }
-            }
         }
 
         /// <summary>
@@ -52,7 +43,7 @@ namespace PointOfSale.Drinks
         /// <param name="e"></param>
         private void CCComboBox_Changed(object sender, SelectionChangedEventArgs e)
         {
-            if (DataContext is CandlehearthCoffee)
+            /*if (DataContext is CandlehearthCoffee)
             {
                 foreach (string s in e.AddedItems)
                 {
@@ -60,7 +51,7 @@ namespace PointOfSale.Drinks
                     if (s == "Medium") cc.Size = BleakwindBuffet.Data.Enums.Size.Medium;
                     if (s == "Large") cc.Size = BleakwindBuffet.Data.Enums.Size.Large;
                 }
-            }
+            }*/
         }
 
         /// <summary>
@@ -80,7 +71,7 @@ namespace PointOfSale.Drinks
         /// <param name="e"></param>
         private void addButton_Click(object sender, RoutedEventArgs e)
         {
-            this.AddItem(sender, cc);
+            this.AddItem(sender, this.DataContext as IOrderItem);
             this.SwitchScreen(sender);
         }
     }

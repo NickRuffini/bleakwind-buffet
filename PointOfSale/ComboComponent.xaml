@@ -4,11 +4,23 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:PointOfSale"
+             xmlns:test="clr-namespace:BleakwindBuffet.Data.Enums;assembly=Data"
+             xmlns:system="clr-namespace:System;assembly=mscorlib"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
+
+    <UserControl.Resources>
+        <ObjectDataProvider x:Key="sizes" ObjectType="system:Enum" MethodName="GetValues">
+            <ObjectDataProvider.MethodParameters>
+                <x:Type TypeName="test:Size"/>
+            </ObjectDataProvider.MethodParameters>
+        </ObjectDataProvider>
+    </UserControl.Resources>
+
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="20"/>
+            <ColumnDefinition Width="*"/>
             <ColumnDefinition Width="*"/>
             <ColumnDefinition Width="4*"/>
             <ColumnDefinition Width="100"/>
@@ -16,26 +28,145 @@
         <Grid.RowDefinitions>
             <RowDefinition Height="20"/>
             <RowDefinition Height="5*"/>
-            <RowDefinition Height="20"/>
             <RowDefinition Height="5*"/>
             <RowDefinition Height="5*"/>
-            <RowDefinition Height="5*"/>
-            <RowDefinition Height="60"/>
-            <RowDefinition Height="20"/>
+            <RowDefinition Height="3*"/>
+            
         </Grid.RowDefinitions>
-        <Button x:Name="returnButton" Grid.Row="6" 
+        <Button x:Name="returnButton" Grid.Row="4" 
                 Grid.Column="1" Margin="10, 10, 10, 10" 
                 Click="returnButton_Click">
             <Viewbox Stretch="Fill">
                 <TextBlock Text="Return"/>
             </Viewbox>
         </Button>
-        <Button x:Name="addButton" Grid.Row="6" 
-                Grid.Column="3" Margin="10, 10, 10, 10" 
+        <Button x:Name="addButton" Grid.Row="4" 
+                Grid.Column="4" Margin="10, 10, 10, 10" 
                 Click="addButton_Click">
             <Viewbox Stretch="Fill">
                 <TextBlock Text="Add"/>
             </Viewbox>
         </Button>
+        
+        <Button x:Name="addDrinkButton" Grid.Row="1" 
+                Grid.Column="1" Margin="10, 10, 10, 10" 
+                Click="addDrinkButton_Click">
+            <Viewbox Stretch="Fill">
+                <TextBlock Text="Add Drink"/>
+            </Viewbox>
+        </Button>
+        <Button x:Name="editDrinkButton" Grid.Row="1" 
+                Grid.Column="2" Margin="10, 10, 10, 10" 
+                Click="editDrinkButton_Click">
+            <Viewbox Stretch="Fill">
+                <TextBlock Text="Edit Drink"/>
+            </Viewbox>
+        </Button>
+        
+        <Button x:Name="addEntreeButton" Grid.Row="2" 
+                Grid.Column="1" Margin="10, 10, 10, 10" 
+                Click="addEntreeButton_Click">
+            <Viewbox Stretch="Fill">
+                <TextBlock Text="Add Entree"/>
+            </Viewbox>
+        </Button>
+        <Button x:Name="editEntreeButton" Grid.Row="2" 
+                Grid.Column="2" Margin="10, 10, 10, 10" 
+                Click="editEntreeButton_Click">
+            <Viewbox Stretch="Fill">
+                <TextBlock Text="Edit Entree"/>
+            </Viewbox>
+        </Button>
+        
+        <Button x:Name="addSideButton" Grid.Row="3" 
+                Grid.Column="1" Margin="10, 10, 10, 10" 
+                Click="addSideButton_Click">
+            <Viewbox Stretch="Fill">
+                <TextBlock Text="Add Side"/>
+            </Viewbox>
+        </Button>
+        <Button x:Name="editSideButton" Grid.Row="3" 
+                Grid.Column="2" Margin="10, 10, 10, 10" 
+                Click="editSideButton_Click">
+            <Viewbox Stretch="Fill">
+                <TextBlock Text="Edit Side"/>
+            </Viewbox>
+        </Button>
+        
+        <TextBlock Text="{Binding Path=Drink}"
+                   TextWrapping="Wrap"
+                   Grid.Column="4"
+                   Grid.Row="1">
+            
+        </TextBlock>
+        <TextBlock Text="{Binding Path=Entree}"
+                   TextWrapping="Wrap"
+                   Grid.Column="4"
+                   Grid.Row="2">
+
+        </TextBlock>
+        <TextBlock Text="{Binding Path=Side}"
+                   TextWrapping="Wrap"
+                   Grid.Column="4"
+                   Grid.Row="3">
+
+        </TextBlock>
+        <StackPanel Grid.Column="3"
+                    Grid.Row="1"
+                    Name="drinkStackPanel"
+                    Orientation="Horizontal"
+                    Margin="10, 10, 10, 10"
+                    Visibility="Collapsed">
+            <Button x:Name="aaComboButton"
+                    Click="aaComboButton_Click"
+                    MaxWidth="100">
+                <TextBlock Text="Aretino Apple Juice"
+                           TextWrapping="Wrap"/>
+            </Button>
+            <Button x:Name="ccComboButton"
+                    Click="ccComboButton_Click"
+                    MaxWidth="100">
+                <TextBlock Text="Candlehearth Coffee"
+                           TextWrapping="Wrap"/>
+            </Button>
+            <Button x:Name="mmComboButton"
+                    Click="mmComboButton_Click"
+                    MaxWidth="100">
+                <TextBlock Text="Markarth Milk"
+                           TextWrapping="Wrap"/>
+            </Button>
+            <Button x:Name="ssComboButton"
+                    Click="ssComboButton_Click"
+                    MaxWidth="100">
+                <TextBlock Text="Sailor Soda"
+                           TextWrapping="Wrap"/>
+            </Button>
+            <Button x:Name="wwComboButton"
+                    Click="wwComboButton_Click"
+                    MaxWidth="100">
+                <TextBlock Text="Warrior Water"
+                           TextWrapping="Wrap"/>
+            </Button>
+        </StackPanel>
+        <!--
+        <StackPanel Grid.Column="3"
+                    Grid.Row="1"
+                    Name="aaStackPanel"
+                    Orientation="Horizontal"
+                    Margin="10, 10, 10, 10"
+                    Visibility="Collapsed">
+            <CheckBox IsChecked="{Binding Path=Ice}" Grid.Column="2" Grid.Row="1">
+                Ice
+            </CheckBox>
+
+            <ComboBox
+                  x:Name="AAComboBox" Grid.Column="2" Grid.Row="3"
+                  ItemsSource="{Binding Source={StaticResource sizes}}"
+                  SelectedItem="{Binding Path=Size}"
+                Width="100"
+                  Margin= "0, 20, 20, 20">
+            </ComboBox>
+        </StackPanel>
+        -->
     </Grid>
 </UserControl>

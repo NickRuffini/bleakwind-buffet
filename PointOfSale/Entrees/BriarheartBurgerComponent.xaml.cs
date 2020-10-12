@@ -19,6 +19,7 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using BleakwindBuffet.Data;
 using BleakwindBuffet.Data.Entrees;
+using BleakwindBuffet.Data.Generic;
 
 namespace PointOfSale.Entrees
 {
@@ -27,14 +28,12 @@ namespace PointOfSale.Entrees
     /// </summary>
     public partial class BriarheartBurgerComponent : UserControl
     {
-        BriarheartBurger bb;
         /// <summary>
         /// Initializes the XAML
         /// </summary>
-        public BriarheartBurgerComponent()
+        public BriarheartBurgerComponent(BriarheartBurger bb)
         {
             InitializeComponent();
-            bb = new BriarheartBurger();
             this.DataContext = bb;
         }
 
@@ -55,7 +54,7 @@ namespace PointOfSale.Entrees
         /// <param name="e"></param>
         private void addButton_Click(object sender, RoutedEventArgs e)
         {
-            this.AddItem(sender, bb);
+            this.AddItem(sender, this.DataContext as IOrderItem);
             this.SwitchScreen(sender);
         }
     }

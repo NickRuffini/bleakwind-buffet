@@ -4,8 +4,27 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:PointOfSale.Drinks"
+             xmlns:test="clr-namespace:BleakwindBuffet.Data.Enums;assembly=Data"
+             xmlns:system="clr-namespace:System;assembly=mscorlib"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
+
+    <UserControl.Resources>
+        <ObjectDataProvider x:Key="sizes" ObjectType="system:Enum" MethodName="GetValues">
+            <ObjectDataProvider.MethodParameters>
+                <x:Type TypeName="test:Size"/>
+            </ObjectDataProvider.MethodParameters>
+        </ObjectDataProvider>
+
+        <ObjectDataProvider x:Key="flavors" ObjectType="system:Enum" MethodName="GetValues">
+            <ObjectDataProvider.MethodParameters>
+                <x:Type TypeName="test:SodaFlavor"/>
+            </ObjectDataProvider.MethodParameters>
+        </ObjectDataProvider>
+    </UserControl.Resources>
+    
+    
+
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="20"/>
@@ -42,6 +61,8 @@
         </CheckBox>
         <ComboBox SelectionChanged="SSFlavorComboBox_Changed" 
                   x:Name="SSFlavorComboBox" Grid.Column="2" Grid.Row="3"
+                  ItemsSource="{Binding Source={StaticResource flavors}}"
+                  SelectedItem="{Binding Path=Flavor}"
                   Margin= "0, 20, 20, 20"
                   >
         </ComboBox>
@@ -50,6 +71,8 @@
         </TextBlock>
         <ComboBox SelectionChanged="SSSizeComboBox_Changed" 
                   x:Name="SSSizeComboBox" Grid.Column="2" Grid.Row="5"
+                  ItemsSource="{Binding Source={StaticResource sizes}}"
+                  SelectedItem="{Binding Path=Size}"
                   Margin= "0, 20, 20, 20">
         </ComboBox>
         <TextBlock Grid.Column="2" Grid.Row="4">

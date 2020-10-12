@@ -19,6 +19,7 @@ using System.Windows.Shapes;
 using PointOfSale.ExtensionMethod;
 using BleakwindBuffet.Data.Drinks;
 using BleakwindBuffet.Data.Enums;
+using BleakwindBuffet.Data.Generic;
 
 namespace PointOfSale.Drinks
 {
@@ -27,30 +28,10 @@ namespace PointOfSale.Drinks
     /// </summary>
     public partial class SailorSodaComponent : UserControl
     {
-        SailorSoda ss;
-
-        public SailorSodaComponent()
+        public SailorSodaComponent(SailorSoda ss)
         {
             InitializeComponent();
-            ss = new SailorSoda();
             this.DataContext = ss;
-
-            foreach (string enumValue in Enum.GetNames(typeof(BleakwindBuffet.Data.Enums.Size)))
-            {
-                SSSizeComboBox.Items.Add(enumValue);
-                if (enumValue == "Small")
-                {
-                    SSSizeComboBox.SelectedItem = enumValue;
-                }
-            }
-            foreach (string enumValue in Enum.GetNames(typeof(BleakwindBuffet.Data.Enums.SodaFlavor)))
-            {
-                SSFlavorComboBox.Items.Add(enumValue);
-                if (enumValue == "Cherry")
-                {
-                    SSFlavorComboBox.SelectedItem = enumValue;
-                }
-            }
         }
 
         /// <summary>
@@ -60,7 +41,7 @@ namespace PointOfSale.Drinks
         /// <param name="e"></param>
         private void SSSizeComboBox_Changed(object sender, SelectionChangedEventArgs e)
         {
-            if (DataContext is SailorSoda)
+            /*if (DataContext is SailorSoda)
             {
                 foreach (string s in e.AddedItems)
                 {
@@ -68,7 +49,7 @@ namespace PointOfSale.Drinks
                     if (s == "Medium") ss.Size = BleakwindBuffet.Data.Enums.Size.Medium;
                     if (s == "Large") ss.Size = BleakwindBuffet.Data.Enums.Size.Large;
                 }
-            }
+            }*/
         }
 
         /// <summary>
@@ -78,7 +59,7 @@ namespace PointOfSale.Drinks
         /// <param name="e"></param>
         private void SSFlavorComboBox_Changed(object sender, SelectionChangedEventArgs e)
         {
-            if (DataContext is SailorSoda)
+            /*if (DataContext is SailorSoda)
             {
                 foreach (string s in e.AddedItems)
                 {
@@ -89,7 +70,7 @@ namespace PointOfSale.Drinks
                     if (s == "Peach") ss.Flavor = BleakwindBuffet.Data.Enums.SodaFlavor.Peach;
                     if (s == "Watermelon") ss.Flavor = BleakwindBuffet.Data.Enums.SodaFlavor.Watermelon;
                 }
-            }
+            }*/
         }
 
         /// <summary>
@@ -109,7 +90,7 @@ namespace PointOfSale.Drinks
         /// <param name="e"></param>
         private void addButton_Click(object sender, RoutedEventArgs e)
         {
-            this.AddItem(sender, ss);
+            this.AddItem(sender, this.DataContext as IOrderItem);
             this.SwitchScreen(sender);
         }
     }

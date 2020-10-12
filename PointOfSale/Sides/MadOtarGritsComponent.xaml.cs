@@ -19,6 +19,7 @@ using System.Windows.Shapes;
 using PointOfSale.ExtensionMethod;
 using BleakwindBuffet.Data.Sides;
 using BleakwindBuffet.Data.Enums;
+using BleakwindBuffet.Data.Generic;
 
 namespace PointOfSale.Sides
 {
@@ -27,22 +28,14 @@ namespace PointOfSale.Sides
     /// </summary>
     public partial class MadOtarGritsComponent : UserControl
     {
-        MadOtarGrits mog;
 
-        public MadOtarGritsComponent()
+        public MadOtarGritsComponent(MadOtarGrits mog)
         {
             InitializeComponent();
-            mog = new MadOtarGrits();
+
             this.DataContext = mog;
 
-            foreach (string enumValue in Enum.GetNames(typeof(BleakwindBuffet.Data.Enums.Size)))
-            {
-                MOGComboBox.Items.Add(enumValue);
-                if (enumValue == "Small")
-                {
-                    MOGComboBox.SelectedItem = enumValue;
-                }
-            }
+
         }
 
         /// <summary>
@@ -52,7 +45,7 @@ namespace PointOfSale.Sides
         /// <param name="e"></param>
         private void MOGComboBox_Changed(object sender, SelectionChangedEventArgs e)
         {
-            if (DataContext is MadOtarGrits)
+            /*if (DataContext is MadOtarGrits)
             {
                 foreach (string s in e.AddedItems)
                 {
@@ -60,7 +53,7 @@ namespace PointOfSale.Sides
                     if (s == "Medium") mog.Size = BleakwindBuffet.Data.Enums.Size.Medium;
                     if (s == "Large") mog.Size = BleakwindBuffet.Data.Enums.Size.Large;
                 }
-            }
+            }*/
         }
 
         /// <summary>
@@ -80,7 +73,7 @@ namespace PointOfSale.Sides
         /// <param name="e"></param>
         private void addButton_Click(object sender, RoutedEventArgs e)
         {
-            this.AddItem(sender, mog);
+            this.AddItem(sender, this.DataContext as IOrderItem);
             this.SwitchScreen(sender);
         }
     }

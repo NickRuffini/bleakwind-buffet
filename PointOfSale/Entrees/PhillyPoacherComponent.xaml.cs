@@ -19,6 +19,7 @@ using System.Windows.Shapes;
 using PointOfSale.ExtensionMethod;
 using BleakwindBuffet.Data;
 using BleakwindBuffet.Data.Entrees;
+using BleakwindBuffet.Data.Generic;
 
 namespace PointOfSale.Entrees
 {
@@ -27,12 +28,10 @@ namespace PointOfSale.Entrees
     /// </summary>
     public partial class PhillyPoacherComponent : UserControl
     {
-        PhillyPoacher pp;
-
-        public PhillyPoacherComponent()
+        public PhillyPoacherComponent(PhillyPoacher pp)
         {
             InitializeComponent();
-            pp = new PhillyPoacher();
+
             this.DataContext = pp;
         }
         /// <summary>
@@ -52,7 +51,7 @@ namespace PointOfSale.Entrees
         /// <param name="e"></param>
         private void addButton_Click(object sender, RoutedEventArgs e)
         {
-            this.AddItem(sender, pp);
+            this.AddItem(sender, this.DataContext as IOrderItem);
             this.SwitchScreen(sender);
         }
     }

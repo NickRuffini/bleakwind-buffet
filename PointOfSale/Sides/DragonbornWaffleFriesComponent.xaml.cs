@@ -19,6 +19,7 @@ using System.Windows.Shapes;
 using PointOfSale.ExtensionMethod;
 using BleakwindBuffet.Data.Sides;
 using BleakwindBuffet.Data.Enums;
+using BleakwindBuffet.Data.Generic;
 
 namespace PointOfSale.Sides
 {
@@ -27,22 +28,12 @@ namespace PointOfSale.Sides
     /// </summary>
     public partial class DragonbornWaffleFriesComponent : UserControl
     {
-        DragonbornWaffleFries dwf;
 
-        public DragonbornWaffleFriesComponent()
+        public DragonbornWaffleFriesComponent(DragonbornWaffleFries dwf)
         {
             InitializeComponent();
-            dwf = new DragonbornWaffleFries();
-            this.DataContext = dwf;
 
-            foreach (string enumValue in Enum.GetNames(typeof(BleakwindBuffet.Data.Enums.Size)))
-            {
-                DWFComboBox.Items.Add(enumValue);
-                if (enumValue == "Small")
-                {
-                    DWFComboBox.SelectedItem = enumValue;
-                }
-            }
+            this.DataContext = dwf;
         }
 
         /// <summary>
@@ -52,7 +43,7 @@ namespace PointOfSale.Sides
         /// <param name="e"></param>
         private void DWFComboBox_Changed(object sender, SelectionChangedEventArgs e)
         {
-            if (DataContext is DragonbornWaffleFries)
+            /*if (DataContext is DragonbornWaffleFries)
             {
                 foreach (string s in e.AddedItems)
                 {
@@ -60,7 +51,7 @@ namespace PointOfSale.Sides
                     if (s == "Medium") dwf.Size = BleakwindBuffet.Data.Enums.Size.Medium;
                     if (s == "Large") dwf.Size = BleakwindBuffet.Data.Enums.Size.Large;
                 }
-            }
+            }*/
         }
 
         /// <summary>
@@ -80,7 +71,7 @@ namespace PointOfSale.Sides
         /// <param name="e"></param>
         private void addButton_Click(object sender, RoutedEventArgs e)
         {
-            this.AddItem(sender, dwf);
+            this.AddItem(sender, this.DataContext as IOrderItem);
             this.SwitchScreen(sender);
         }
     }

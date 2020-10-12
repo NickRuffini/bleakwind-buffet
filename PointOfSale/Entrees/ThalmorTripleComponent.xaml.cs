@@ -19,6 +19,7 @@ using System.Windows.Shapes;
 using PointOfSale.ExtensionMethod;
 using BleakwindBuffet.Data;
 using BleakwindBuffet.Data.Entrees;
+using BleakwindBuffet.Data.Generic;
 
 namespace PointOfSale.Entrees
 {
@@ -27,12 +28,11 @@ namespace PointOfSale.Entrees
     /// </summary>
     public partial class ThalmorTripleComponent : UserControl
     {
-        ThalmorTriple tt;
 
-        public ThalmorTripleComponent()
+        public ThalmorTripleComponent(ThalmorTriple tt)
         {
             InitializeComponent();
-            tt = new ThalmorTriple();
+
             this.DataContext = tt;
         }
 
@@ -53,7 +53,7 @@ namespace PointOfSale.Entrees
         /// <param name="e"></param>
         private void addButton_Click(object sender, RoutedEventArgs e)
         {
-            this.AddItem(sender, tt);
+            this.AddItem(sender, this.DataContext as IOrderItem);
             this.SwitchScreen(sender);
         }
     }

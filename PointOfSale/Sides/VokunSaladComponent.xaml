@@ -4,8 +4,19 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:PointOfSale.Sides"
+             xmlns:test="clr-namespace:BleakwindBuffet.Data.Enums;assembly=Data"
+             xmlns:system="clr-namespace:System;assembly=mscorlib"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
+
+    <UserControl.Resources>
+        <ObjectDataProvider x:Key="sizes" ObjectType="system:Enum" MethodName="GetValues">
+            <ObjectDataProvider.MethodParameters>
+                <x:Type TypeName="test:Size"/>
+            </ObjectDataProvider.MethodParameters>
+        </ObjectDataProvider>
+    </UserControl.Resources>
+
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="20"/>
@@ -39,6 +50,8 @@
         </Button>
         <ComboBox SelectionChanged="VSComboBox_Changed" 
                   x:Name="VSComboBox" Grid.Column="2" Grid.Row="2"
+                  ItemsSource="{Binding Source={StaticResource sizes}}"
+                  SelectedItem="{Binding Path=Size}"
                   Margin= "0, 20, 20, 20">
         </ComboBox>
         <TextBlock Grid.Column="2" Grid.Row="1">

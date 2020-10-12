@@ -19,6 +19,7 @@ using System.Windows.Shapes;
 using PointOfSale.ExtensionMethod;
 using BleakwindBuffet.Data.Sides;
 using BleakwindBuffet.Data.Enums;
+using BleakwindBuffet.Data.Generic;
 
 namespace PointOfSale.Sides
 {
@@ -27,22 +28,12 @@ namespace PointOfSale.Sides
     /// </summary>
     public partial class FriedMiraakComponent : UserControl
     {
-        FriedMiraak fm;
 
-        public FriedMiraakComponent()
+        public FriedMiraakComponent(FriedMiraak fm)
         {
             InitializeComponent();
-            fm = new FriedMiraak();
-            this.DataContext = fm;
 
-            foreach (string enumValue in Enum.GetNames(typeof(BleakwindBuffet.Data.Enums.Size)))
-            {
-                FMComboBox.Items.Add(enumValue);
-                if (enumValue == "Small")
-                {
-                    FMComboBox.SelectedItem = enumValue;
-                }
-            }
+            this.DataContext = fm;
         }
 
         /// <summary>
@@ -52,7 +43,7 @@ namespace PointOfSale.Sides
         /// <param name="e"></param>
         private void FMComboBox_Changed(object sender, SelectionChangedEventArgs e)
         {
-            if (DataContext is FriedMiraak)
+            /*if (DataContext is FriedMiraak)
             {
                 foreach (string s in e.AddedItems)
                 {
@@ -60,7 +51,7 @@ namespace PointOfSale.Sides
                     if (s == "Medium") fm.Size = BleakwindBuffet.Data.Enums.Size.Medium;
                     if (s == "Large") fm.Size = BleakwindBuffet.Data.Enums.Size.Large;
                 }
-            }
+            }*/
         }
 
         /// <summary>
@@ -80,7 +71,7 @@ namespace PointOfSale.Sides
         /// <param name="e"></param>
         private void addButton_Click(object sender, RoutedEventArgs e)
         {
-            this.AddItem(sender, fm);
+            this.AddItem(sender, this.DataContext as IOrderItem);
             this.SwitchScreen(sender);
         }
     }
