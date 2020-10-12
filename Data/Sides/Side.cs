@@ -34,6 +34,9 @@ namespace BleakwindBuffet.Data.Sides
         /// </summary>
         public abstract uint Calories { get; }
 
+        /// <summary>
+        /// Returns the toString of the item
+        /// </summary>
         public string Name
         {
             get

@@ -67,7 +67,11 @@ namespace PointOfSale
             this.DataContext = o;
         }
 
-        // Maybe try setting the combo box directly with the Order item's size?
+        /// <summary>
+        /// Method that handles editing an existing item in the order
+        /// </summary>
+        /// <param name="sender"> ListBoxItem we are clicking on </param>
+        /// <param name="e"></param>
         void EditItem(object sender, SelectionChangedEventArgs e)
         {
             IOrderItem lbi = (sender as ListBox).SelectedItem as IOrderItem;
@@ -173,6 +177,11 @@ namespace PointOfSale
             }
         }
 
+        /// <summary>
+        /// Handler that handles clicking the remove button on a order item (to remove it)
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void removeButton_Click(object sender, RoutedEventArgs e)
         {
             if (sender is Button)
@@ -204,16 +213,6 @@ namespace PointOfSale
                         list.Items.RemoveAt(index);
 
                         o.RemoveAt(index);
-
-                        //this.orderList.Items.RemoveAt(index);
-
-                        /*if (listBoxContent is AretinoAppleJuice aj)
-                        {
-                            int index = list.Items.IndexOf(aj);
-
-                            this.orderList.Items.RemoveAt(index);
-                        }*/
-
                     }
                 }
             }

@@ -148,5 +148,23 @@ namespace BleakwindBuffet.DataTests.UnitTests.SideTests
             FriedMiraak fm = new FriedMiraak();
             Assert.IsAssignableFrom<System.ComponentModel.INotifyPropertyChanged>(fm);
         }
+
+        [Fact]
+        public void ChangingSizeNotifiesNameProperty()
+        {
+            FriedMiraak fm = new FriedMiraak();
+            Assert.PropertyChanged(fm, "Name", () =>
+            {
+                fm.Size = Size.Small;
+            });
+            Assert.PropertyChanged(fm, "Name", () =>
+            {
+                fm.Size = Size.Medium;
+            });
+            Assert.PropertyChanged(fm, "Name", () =>
+            {
+                fm.Size = Size.Large;
+            });
+        }
     }
 }

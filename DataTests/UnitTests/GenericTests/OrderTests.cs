@@ -131,7 +131,7 @@ namespace BleakwindBuffet.DataTests.UnitTests.GenericTests
             o.Add(bb);
             o.Add(dwf);
 
-            Assert.Equal(7.36 * 0.12, o.Tax);
+            Assert.Equal(Math.Round((7.36 * 0.12), 2), o.Tax);
         }
 
         [Fact]
@@ -147,7 +147,7 @@ namespace BleakwindBuffet.DataTests.UnitTests.GenericTests
             o.Add(bb);
             o.Add(dwf);
 
-            Assert.Equal(7.36 + (7.36*0.12), o.Total);
+            Assert.Equal(Math.Round(7.36 + (7.36*0.12), 2), o.Total);
         }
 
         [Fact]

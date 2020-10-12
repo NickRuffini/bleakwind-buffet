@@ -204,5 +204,23 @@ namespace BleakwindBuffet.DataTests.UnitTests.DrinkTests
             MarkarthMilk mm = new MarkarthMilk();
             Assert.IsAssignableFrom<System.ComponentModel.INotifyPropertyChanged>(mm);
         }
+
+        [Fact]
+        public void ChangingSizeNotifiesNameProperty()
+        {
+            MarkarthMilk mm = new MarkarthMilk();
+            Assert.PropertyChanged(mm, "Name", () =>
+            {
+                mm.Size = Size.Small;
+            });
+            Assert.PropertyChanged(mm, "Name", () =>
+            {
+                mm.Size = Size.Medium;
+            });
+            Assert.PropertyChanged(mm, "Name", () =>
+            {
+                mm.Size = Size.Large;
+            });
+        }
     }
 }

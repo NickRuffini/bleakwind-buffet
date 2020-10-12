@@ -303,5 +303,37 @@ namespace BleakwindBuffet.DataTests.UnitTests.DrinkTests
             CandlehearthCoffee cc = new CandlehearthCoffee();
             Assert.IsAssignableFrom<System.ComponentModel.INotifyPropertyChanged>(cc);
         }
+
+        [Fact]
+        public void ChangingSizeNotifiesNameProperty()
+        {
+            CandlehearthCoffee cc = new CandlehearthCoffee();
+            Assert.PropertyChanged(cc, "Name", () =>
+            {
+                cc.Size = Size.Small;
+            });
+            Assert.PropertyChanged(cc, "Name", () =>
+            {
+                cc.Size = Size.Medium;
+            });
+            Assert.PropertyChanged(cc, "Name", () =>
+            {
+                cc.Size = Size.Large;
+            });
+        }
+
+        [Fact]
+        public void ChangingDecafNotifiesNameProperty()
+        {
+            CandlehearthCoffee cc = new CandlehearthCoffee();
+            Assert.PropertyChanged(cc, "Name", () =>
+            {
+                cc.Decaf = true;
+            });
+            Assert.PropertyChanged(cc, "Name", () =>
+            {
+                cc.Decaf = false;
+            });
+        }
     }
 }

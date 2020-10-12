@@ -234,5 +234,23 @@ namespace BleakwindBuffet.DataTests.UnitTests.DrinkTests
             Assert.IsAssignableFrom<System.ComponentModel.INotifyPropertyChanged>(ww);
         }
 
+        [Fact]
+        public void ChangingSizeNotifiesNameProperty()
+        {
+            WarriorWater ww = new WarriorWater();
+            Assert.PropertyChanged(ww, "Name", () =>
+            {
+                ww.Size = Size.Small;
+            });
+            Assert.PropertyChanged(ww, "Name", () =>
+            {
+                ww.Size = Size.Medium;
+            });
+            Assert.PropertyChanged(ww, "Name", () =>
+            {
+                ww.Size = Size.Large;
+            });
+        }
+
     }
 }

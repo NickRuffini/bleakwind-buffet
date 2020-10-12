@@ -148,5 +148,23 @@ namespace BleakwindBuffet.DataTests.UnitTests.SideTests
             MadOtarGrits mog = new MadOtarGrits();
             Assert.IsAssignableFrom<System.ComponentModel.INotifyPropertyChanged>(mog);
         }
+
+        [Fact]
+        public void ChangingSizeNotifiesNameProperty()
+        {
+            MadOtarGrits mog = new MadOtarGrits();
+            Assert.PropertyChanged(mog, "Name", () =>
+            {
+                mog.Size = Size.Small;
+            });
+            Assert.PropertyChanged(mog, "Name", () =>
+            {
+                mog.Size = Size.Medium;
+            });
+            Assert.PropertyChanged(mog, "Name", () =>
+            {
+                mog.Size = Size.Large;
+            });
+        }
     }
 }

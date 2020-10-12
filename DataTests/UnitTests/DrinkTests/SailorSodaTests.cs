@@ -281,5 +281,53 @@ namespace BleakwindBuffet.DataTests.UnitTests.DrinkTests
             SailorSoda ss = new SailorSoda();
             Assert.IsAssignableFrom<System.ComponentModel.INotifyPropertyChanged>(ss);
         }
+
+        [Fact]
+        public void ChangingSizeNotifiesNameProperty()
+        {
+            SailorSoda ss = new SailorSoda();
+            Assert.PropertyChanged(ss, "Name", () =>
+            {
+                ss.Size = Size.Small;
+            });
+            Assert.PropertyChanged(ss, "Name", () =>
+            {
+                ss.Size = Size.Medium;
+            });
+            Assert.PropertyChanged(ss, "Name", () =>
+            {
+                ss.Size = Size.Large;
+            });
+        }
+
+        [Fact]
+        public void ChangingFlavorNotifiesNameProperty()
+        {
+            SailorSoda ss = new SailorSoda();
+            Assert.PropertyChanged(ss, "Name", () =>
+            {
+                ss.Flavor = SodaFlavor.Cherry;
+            });
+            Assert.PropertyChanged(ss, "Name", () =>
+            {
+                ss.Flavor = SodaFlavor.Blackberry;
+            });
+            Assert.PropertyChanged(ss, "Name", () =>
+            {
+                ss.Flavor = SodaFlavor.Grapefruit;
+            });
+            Assert.PropertyChanged(ss, "Name", () =>
+            {
+                ss.Flavor = SodaFlavor.Lemon;
+            });
+            Assert.PropertyChanged(ss, "Name", () =>
+            {
+                ss.Flavor = SodaFlavor.Peach;
+            });
+            Assert.PropertyChanged(ss, "Name", () =>
+            {
+                ss.Flavor = SodaFlavor.Watermelon;
+            });
+        }
     }
 }

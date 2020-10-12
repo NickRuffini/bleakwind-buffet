@@ -148,5 +148,23 @@ namespace BleakwindBuffet.DataTests.UnitTests.SideTests
             VokunSalad vs = new VokunSalad();
             Assert.IsAssignableFrom<System.ComponentModel.INotifyPropertyChanged>(vs);
         }
+
+        [Fact]
+        public void ChangingSizeNotifiesNameProperty()
+        {
+            VokunSalad vs = new VokunSalad();
+            Assert.PropertyChanged(vs, "Name", () =>
+            {
+                vs.Size = Size.Small;
+            });
+            Assert.PropertyChanged(vs, "Name", () =>
+            {
+                vs.Size = Size.Medium;
+            });
+            Assert.PropertyChanged(vs, "Name", () =>
+            {
+                vs.Size = Size.Large;
+            });
+        }
     }
 }

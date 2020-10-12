@@ -148,5 +148,24 @@ namespace BleakwindBuffet.DataTests.UnitTests.SideTests
             DragonbornWaffleFries dwf = new DragonbornWaffleFries();
             Assert.IsAssignableFrom<System.ComponentModel.INotifyPropertyChanged>(dwf);
         }
+
+        [Fact]
+        public void ChangingSizeNotifiesNameProperty()
+        {
+            DragonbornWaffleFries dwf = new DragonbornWaffleFries();
+            Assert.PropertyChanged(dwf, "Name", () =>
+            {
+                dwf.Size = Size.Small;
+            });
+            Assert.PropertyChanged(dwf, "Name", () =>
+            {
+                dwf.Size = Size.Medium;
+            });
+            Assert.PropertyChanged(dwf, "Name", () =>
+            {
+                dwf.Size = Size.Large;
+            });
+        }
+
     }
 }

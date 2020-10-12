@@ -29,6 +29,9 @@ namespace BleakwindBuffet.Data.Entrees
         /// </summary>
         public abstract uint Calories { get; }
 
+        /// <summary>
+        /// Returns the toString of the item
+        /// </summary>
         public string Name
         {
             get

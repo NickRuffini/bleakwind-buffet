@@ -83,7 +83,7 @@ namespace BleakwindBuffet.DataTests.UnitTests.GenericTests
             DragonbornWaffleFries dwf = new DragonbornWaffleFries();
             c.Side = dwf;
 
-            Assert.Equal(7.36, c.Price);
+            Assert.Equal(7.36 - 1, c.Price);
         }
 
         [Fact]
@@ -100,11 +100,11 @@ namespace BleakwindBuffet.DataTests.UnitTests.GenericTests
             DragonbornWaffleFries dwf = new DragonbornWaffleFries();
             c.Side = dwf;
 
-            Assert.Equal(7.36, c.Price);
+            Assert.Equal(7.36 - 1, c.Price);
 
             c.Drink.Size = Data.Enums.Size.Medium;
 
-            Assert.Equal(7.61, c.Price);
+            Assert.Equal(7.61 - 1, c.Price);
         }
 
         [Theory]
@@ -275,12 +275,12 @@ namespace BleakwindBuffet.DataTests.UnitTests.GenericTests
             DragonbornWaffleFries dwf = new DragonbornWaffleFries();
             c.Side = dwf;
 
-            Assert.Equal(7.36, c.Price);
+            Assert.Equal(7.36 - 1, c.Price);
 
             PhillyPoacher pp = new PhillyPoacher();
             c.Entree = pp;
 
-            Assert.Equal(8.27, c.Price, 2);
+            Assert.Equal(8.27 - 1, c.Price, 2);
         }
 
         [Fact]
@@ -422,11 +422,11 @@ namespace BleakwindBuffet.DataTests.UnitTests.GenericTests
             DragonbornWaffleFries dwf = new DragonbornWaffleFries();
             c.Side = dwf;
 
-            Assert.Equal(7.36, c.Price);
+            Assert.Equal(7.36 - 1, c.Price);
 
             c.Side.Size = Data.Enums.Size.Medium;
 
-            Assert.Equal(7.70, c.Price);
+            Assert.Equal(7.70 - 1, c.Price);
         }
 
         [Fact]
