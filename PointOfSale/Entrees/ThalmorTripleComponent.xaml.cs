@@ -53,7 +53,7 @@ namespace PointOfSale.Entrees
         /// <param name="e"></param>
         private void addButton_Click(object sender, RoutedEventArgs e)
         {
-            this.AddItem(sender, tt.ToString(), tt);
+            this.AddItem(sender, tt);
             this.SwitchScreen(sender);
         }
     }

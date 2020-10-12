@@ -16,11 +16,12 @@
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
             <RowDefinition Height="20"/>
-            <RowDefinition Height="5*"/>
-            <RowDefinition Height="5*"/>
-            <RowDefinition Height="5*"/>
-            <RowDefinition Height="5*"/>
-            <RowDefinition Height="5*"/>
+            <RowDefinition Height="4*"/>
+            <RowDefinition Height="4*"/>
+            <RowDefinition Height="4*"/>
+            <RowDefinition Height="4*"/>
+            <RowDefinition Height="4*"/>
+            <RowDefinition Height="4*"/>
             <RowDefinition Height="20"/>
         </Grid.RowDefinitions>
         <Button x:Name="briarheartBurgerButton" Grid.Row="1" 
@@ -150,5 +151,14 @@
                 <TextBlock Text="Dragonborn Waffle Fries"/>
             </Viewbox>
         </Button>
+        <Button x:Name="comboButton"
+                Grid.Row="6" Grid.Column="1" 
+                Margin="10, 10, 10, 10"
+                Click="menuButtonClickEvent">
+            <Viewbox Stretch="Fill">
+                <TextBlock Text="Combo"/>
+            </Viewbox>
+        </Button>
+        
     </Grid>
 </UserControl>

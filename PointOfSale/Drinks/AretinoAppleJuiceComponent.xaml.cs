@@ -32,16 +32,16 @@ namespace PointOfSale.Drinks
         public AretinoAppleJuiceComponent(AretinoAppleJuice aj)
         {
             InitializeComponent();
-            this.DataContext = aj;
-
-            foreach(string enumValue in Enum.GetNames(typeof(BleakwindBuffet.Data.Enums.Size)))
+            /*foreach (string enumValue in Enum.GetNames(typeof(BleakwindBuffet.Data.Enums.Size)))
             {
                 AAComboBox.Items.Add(enumValue);
-                if(enumValue == "Small")
+                if (enumValue == "Small")
                 {
                     AAComboBox.SelectedItem = enumValue;
                 }
-            }
+            }*/
+
+            this.DataContext = aj;
         }
 
         /// <summary>
@@ -53,12 +53,13 @@ namespace PointOfSale.Drinks
         {
             if (DataContext is AretinoAppleJuice aj)
             {
+                /*
                 foreach(string s in e.AddedItems)
                 {
                     if (s == "Small") aj.Size = BleakwindBuffet.Data.Enums.Size.Small;
                     if (s == "Medium") aj.Size = BleakwindBuffet.Data.Enums.Size.Medium;
                     if (s == "Large") aj.Size = BleakwindBuffet.Data.Enums.Size.Large;
-                }
+                }*/
             }
         }
 
@@ -80,7 +81,7 @@ namespace PointOfSale.Drinks
         private void addButton_Click(object sender, RoutedEventArgs e)
         {
             // Issue starts here; not adding the data context, but another aj?
-            this.AddItem(sender, this.DataContext.ToString(), this.DataContext as IOrderItem);
+            this.AddItem(sender, this.DataContext as IOrderItem);
             this.SwitchScreen(sender);
         }
     }

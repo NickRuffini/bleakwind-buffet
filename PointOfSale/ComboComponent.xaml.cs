@@ -1,9 +1,4 @@
-﻿/*
- * Author: Nick Ruffini
- * Class name: DoubleDraugrComponent.xaml.cs
- * Purpose: Class used to represent the GUI of the Entree Double Draugr
- */
-
+﻿using BleakwindBuffet.Data.Generic;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -18,22 +13,22 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using PointOfSale.ExtensionMethod;
 using BleakwindBuffet.Data;
-using BleakwindBuffet.Data.Entrees;
+using BleakwindBuffet.Data.Drinks;
+using BleakwindBuffet.Data.Enums;
 
-namespace PointOfSale.Entrees
+namespace PointOfSale
 {
     /// <summary>
-    /// Interaction logic for DoubleDraugrComponent.xaml
+    /// Interaction logic for ComboComponent.xaml
     /// </summary>
-    public partial class DoubleDraugrComponent : UserControl
+    public partial class ComboComponent : UserControl
     {
-        DoubleDraugr dd;
 
-        public DoubleDraugrComponent()
+        public ComboComponent(Combo c)
         {
             InitializeComponent();
-            dd = new DoubleDraugr();
-            this.DataContext = dd;
+
+            this.DataContext = c;
         }
 
         /// <summary>
@@ -53,7 +48,8 @@ namespace PointOfSale.Entrees
         /// <param name="e"></param>
         private void addButton_Click(object sender, RoutedEventArgs e)
         {
-            this.AddItem(sender, dd);
+            // Issue starts here; not adding the data context, but another aj?
+            this.AddItem(sender, this.DataContext as IOrderItem);
             this.SwitchScreen(sender);
         }
     }

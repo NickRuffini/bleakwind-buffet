@@ -71,6 +71,9 @@ namespace PointOfSale.ExtensionMethod
                     case "addButton":
                         switchToScreen = new MenuSelectionComponent();
                         break;
+                    case "editButton":
+                        switchToScreen = new MenuSelectionComponent();
+                        break;
                     case "doubleDraugrButton":
                         switchToScreen = new DoubleDraugrComponent();
                         break;
@@ -116,6 +119,13 @@ namespace PointOfSale.ExtensionMethod
                     case "dragonbornWaffleFriesButton":
                         switchToScreen = new DragonbornWaffleFriesComponent();
                         break;
+                    case "comboButton":
+                        Combo c = new Combo();
+                        c.Entree = new BleakwindBuffet.Data.Entrees.BriarheartBurger();
+                        c.Drink = new AretinoAppleJuice();
+                        c.Side = new BleakwindBuffet.Data.Sides.DragonbornWaffleFries();
+                        switchToScreen = new ComboComponent(c);
+                        break;
                     default:
                         throw new NotImplementedException("Unknown category selected");
                 }
@@ -128,7 +138,7 @@ namespace PointOfSale.ExtensionMethod
         /// <param name="elem"></param>
         /// <param name="sender">Button Pressed</param>
         /// <param name="itemName">String of the item name</param>
-        public static void AddItem(this DependencyObject elem, object sender, string itemName, IOrderItem item)
+        public static void AddItem(this DependencyObject elem, object sender, IOrderItem item)
         {
             if (sender is Button)
             {
@@ -139,12 +149,14 @@ namespace PointOfSale.ExtensionMethod
                 {
                     if (item.SpecialInstructions.Count > 0)
                     {
-                        string concat = String.Join(", ", item.SpecialInstructions);
-                        orderControl.orderList.Items.Add("$" + item.Price + ": " + itemName + " - " + concat);
+                        //string concat = String.Join(", ", item.SpecialInstructions);
+                        //orderControl.orderList.Items.Add("$" + item.Price + ": " + itemName + " - " + concat);
+                        orderControl.orderList.Items.Add(item);
                     }
                     else
                     {
-                        orderControl.orderList.Items.Add("$" + item.Price + ":   " + itemName);
+                        //orderControl.orderList.Items.Add("$" + item.Price + ":   " + itemName);
+                        orderControl.orderList.Items.Add(item);
                     }
                     
                     listOfItems.Add(item);

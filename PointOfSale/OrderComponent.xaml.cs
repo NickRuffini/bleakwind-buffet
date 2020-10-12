@@ -66,17 +66,17 @@ namespace PointOfSale
         // Maybe try setting the combo box directly with the Order item's size?
         void EditItem(object sender, SelectionChangedEventArgs e)
         {
-            ListBoxItem lbi = (sender as ListBox).SelectedItem as ListBoxItem;
+            IOrderItem lbi = (sender as ListBox).SelectedItem as IOrderItem;
             //IOrderItem item = lbi.DataContext as IOrderItem;
             // index of the item in the order we are interacting with
             int index = ((sender as ListBox).SelectedIndex);
 
-            if (index > -1 && o[index] is AretinoAppleJuice)
+            if (index > -1 && lbi is AretinoAppleJuice)
             {
-                AretinoAppleJuice test = o[index] as AretinoAppleJuice;
+                AretinoAppleJuice test = lbi as AretinoAppleJuice;
                 AretinoAppleJuiceComponent ajc = new AretinoAppleJuiceComponent(test);
 
-                AretinoAppleJuice aj = ajc.DataContext as AretinoAppleJuice;
+                /*AretinoAppleJuice aj = ajc.DataContext as AretinoAppleJuice;
                 switch(aj.Size)
                 {
                     case BleakwindBuffet.Data.Enums.Size.Small:
@@ -88,7 +88,7 @@ namespace PointOfSale
                     case BleakwindBuffet.Data.Enums.Size.Large:
                         ajc.AAComboBox.SelectedItem = "Large";
                         break;
-                }
+                }*/
                 containerBorder.Child = ajc;
             }
             /*if (o[index] is AretinoAppleJuice)
