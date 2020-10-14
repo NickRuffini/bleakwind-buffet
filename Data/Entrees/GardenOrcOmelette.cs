@@ -14,7 +14,6 @@ namespace BleakwindBuffet.Data.Entrees
 {
     public class GardenOrcOmelette : Entree, IOrderItem, INotifyPropertyChanged
     {
-        public event PropertyChangedEventHandler PropertyChanged;
 
         /// <summary>
         /// Gets the price of the item
@@ -47,15 +46,16 @@ namespace BleakwindBuffet.Data.Entrees
                 if (!value)
                 {
                     specialInstructions.Add("Hold broccoli");
-                    PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("SpecialInstructions"));
+                    OnPropertyChanged("SpecialInstructions");
                 }
                 else
                 {
                     specialInstructions.Remove("Hold broccoli");
-                    PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("SpecialInstructions"));
+                    OnPropertyChanged("SpecialInstructions");
                 }
                 broccoli = value;
-                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Broccoli"));
+
+                OnPropertyChanged("Broccoli");
             }
         }
 
@@ -74,15 +74,16 @@ namespace BleakwindBuffet.Data.Entrees
                 if (!value)
                 {
                     specialInstructions.Add("Hold mushrooms");
-                    PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("SpecialInstructions"));
+                    OnPropertyChanged("SpecialInstructions");
                 }
                 else
                 {
                     specialInstructions.Remove("Hold mushrooms");
-                    PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("SpecialInstructions"));
+                    OnPropertyChanged("SpecialInstructions");
                 }
                 mushrooms = value;
-                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Mushrooms"));
+
+                OnPropertyChanged("Mushrooms");
             }
         }
 
@@ -101,15 +102,16 @@ namespace BleakwindBuffet.Data.Entrees
                 if (!value)
                 {
                     specialInstructions.Add("Hold tomato");
-                    PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("SpecialInstructions"));
+                    OnPropertyChanged("SpecialInstructions");
                 }
                 else
                 {
                     specialInstructions.Remove("Hold tomato");
-                    PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("SpecialInstructions"));
+                    OnPropertyChanged("SpecialInstructions");
                 }
                 tomato = value;
-                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Tomato"));
+
+                OnPropertyChanged("Tomato");
             }
         }
 
@@ -128,15 +130,16 @@ namespace BleakwindBuffet.Data.Entrees
                 if (!value)
                 {
                     specialInstructions.Add("Hold cheddar");
-                    PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("SpecialInstructions"));
+                    OnPropertyChanged("SpecialInstructions");
                 }
                 else
                 {
                     specialInstructions.Remove("Hold cheddar");
-                    PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("SpecialInstructions"));
+                    OnPropertyChanged("SpecialInstructions");
                 }
                 cheddar = value;
-                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Cheddar"));
+
+                OnPropertyChanged("Cheddar");
             }
         }
 

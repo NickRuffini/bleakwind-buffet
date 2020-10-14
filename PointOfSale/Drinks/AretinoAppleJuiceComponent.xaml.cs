@@ -44,6 +44,23 @@ namespace PointOfSale.Drinks
             this.DataContext = aj;
         }
 
+        public ComboComponent var { get; set; }
+
+        /*public AretinoAppleJuiceComponent(FrameworkElement fe)
+        {
+            if (fe is ComboComponent cc)
+            {
+                var = cc;
+
+                this.DataContext = new AretinoAppleJuice();
+            }
+            else
+            {
+                throw new NotImplementedException();
+            }
+
+        }*/
+
         /// <summary>
         /// Event handler for changing the combo box's size value
         /// </summary>

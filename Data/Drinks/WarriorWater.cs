@@ -15,7 +15,6 @@ namespace BleakwindBuffet.Data.Drinks
 {
     public class WarriorWater : Drink, IOrderItem, INotifyPropertyChanged
     {
-        public event PropertyChangedEventHandler PropertyChanged;
 
         /// <summary>
         /// Gets the price of the item
@@ -48,8 +47,8 @@ namespace BleakwindBuffet.Data.Drinks
             set
             {
                 size = value;
-                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Size"));
-                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Name"));
+                OnPropertyChanged("Size");
+                OnPropertyChanged("Name");
             }
         }
 
@@ -69,14 +68,14 @@ namespace BleakwindBuffet.Data.Drinks
                 if (value == false)
                 {
                     specialInstructions.Add("Hold ice");
-                    PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Ice"));
-                    PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("SpecialInstructions"));
+                    OnPropertyChanged("Ice");
+                    OnPropertyChanged("SpecialInstructions");
                 }
                 else
                 {
                     specialInstructions.Remove("Hold ice");
-                    PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Ice"));
-                    PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("SpecialInstructions"));
+                    OnPropertyChanged("Ice");
+                    OnPropertyChanged("SpecialInstructions");
                 }
             }
         }
@@ -97,14 +96,14 @@ namespace BleakwindBuffet.Data.Drinks
                 if (value == true)
                 {
                     specialInstructions.Add("Add lemon");
-                    PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Lemon"));
-                    PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("SpecialInstructions"));
+                    OnPropertyChanged("Lemon");
+                    OnPropertyChanged("SpecialInstructions");
                 }
                 else
                 {
                     specialInstructions.Remove("Add lemon");
-                    PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Lemon"));
-                    PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("SpecialInstructions"));
+                    OnPropertyChanged("Lemon");
+                    OnPropertyChanged("SpecialInstructions");
                 }
             }
         }

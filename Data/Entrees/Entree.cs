@@ -8,14 +8,23 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 using BleakwindBuffet.Data.Enums;
+using BleakwindBuffet.Data.Generic;
+using System.ComponentModel;
 
 namespace BleakwindBuffet.Data.Entrees
 {
     /// <summary>
     /// A base class representing the common properties of entrees
     /// </summary>
-    public abstract class Entree
+    public abstract class Entree : IOrderItem
     {
+        public event PropertyChangedEventHandler PropertyChanged;
+
+        protected void OnPropertyChanged(string s)
+        {
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(s));
+        }
+
         /// <summary>
         /// The price of the entree
         /// </summary>

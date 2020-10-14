@@ -15,7 +15,6 @@ namespace BleakwindBuffet.Data.Sides
 {
     public class FriedMiraak : Side, IOrderItem, INotifyPropertyChanged
     {
-        public event PropertyChangedEventHandler PropertyChanged;
 
         /// <summary>
         /// Gets the price of the item
@@ -52,28 +51,28 @@ namespace BleakwindBuffet.Data.Sides
                 {
                     price = 1.78;
                     calories = 151;
-                    PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Size"));
-                    PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Price"));
-                    PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Calories"));
-                    PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Name"));
+                    OnPropertyChanged("Size");
+                    OnPropertyChanged("Price");
+                    OnPropertyChanged("Calories");
+                    OnPropertyChanged("Name");
                 }
                 else if (value == Size.Medium)
                 {
                     price = 2.01;
                     calories = 236;
-                    PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Size"));
-                    PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Price"));
-                    PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Calories"));
-                    PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Name"));
+                    OnPropertyChanged("Size");
+                    OnPropertyChanged("Price");
+                    OnPropertyChanged("Calories");
+                    OnPropertyChanged("Name");
                 }
                 else
                 {
                     price = 2.88;
                     calories = 306;
-                    PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Size"));
-                    PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Price"));
-                    PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Calories"));
-                    PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Name"));
+                    OnPropertyChanged("Size");
+                    OnPropertyChanged("Price");
+                    OnPropertyChanged("Calories");
+                    OnPropertyChanged("Name");
                 }
             }
         }

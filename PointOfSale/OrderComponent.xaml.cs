@@ -68,6 +68,16 @@ namespace PointOfSale
         }
 
         /// <summary>
+        /// Complete button event handler that brings us to the Payment Options Screen
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void completeButton_Click(object sender, RoutedEventArgs e)
+        {
+            SwapScreen(new PaymentOptionsScreenComponent());
+        }
+
+        /// <summary>
         /// Method that handles editing an existing item in the order
         /// </summary>
         /// <param name="sender"> ListBoxItem we are clicking on </param>

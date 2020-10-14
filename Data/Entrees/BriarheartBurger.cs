@@ -14,7 +14,6 @@ namespace BleakwindBuffet.Data.Entrees
 {
     public class BriarheartBurger : Entree, IOrderItem, INotifyPropertyChanged
     {
-        public event PropertyChangedEventHandler PropertyChanged;
 
         /// <summary>
         /// Gets the price of the item
@@ -47,15 +46,16 @@ namespace BleakwindBuffet.Data.Entrees
                 if (!value)
                 {
                     specialInstructions.Add("Hold ketchup");
-                    PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("SpecialInstructions"));
+
+                    OnPropertyChanged("SpecialInstructions");
                 }
                 else
                 {
                     specialInstructions.Remove("Hold ketchup");
-                    PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("SpecialInstructions"));
+                    OnPropertyChanged("SpecialInstructions");
                 }
                 ketchup = value;
-                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Ketchup"));
+                OnPropertyChanged("Ketchup");
             }
         }
 
@@ -74,15 +74,16 @@ namespace BleakwindBuffet.Data.Entrees
                 if (!value)
                 {
                     specialInstructions.Add("Hold bun");
-                    PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("SpecialInstructions"));
+                    OnPropertyChanged("SpecialInstructions");
                 }
                 else
                 {
                     specialInstructions.Remove("Hold bun");
-                    PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("SpecialInstructions"));
+                    OnPropertyChanged("SpecialInstructions");
                 }
                 bun = value;
-                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Bun"));
+
+                OnPropertyChanged("Bun");
             }
         }
 
@@ -101,15 +102,16 @@ namespace BleakwindBuffet.Data.Entrees
                 if (!value)
                 {
                     specialInstructions.Add("Hold mustard");
-                    PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("SpecialInstructions"));
+                    OnPropertyChanged("SpecialInstructions");
                 }
                 else
                 {
                     specialInstructions.Remove("Hold mustard");
-                    PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("SpecialInstructions"));
+                    OnPropertyChanged("SpecialInstructions");
                 }
                 mustard = value;
-                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Mustard"));
+                
+                OnPropertyChanged("Mustard");
             }
         }
 
@@ -128,15 +130,16 @@ namespace BleakwindBuffet.Data.Entrees
                 if (!value)
                 {
                     specialInstructions.Add("Hold pickle");
-                    PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("SpecialInstructions"));
+                    OnPropertyChanged("SpecialInstructions");
                 }
                 else
                 {
                     specialInstructions.Remove("Hold pickle");
-                    PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("SpecialInstructions"));
+                    OnPropertyChanged("SpecialInstructions");
                 }
                 pickle= value;
-                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Pickle"));
+                
+                OnPropertyChanged("Pickle");
             }
         }
 
@@ -155,15 +158,16 @@ namespace BleakwindBuffet.Data.Entrees
                 if (!value)
                 {
                     specialInstructions.Add("Hold cheese");
-                    PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("SpecialInstructions"));
+                    OnPropertyChanged("SpecialInstructions");
                 }
                 else
                 {
                     specialInstructions.Remove("Hold cheese");
-                    PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("SpecialInstructions"));
+                    OnPropertyChanged("SpecialInstructions");
                 }
                 cheese = value;
-                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Cheese"));
+
+                OnPropertyChanged("Cheese");
             }
         }
 

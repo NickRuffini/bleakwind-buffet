@@ -14,7 +14,6 @@ namespace BleakwindBuffet.Data.Entrees
 {
     public class PhillyPoacher : Entree, IOrderItem, INotifyPropertyChanged
     {
-        public event PropertyChangedEventHandler PropertyChanged;
 
         /// <summary>
         /// Gets the price of the item
@@ -47,15 +46,16 @@ namespace BleakwindBuffet.Data.Entrees
                 if (!value)
                 {
                     specialInstructions.Add("Hold sirloin");
-                    PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("SpecialInstructions"));
+                    OnPropertyChanged("SpecialInstructions");
                 }
                 else
                 {
                     specialInstructions.Remove("Hold sirloin");
-                    PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("SpecialInstructions"));
+                    OnPropertyChanged("SpecialInstructions");
                 }
                 sirloin = value;
-                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Sirloin"));
+
+                OnPropertyChanged("Sirloin");
             }
         }
 
@@ -74,15 +74,16 @@ namespace BleakwindBuffet.Data.Entrees
                 if (!value)
                 {
                     specialInstructions.Add("Hold onion");
-                    PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("SpecialInstructions"));
+                    OnPropertyChanged("SpecialInstructions");
                 }
                 else
                 {
                     specialInstructions.Remove("Hold onion");
-                    PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("SpecialInstructions"));
+                    OnPropertyChanged("SpecialInstructions");
                 }
                 onion = value;
-                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Onion"));
+
+                OnPropertyChanged("Onion");
             }
         }
 
@@ -101,15 +102,16 @@ namespace BleakwindBuffet.Data.Entrees
                 if (!value)
                 {
                     specialInstructions.Add("Hold roll");
-                    PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("SpecialInstructions"));
+                    OnPropertyChanged("SpecialInstructions");
                 }
                 else
                 {
                     specialInstructions.Remove("Hold roll");
-                    PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("SpecialInstructions"));
+                    OnPropertyChanged("SpecialInstructions");
                 }
                 roll = value;
-                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Roll"));
+
+                OnPropertyChanged("Roll");
             }
         }
 

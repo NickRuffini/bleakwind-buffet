@@ -9,4 +9,10 @@
     <Folder Include="Documentation\" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Reference Include="RoundRegister">
+      <HintPath>..\RoundRegister.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
 </Project>

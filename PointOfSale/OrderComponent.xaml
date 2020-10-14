@@ -55,8 +55,10 @@
             <ListBox x:Name="orderList"
                      SelectionChanged="EditItem"
                      IsSynchronizedWithCurrentItem="True"
-                     ItemTemplate="{StaticResource ListBoxItemTemplate}">
-
+                     ItemTemplate="{StaticResource ListBoxItemTemplate}"
+                     MaxHeight="300"
+                     ScrollViewer.VerticalScrollBarVisibility="Visible">
+                
             </ListBox>
         </StackPanel>
 
@@ -92,7 +94,8 @@
             <TextBlock Text="{Binding Path=Total}"/>
         </Viewbox>
 
-        <Button Grid.Row="2" Grid.Column="4" Margin="5">
+        <Button Grid.Row="2" Grid.Column="4" Margin="5"
+                Click="completeButton_Click">
             <Viewbox Stretch="Fill">
                 <TextBlock Text="Complete Order"/>
             </Viewbox>

@@ -26,7 +26,7 @@ namespace BleakwindBuffet.Data.Generic
         /// </summary>
         public double Price
         {
-            get { return drink.Price + entree.Price + side.Price - 1; }
+            get { return Math.Round(drink.Price + entree.Price + side.Price - 1, 2); }
         }
 
         /// <summary>
@@ -46,12 +46,36 @@ namespace BleakwindBuffet.Data.Generic
             get { return drink; }
             set
             {
+                /*if (drink != null)
+                {
+                    drink.PropertyChanged -= CollectionItemChangedListener;
+
+                    drink = value;
+
+                    drink.PropertyChanged += CollectionItemChangedListener;
+
+                    PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Drink"));
+                    PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Calories"));
+                    PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Price"));
+                    PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("DrinkName"));
+                    PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("SpecialInstructions"));
+                }*/
+
+                if (drink != null)
+                {
+                    drink.PropertyChanged -= CollectionItemChangedListener;
+                }
+
                 drink = value;
+
+                drink.PropertyChanged += CollectionItemChangedListener;
+
                 PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Drink"));
                 PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Calories"));
                 PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Price"));
-                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("SideName"));
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("DrinkName"));
                 PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("SpecialInstructions"));
+
             }
         }
 
@@ -79,7 +103,7 @@ namespace BleakwindBuffet.Data.Generic
                 PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Entree"));
                 PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Calories"));
                 PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Price"));
-                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("SideName"));
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("EntreeName"));
                 PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("SpecialInstructions"));
             }
         }
@@ -139,6 +163,41 @@ namespace BleakwindBuffet.Data.Generic
                 list.Add(SideName);
                 list.AddRange(Side.SpecialInstructions);
                 return list;
+            }
+        }
+
+        /// <summary>
+        /// Event Listener for when the ITEMS themselves change in our collection
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        void CollectionItemChangedListener(object sender, PropertyChangedEventArgs e)
+        {
+            if (e.PropertyName == "Price")
+            {
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Price"));
+            }
+            if (e.PropertyName == "Calories")
+            {
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Calories"));
+            }
+            if (e.PropertyName == "SpecialInstructions")
+            {
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("SpecialInstructions"));
+            }
+            if (e.PropertyName == "Size")
+            {
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("DrinkName"));
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("EntreeName"));
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("SideName"));
+            }
+            if (e.PropertyName == "Decaf")
+            {
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("DrinkName"));
+            }
+            if (e.PropertyName == "Flavor")
+            {
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("DrinkName"));
             }
         }
     }

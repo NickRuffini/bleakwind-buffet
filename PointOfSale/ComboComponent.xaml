@@ -62,6 +62,7 @@
                 <TextBlock Text="Edit Drink"/>
             </Viewbox>
         </Button>
+        <Border Name="drinkContainerBorder" Grid.Column="3" Grid.Row="1" Grid.RowSpan="3"/>
         
         <Button x:Name="addEntreeButton" Grid.Row="2" 
                 Grid.Column="1" Margin="10, 10, 10, 10" 
@@ -77,6 +78,7 @@
                 <TextBlock Text="Edit Entree"/>
             </Viewbox>
         </Button>
+        <Border Name="entreeContainerBorder" Grid.Column="3" Grid.Row="1" Grid.RowSpan="3"/>
         
         <Button x:Name="addSideButton" Grid.Row="3" 
                 Grid.Column="1" Margin="10, 10, 10, 10" 
@@ -92,20 +94,21 @@
                 <TextBlock Text="Edit Side"/>
             </Viewbox>
         </Button>
+        <Border Name="sideContainerBorder" Grid.Column="3" Grid.Row="1" Grid.RowSpan="3"/>
         
-        <TextBlock Text="{Binding Path=Drink}"
+        <TextBlock Text="{Binding Path=DrinkName}"
                    TextWrapping="Wrap"
                    Grid.Column="4"
                    Grid.Row="1">
             
         </TextBlock>
-        <TextBlock Text="{Binding Path=Entree}"
+        <TextBlock Text="{Binding Path=EntreeName}"
                    TextWrapping="Wrap"
                    Grid.Column="4"
                    Grid.Row="2">
 
         </TextBlock>
-        <TextBlock Text="{Binding Path=Side}"
+        <TextBlock Text="{Binding Path=SideName}"
                    TextWrapping="Wrap"
                    Grid.Column="4"
                    Grid.Row="3">
@@ -168,5 +171,55 @@
             </ComboBox>
         </StackPanel>
         -->
+        <StackPanel Grid.Column="3"
+                    Grid.Row="2"
+                    Name="entreeStackPanel"
+                    Orientation="Horizontal"
+                    Margin="10, 10, 10, 10"
+                    Visibility="Collapsed">
+            <Button x:Name="bbComboButton"
+                    Click="bbComboButton_Click"
+                    MaxWidth="100">
+                <TextBlock Text="Briarheart Burger"
+                           TextWrapping="Wrap"/>
+            </Button>
+            <Button x:Name="ddComboButton"
+                    Click="ddComboButton_Click"
+                    MaxWidth="100">
+                <TextBlock Text="Double Draugr"
+                           TextWrapping="Wrap"/>
+            </Button>
+            <Button x:Name="gooComboButton"
+                    Click="gooComboButton_Click"
+                    MaxWidth="100">
+                <TextBlock Text="Garden Orc Omelette"
+                           TextWrapping="Wrap"/>
+            </Button>
+            <Button x:Name="ppComboButton"
+                    Click="ppComboButton_Click"
+                    MaxWidth="100">
+                <TextBlock Text="Philly Poacher"
+                           TextWrapping="Wrap"/>
+            </Button>
+            <Button x:Name="smComboButton"
+                    Click="smComboButton_Click"
+                    MaxWidth="100">
+                <TextBlock Text="Smokehouse Skeleton"
+                           TextWrapping="Wrap"/>
+            </Button>
+            <Button x:Name="ttComboButton"
+                    Click="ttComboButton_Click"
+                    MaxWidth="100">
+                <TextBlock Text="Thalmor Triple"
+                           TextWrapping="Wrap"/>
+            </Button>
+            <Button x:Name="ttbComboButton"
+                    Click="ttbComboButton_Click"
+                    MaxWidth="100">
+                <TextBlock Text="Thugs T-Bone"
+                           TextWrapping="Wrap"/>
+            </Button>
+            
+        </StackPanel>
     </Grid>
 </UserControl>

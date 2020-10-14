@@ -14,10 +14,8 @@ using System.Runtime.CompilerServices;
 
 namespace BleakwindBuffet.Data.Drinks
 {
-    public class AretinoAppleJuice : Drink, IOrderItem, INotifyPropertyChanged
+    public class AretinoAppleJuice : Drink
     {
-        public event PropertyChangedEventHandler PropertyChanged;
-
         /// <summary>
         /// Gets the price of the item
         /// </summary>
@@ -53,28 +51,34 @@ namespace BleakwindBuffet.Data.Drinks
                 {
                     price = 0.62;
                     calories = 44;
+                    OnPropertyChanged("Size");
+                    OnPropertyChanged("Price");
+                    OnPropertyChanged("Calories");
+                    OnPropertyChanged("Name");
+                    /*
                     PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Size"));
                     PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Price"));
                     PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Calories"));
-                    PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Name"));
+                    PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Name"));*/
                 }
                 else if (value == Size.Medium)
                 {
                     price = 0.87;
                     calories = 88;
-                    PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Size"));
-                    PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Price"));
-                    PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Calories"));
-                    PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Name"));
+                    OnPropertyChanged("Size");
+                    OnPropertyChanged("Price");
+                    OnPropertyChanged("Calories");
+                    OnPropertyChanged("Name");
+                    
                 }
                 else
                 {
                     price = 1.01;
                     calories = 132;
-                    PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Size"));
-                    PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Price"));
-                    PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Calories"));
-                    PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Name"));
+                    OnPropertyChanged("Size");
+                    OnPropertyChanged("Price");
+                    OnPropertyChanged("Calories");
+                    OnPropertyChanged("Name");
                 }
             }
         }
@@ -95,14 +99,15 @@ namespace BleakwindBuffet.Data.Drinks
                 if (value == true)
                 {
                     specialInstructions.Add("Add ice");
-                    PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Ice"));
-                    PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("SpecialInstructions"));
+                    OnPropertyChanged("Ice");
+                    OnPropertyChanged("SpecialInstructions");
+
                 }
                 else
                 {
                     specialInstructions.Remove("Add ice");
-                    PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Ice"));
-                    PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("SpecialInstructions"));
+                    OnPropertyChanged("Ice");
+                    OnPropertyChanged("SpecialInstructions");
                 }
             }
         }
