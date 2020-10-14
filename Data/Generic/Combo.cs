@@ -99,7 +99,15 @@ namespace BleakwindBuffet.Data.Generic
             get { return entree; }
             set
             {
+                if (entree != null)
+                {
+                    entree.PropertyChanged -= CollectionItemChangedListener;
+                }
+
                 entree = value;
+
+                entree.PropertyChanged += CollectionItemChangedListener;
+
                 PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Entree"));
                 PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Calories"));
                 PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Price"));
@@ -128,7 +136,15 @@ namespace BleakwindBuffet.Data.Generic
             get { return side; }
             set
             {
+                if (side != null)
+                {
+                    side.PropertyChanged -= CollectionItemChangedListener;
+                }
+
                 side = value;
+
+                side.PropertyChanged += CollectionItemChangedListener;
+
                 PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Side"));
                 PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Calories"));
                 PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Price"));
@@ -187,8 +203,8 @@ namespace BleakwindBuffet.Data.Generic
             }
             if (e.PropertyName == "Size")
             {
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("SpecialInstructions"));
                 PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("DrinkName"));
-                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("EntreeName"));
                 PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("SideName"));
             }
             if (e.PropertyName == "Decaf")

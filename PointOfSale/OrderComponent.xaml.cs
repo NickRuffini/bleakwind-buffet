@@ -185,6 +185,12 @@ namespace PointOfSale
                 VokunSaladComponent vsc = new VokunSaladComponent(test);
                 containerBorder.Child = vsc;
             }
+            if (index > -1 && lbi is Combo)
+            {
+                Combo test = lbi as Combo;
+                ComboComponent cc = new ComboComponent(test);
+                containerBorder.Child = cc;
+            }
         }
 
         /// <summary>

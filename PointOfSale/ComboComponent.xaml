@@ -47,7 +47,7 @@
                 <TextBlock Text="Add"/>
             </Viewbox>
         </Button>
-        
+
         <Button x:Name="addDrinkButton" Grid.Row="1" 
                 Grid.Column="1" Margin="10, 10, 10, 10" 
                 Click="addDrinkButton_Click">
@@ -220,6 +220,39 @@
                            TextWrapping="Wrap"/>
             </Button>
             
+        </StackPanel>
+
+        <StackPanel Grid.Column="3"
+                    Grid.Row="3"
+                    Name="sideStackPanel"
+                    Orientation="Horizontal"
+                    Margin="10, 10, 10, 10"
+                    Visibility="Collapsed">
+            
+            <Button x:Name="dwfComboButton"
+                    Click="dwfComboButton_Click"
+                    MaxWidth="100">
+                <TextBlock Text="Dragonborn Waffle Fries"
+                           TextWrapping="Wrap"/>
+            </Button>
+            <Button x:Name="fmComboButton"
+                    Click="fmComboButton_Click"
+                    MaxWidth="100">
+                <TextBlock Text="Fried Miraak"
+                           TextWrapping="Wrap"/>
+            </Button>
+            <Button x:Name="mogComboButton"
+                    Click="mogComboButton_Click"
+                    MaxWidth="100">
+                <TextBlock Text="Mad Otar Grits"
+                           TextWrapping="Wrap"/>
+            </Button>
+            <Button x:Name="vsComboButton"
+                    Click="vsComboButton_Click"
+                    MaxWidth="100">
+                <TextBlock Text="Vokun Salad"
+                           TextWrapping="Wrap"/>
+            </Button>
         </StackPanel>
     </Grid>
 </UserControl>
