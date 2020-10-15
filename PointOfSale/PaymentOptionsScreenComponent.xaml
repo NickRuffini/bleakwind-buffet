@@ -21,13 +21,15 @@
         </Grid.RowDefinitions>
 
         <Button x:Name="cashButton" Grid.Row="1" 
-                Grid.Column="1" Margin="30">
+                Grid.Column="1" Margin="30"
+                Click="cashButton_Click">
             <Viewbox Stretch="Fill">
                 <TextBlock Text="Cash"/>
             </Viewbox>
         </Button>
         <Button x:Name="cardButton" Grid.Row="1" 
-                Grid.Column="3" Margin="30">
+                Grid.Column="3" Margin="30"
+                Click="cardButton_Click">
             <Viewbox Stretch="Fill">
                 <TextBlock Text="Debit/Credit"
                            TextWrapping="Wrap"/>

@@ -1,0 +1,180 @@
+﻿<UserControl x:Class="PointOfSale.CashPaymentComponent"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:PointOfSale"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="2*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="2*"/>
+        </Grid.ColumnDefinitions>
+
+        <local:CurrencyControl MoneyAmount="$100"
+                               Grid.Row="1" Grid.ColumnSpan="3"
+                               HorizontalAlignment="Center">
+
+        </local:CurrencyControl>
+        <local:CurrencyControl MoneyAmount="$100"
+                               Grid.Row="2" Grid.ColumnSpan="3"
+                               HorizontalAlignment="Center">
+
+        </local:CurrencyControl>
+        <local:CurrencyControl MoneyAmount="$100"
+                               Grid.Row="3" Grid.ColumnSpan="3"
+                               HorizontalAlignment="Center">
+
+        </local:CurrencyControl>
+        <local:CurrencyControl MoneyAmount="$100"
+                               Grid.Row="4" Grid.ColumnSpan="3"
+                               HorizontalAlignment="Center">
+
+        </local:CurrencyControl>
+        <local:CurrencyControl MoneyAmount="$100"
+                               Grid.Row="5" Grid.ColumnSpan="3"
+                               HorizontalAlignment="Center">
+
+        </local:CurrencyControl>
+        <local:CurrencyControl MoneyAmount="$100"
+                               Grid.Row="6" Grid.ColumnSpan="3"
+                               HorizontalAlignment="Center">
+
+        </local:CurrencyControl>
+        <local:CurrencyControl MoneyAmount="$100"
+                               Grid.Row="7" Grid.ColumnSpan="3"
+                               HorizontalAlignment="Center">
+
+        </local:CurrencyControl>
+
+        <local:CurrencyControl MoneyAmount="$100"
+                               Grid.Row="1" Grid.Column="3"
+                               Grid.ColumnSpan="3"
+                               HorizontalAlignment="Center">
+
+        </local:CurrencyControl>
+        <local:CurrencyControl MoneyAmount="$100"
+                               Grid.Row="2" Grid.Column="3"
+                               Grid.ColumnSpan="3"
+                               HorizontalAlignment="Center">
+
+        </local:CurrencyControl>
+        <local:CurrencyControl MoneyAmount="$100"
+                               Grid.Row="3" Grid.Column="3"
+                               Grid.ColumnSpan="3"
+                               HorizontalAlignment="Center">
+
+        </local:CurrencyControl>
+        <local:CurrencyControl MoneyAmount="$100"
+                               Grid.Row="4" Grid.Column="3"
+                               Grid.ColumnSpan="3"
+                               HorizontalAlignment="Center">
+
+        </local:CurrencyControl>
+        <local:CurrencyControl MoneyAmount="$100"
+                               Grid.Row="5" Grid.Column="3"
+                               Grid.ColumnSpan="3"
+                               HorizontalAlignment="Center">
+
+        </local:CurrencyControl>
+        <local:CurrencyControl MoneyAmount="$100"
+                               Grid.Row="6" Grid.Column="3"
+                               Grid.ColumnSpan="3"
+                               HorizontalAlignment="Center">
+
+        </local:CurrencyControl>
+
+        <Button x:Name="finalizeSaleButton"
+                Grid.Row="7" Grid.Column="5"
+                Margin="7">
+            <Viewbox Stretch="Fill">
+                <TextBlock Text="Finalize Sale"
+                           TextWrapping="Wrap"/>
+            </Viewbox>
+        </Button>
+        <Button x:Name="returnButton"
+                Grid.Row="8" Grid.Column="0"
+                Margin="7" Click="returnButton_Click">
+            <Viewbox Stretch="Fill">
+                <TextBlock Text="Return to Order"
+                           TextWrapping="Wrap"/>
+            </Viewbox>
+        </Button>
+
+        <TextBlock Grid.Row="0" Grid.Column="0"
+                   FontSize="15"
+                   HorizontalAlignment="Right"
+                   VerticalAlignment="Bottom"
+                   TextWrapping="Wrap">
+            From Customer
+        </TextBlock>
+        <TextBlock Grid.Row="0" Grid.Column="2"
+                   FontSize="15"
+                   HorizontalAlignment="Left"
+                   VerticalAlignment="Bottom"
+                   TextWrapping="Wrap">
+            Give As Change
+        </TextBlock>
+
+        <TextBlock Grid.Row="0" Grid.Column="4"
+                   FontSize="15"
+                   HorizontalAlignment="Right"
+                   VerticalAlignment="Bottom"
+                   TextWrapping="Wrap">
+            From Customer
+        </TextBlock>
+        <TextBlock Grid.Row="0" Grid.Column="5"
+                   FontSize="15"
+                   HorizontalAlignment="Right"
+                   VerticalAlignment="Bottom"
+                   TextWrapping="Wrap">
+            Give as Change
+        </TextBlock>
+
+        <TextBlock Grid.Row="8" Grid.Column="1"
+                   FontSize="15"
+                   HorizontalAlignment="Center"
+                   VerticalAlignment="Center"
+                   TextWrapping="Wrap">
+            Amount Due:
+        </TextBlock>
+        <TextBlock Grid.Row="8" Grid.Column="2"
+                   FontSize="25"
+                   HorizontalAlignment="Center"
+                   VerticalAlignment="Center"
+                   TextWrapping="Wrap">
+            $0.00
+        </TextBlock>
+        <TextBlock Grid.Row="8" Grid.Column="3"
+                   FontSize="15"
+                   HorizontalAlignment="Center"
+                   VerticalAlignment="Center"
+                   TextWrapping="Wrap">
+            Change Owed:
+        </TextBlock>
+        <TextBlock Grid.Row="8" Grid.Column="4"
+                   FontSize="25"
+                   HorizontalAlignment="Center"
+                   VerticalAlignment="Center"
+                   TextWrapping="Wrap">
+            $0.00
+        </TextBlock>
+
+    </Grid>
+</UserControl>
