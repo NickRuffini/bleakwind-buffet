@@ -198,12 +198,12 @@ namespace BleakwindBuffet.DataTests.UnitTests.GenericTests
         }
 
         [Fact]
-        public void ChangingDrinkNotifiesSideNameProperty()
+        public void ChangingDrinkNotifiesDrinkNameProperty()
         {
             AretinoAppleJuice aj = new AretinoAppleJuice();
             Combo c = new Combo();
 
-            Assert.PropertyChanged(c, "SideName", () =>
+            Assert.PropertyChanged(c, "DrinkName", () =>
             {
                 c.Drink = aj;
             });
@@ -345,12 +345,12 @@ namespace BleakwindBuffet.DataTests.UnitTests.GenericTests
         }
 
         [Fact]
-        public void ChangingEntreeNotifiesSideNameProperty()
+        public void ChangingEntreeNotifiesEntreeNameProperty()
         {
             BriarheartBurger bb = new BriarheartBurger();
             Combo c = new Combo();
 
-            Assert.PropertyChanged(c, "SideName", () =>
+            Assert.PropertyChanged(c, "EntreeName", () =>
             {
                 c.Entree = bb;
             });

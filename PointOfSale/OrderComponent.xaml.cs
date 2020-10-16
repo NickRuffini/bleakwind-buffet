@@ -233,5 +233,130 @@ namespace PointOfSale
                 }
             }
         }
+
+        /// <summary>
+        /// Prints the receipt for the order, which is the data context of this!
+        /// </summary>
+        /// <param name="paymentMethod"> Can be "Cash" or "Card"</param>
+        public void printReceipt(string paymentMethod)
+        {
+            if (paymentMethod == "Card")
+            {
+                if (this.DataContext is Order o)
+                {
+                    //Prints the order number
+                    int orderNumber = o.Number;
+                    string orderNumberString = orderNumber.ToString();
+                    printWithLineBreaks(orderNumberString, 40);
+
+                    //Prints time Orde was finalized (now)
+                    DateTime now = DateTime.Now;
+                    string timeString = now.ToString();
+                    printWithLineBreaks(timeString, 40);
+
+                    //Prints each item in the listbox
+                    foreach(IOrderItem item in o)
+                    {
+                        printWithLineBreaks(item.ToString(), 40);
+                        printWithLineBreaks(item.Price.ToString(), 40);
+                        foreach(string s in item.SpecialInstructions)
+                        {
+                            printWithLineBreaks(s, 40);
+                        }
+                    }
+
+                    //Prints the subtotal of the order
+                    double subtotal = o.Subtotal;
+                    string subtotalString = "$" + subtotal.ToString();
+                    printWithLineBreaks(subtotalString, 40);
+
+                    //Prints the tax of the order
+                    double tax = o.Tax;
+                    string taxString = "$" + tax.ToString();
+                    printWithLineBreaks(taxString, 40);
+
+                    //Prints the total of the order
+                    double total = o.Total;
+                    string totalString = "$" + total.ToString();
+                    printWithLineBreaks(totalString, 40);
+
+                    //Prints the payment method of the order
+                    printWithLineBreaks(paymentMethod, 40);
+                }
+            }
+            if (paymentMethod == "Cash")
+            {
+                if (this.DataContext is Order o)
+                {
+                    //Prints the order number
+                    int orderNumber = o.Number;
+                    string orderNumberString = orderNumber.ToString();
+                    printWithLineBreaks(orderNumberString, 40);
+
+                    //Prints time Order was finalized (now)
+                    DateTime now = DateTime.Now;
+                    string timeString = now.ToString();
+                    printWithLineBreaks(timeString, 40);
+
+                    //Prints each item in the listbox
+                    foreach (IOrderItem item in o)
+                    {
+                        printWithLineBreaks(item.ToString(), 40);
+                        printWithLineBreaks(item.Price.ToString(), 40);
+                        foreach (string s in item.SpecialInstructions)
+                        {
+                            printWithLineBreaks(s, 40);
+                        }
+                    }
+
+                    //Prints the subtotal of the order
+                    double subtotal = o.Subtotal;
+                    string subtotalString = "$" + subtotal.ToString();
+                    printWithLineBreaks(subtotalString, 40);
+
+                    //Prints the tax of the order
+                    double tax = o.Tax;
+                    string taxString = "$" + tax.ToString();
+                    printWithLineBreaks(taxString, 40);
+
+                    //Prints the total of the order
+                    double total = o.Total;
+                    string totalString = "$" + total.ToString();
+                    printWithLineBreaks(totalString, 40);
+
+                    //Prints the payment method of the order
+                    printWithLineBreaks(paymentMethod, 40);
+
+                    //Needs to print change owed as well!!!!
+
+
+
+
+
+                }
+            }
+        }
+
+        /// <summary>
+        /// Adds line breaks to a string for a designated interval
+        /// </summary>
+        /// <param name="input"> String we are breaking up (potentially) </param>
+        /// <param name="maxLineLength"> Lenght we are breaking at (this case 40) </param>
+        /// <returns></returns>
+        public void printWithLineBreaks(string input, int maxLineLength)
+        {
+            if (input == null)
+            {
+                throw new ArgumentNullException();
+            }
+
+            for (var i = 0; i < input.Length; i += maxLineLength)
+            {
+                string test = input.Substring(i, Math.Min(maxLineLength, input.Length - i));
+                RoundRegister.RecieptPrinter.PrintLine(input.Substring(i, Math.Min(maxLineLength, input.Length - i)));
+            }
+
+
+        }
     }
 }

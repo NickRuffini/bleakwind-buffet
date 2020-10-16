@@ -20,9 +20,11 @@ namespace PointOfSale
     /// </summary>
     public partial class CashPaymentComponent : UserControl
     {
-        public CashPaymentComponent()
+        public CashPaymentComponent(RegisterViewModel rvm)
         {
             InitializeComponent();
+
+            this.DataContext = rvm;
         }
 
         private void returnButton_Click(object sender, RoutedEventArgs e)

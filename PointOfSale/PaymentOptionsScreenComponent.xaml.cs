@@ -55,6 +55,7 @@ namespace PointOfSale
                         MessageBox.Show("Card Approved");
 
                         // Print order receipt
+                        oc.printReceipt("Card");
 
                         oc.orderList.Items.Clear();
                         oc.containerBorder.Child = new MenuSelectionComponent();
@@ -73,7 +74,7 @@ namespace PointOfSale
                         MessageBox.Show("Read Error");
                         break;
                 }
-
+                
             }
         }
 
