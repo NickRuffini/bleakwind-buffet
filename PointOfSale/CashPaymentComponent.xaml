@@ -28,73 +28,86 @@
         </Grid.ColumnDefinitions>
 
         <local:CurrencyControl MoneyAmount="$100"
-                               Grid.Row="1" Grid.ColumnSpan="3"
+                               AmountFromCustomer="{Binding Path=CustomerHundredDollars}"
+                               Grid.Row="1" Grid.ColumnSpan="2"
                                HorizontalAlignment="Center">
 
         </local:CurrencyControl>
-        <local:CurrencyControl MoneyAmount="$100"
-                               Grid.Row="2" Grid.ColumnSpan="3"
+        <local:CurrencyControl MoneyAmount="  $50"
+                               AmountFromCustomer="{Binding Path=CustomerFiftyDollars}"
+                               Grid.Row="2" Grid.ColumnSpan="2"
                                HorizontalAlignment="Center">
 
         </local:CurrencyControl>
-        <local:CurrencyControl MoneyAmount="$100"
-                               Grid.Row="3" Grid.ColumnSpan="3"
+        <local:CurrencyControl MoneyAmount="  $20"
+                               AmountFromCustomer="{Binding Path=CustomerTwentyDollars}"
+                               Grid.Row="3" Grid.ColumnSpan="2"
                                HorizontalAlignment="Center">
 
         </local:CurrencyControl>
-        <local:CurrencyControl MoneyAmount="$100"
-                               Grid.Row="4" Grid.ColumnSpan="3"
+        <local:CurrencyControl MoneyAmount="  $10"
+                               AmountFromCustomer="{Binding Path=CustomerTenDollars}"
+                               Grid.Row="4" Grid.ColumnSpan="2"
                                HorizontalAlignment="Center">
 
         </local:CurrencyControl>
-        <local:CurrencyControl MoneyAmount="$100"
-                               Grid.Row="5" Grid.ColumnSpan="3"
+        <local:CurrencyControl MoneyAmount="    $5"
+                               AmountFromCustomer="{Binding Path=CustomerFiveDollars}"
+                               Grid.Row="5" Grid.ColumnSpan="2"
                                HorizontalAlignment="Center">
 
         </local:CurrencyControl>
-        <local:CurrencyControl MoneyAmount="$100"
-                               Grid.Row="6" Grid.ColumnSpan="3"
+        <local:CurrencyControl MoneyAmount="    $2"
+                               AmountFromCustomer="{Binding Path=CustomerTwoDollars}"
+                               Grid.Row="6" Grid.ColumnSpan="2"
                                HorizontalAlignment="Center">
 
         </local:CurrencyControl>
-        <local:CurrencyControl MoneyAmount="$100"
-                               Grid.Row="7" Grid.ColumnSpan="3"
+        <local:CurrencyControl MoneyAmount="    $1"
+                               AmountFromCustomer="{Binding Path=CustomerOneDollars}"
+                               Grid.Row="7" Grid.ColumnSpan="2"
                                HorizontalAlignment="Center">
 
         </local:CurrencyControl>
 
-        <local:CurrencyControl MoneyAmount="$100"
-                               Grid.Row="1" Grid.Column="3"
+        <local:CurrencyControl MoneyAmount="     $1"
+                               AmountFromCustomer="{Binding Path=CustomerOneDollarCoin}"
+                               Grid.Row="1" Grid.Column="2"
                                Grid.ColumnSpan="3"
                                HorizontalAlignment="Center">
 
         </local:CurrencyControl>
-        <local:CurrencyControl MoneyAmount="$100"
-                               Grid.Row="2" Grid.Column="3"
+        <local:CurrencyControl MoneyAmount="$0.50"
+                               AmountFromCustomer="{Binding Path=CustomerHalfDollarCoin}"
+                               Grid.Row="2" Grid.Column="2"
                                Grid.ColumnSpan="3"
                                HorizontalAlignment="Center">
 
         </local:CurrencyControl>
-        <local:CurrencyControl MoneyAmount="$100"
-                               Grid.Row="3" Grid.Column="3"
+        <local:CurrencyControl MoneyAmount="$0.25"
+                               AmountFromCustomer="{Binding Path=CustomerQuarters}"
+                               Grid.Row="3" Grid.Column="2"
                                Grid.ColumnSpan="3"
                                HorizontalAlignment="Center">
 
         </local:CurrencyControl>
-        <local:CurrencyControl MoneyAmount="$100"
-                               Grid.Row="4" Grid.Column="3"
+        <local:CurrencyControl MoneyAmount="$0.10"
+                               AmountFromCustomer="{Binding Path=CustomerDimes}"
+                               Grid.Row="4" Grid.Column="2"
                                Grid.ColumnSpan="3"
                                HorizontalAlignment="Center">
 
         </local:CurrencyControl>
-        <local:CurrencyControl MoneyAmount="$100"
-                               Grid.Row="5" Grid.Column="3"
+        <local:CurrencyControl MoneyAmount="$0.05"
+                               AmountFromCustomer="{Binding Path=CustomerNickels}"
+                               Grid.Row="5" Grid.Column="2"
                                Grid.ColumnSpan="3"
                                HorizontalAlignment="Center">
 
         </local:CurrencyControl>
-        <local:CurrencyControl MoneyAmount="$100"
-                               Grid.Row="6" Grid.Column="3"
+        <local:CurrencyControl MoneyAmount="$0.01"
+                               AmountFromCustomer="{Binding Path=CustomerPennies}"
+                               Grid.Row="6" Grid.Column="2"
                                Grid.ColumnSpan="3"
                                HorizontalAlignment="Center">
 
@@ -124,7 +137,7 @@
                    TextWrapping="Wrap">
             From Customer
         </TextBlock>
-        <TextBlock Grid.Row="0" Grid.Column="2"
+        <TextBlock Grid.Row="0" Grid.Column="1"
                    FontSize="15"
                    HorizontalAlignment="Left"
                    VerticalAlignment="Bottom"
@@ -132,17 +145,17 @@
             Give As Change
         </TextBlock>
 
-        <TextBlock Grid.Row="0" Grid.Column="4"
+        <TextBlock Grid.Row="0" Grid.Column="3"
                    FontSize="15"
                    HorizontalAlignment="Right"
                    VerticalAlignment="Bottom"
                    TextWrapping="Wrap">
             From Customer
         </TextBlock>
-        <TextBlock Grid.Row="0" Grid.Column="5"
+        <TextBlock Grid.Row="0" Grid.Column="4"
                    FontSize="15"
-                   HorizontalAlignment="Right"
-                   VerticalAlignment="Bottom"
+                   HorizontalAlignment="Left"
+                   VerticalAlignment="Center"
                    TextWrapping="Wrap">
             Give as Change
         </TextBlock>
@@ -158,8 +171,9 @@
                    FontSize="25"
                    HorizontalAlignment="Center"
                    VerticalAlignment="Center"
+                   Text="{Binding Path=AmountDue}"
                    TextWrapping="Wrap">
-            $0.00
+            
         </TextBlock>
         <TextBlock Grid.Row="8" Grid.Column="3"
                    FontSize="15"

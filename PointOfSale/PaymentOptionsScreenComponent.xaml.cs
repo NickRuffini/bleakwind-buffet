@@ -86,8 +86,10 @@ namespace PointOfSale
         private void cashButton_Click(object sender, RoutedEventArgs e)
         {
             OrderComponent oc = this.FindAncestor<OrderComponent>();
-            oc.containerBorder.Child = new CashPaymentComponent(new RegisterViewModel());
+            if (oc.DataContext is Order o)
+            {
+                oc.containerBorder.Child = new CashPaymentComponent(new RegisterViewModel(o.Total));
+            }
         }
-
     }
 }

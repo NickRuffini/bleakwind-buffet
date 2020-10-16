@@ -10,30 +10,30 @@
         <StackPanel Orientation="Horizontal"
                     VerticalAlignment="Center">
             <TextBlock FontSize="30"
-                       Text="{Binding Path=MoneyAmount}"
+                       Text="{Binding Path=MoneyAmount, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=local:CurrencyControl}}"
                        VerticalAlignment="Center">
             </TextBlock>
-            <Button >
+            <Button Click="subtractButton_Click">
                 <Viewbox Stretch="Fill">
                     <TextBlock Text=" -"
                            TextWrapping="Wrap"/>
                 </Viewbox>
             </Button>
             <Border BorderBrush="Black" BorderThickness="2">
-                <TextBlock Text="0" FontSize="30"
+                <TextBlock Text="{Binding Path=AmountFromCustomer, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=local:CurrencyControl}}" FontSize="30"
                            TextAlignment="Center">
                     
                 </TextBlock>
             </Border>
             
-            <Button>
+            <Button Click="addButton_Click">
                 <Viewbox Stretch="Fill">
                     <TextBlock Text="+"
                            TextWrapping="Wrap"/>
                 </Viewbox>
             </Button>
             <TextBlock FontSize="30"
-                       Text="100"
+                       Text="{Binding Path=AmountToGiveBack, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=local:CurrencyControl}}"
                        VerticalAlignment="Center">
             </TextBlock>
         </StackPanel>
