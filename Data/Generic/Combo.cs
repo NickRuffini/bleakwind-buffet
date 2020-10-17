@@ -46,21 +46,6 @@ namespace BleakwindBuffet.Data.Generic
             get { return drink; }
             set
             {
-                /*if (drink != null)
-                {
-                    drink.PropertyChanged -= CollectionItemChangedListener;
-
-                    drink = value;
-
-                    drink.PropertyChanged += CollectionItemChangedListener;
-
-                    PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Drink"));
-                    PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Calories"));
-                    PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Price"));
-                    PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("DrinkName"));
-                    PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("SpecialInstructions"));
-                }*/
-
                 if (drink != null)
                 {
                     drink.PropertyChanged -= CollectionItemChangedListener;

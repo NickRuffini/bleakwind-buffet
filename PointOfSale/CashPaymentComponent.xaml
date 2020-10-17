@@ -128,7 +128,8 @@
 
         <Button x:Name="finalizeSaleButton"
                 Grid.Row="7" Grid.Column="5"
-                Margin="7">
+                Margin="7"
+                Click="finalizeSaleButton_Click">
             <Viewbox Stretch="Fill">
                 <TextBlock Text="Finalize Sale"
                            TextWrapping="Wrap"/>

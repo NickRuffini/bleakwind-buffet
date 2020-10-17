@@ -518,5 +518,56 @@ namespace BleakwindBuffet.DataTests.UnitTests.GenericTests
             Combo c = new Combo();
             Assert.IsAssignableFrom<System.ComponentModel.INotifyPropertyChanged>(c);
         }
+
+        [Fact]
+        public void ChangingItemPropertyInComboNotifiesChange()
+        {
+            Combo c = new Combo();
+            c.Drink = new AretinoAppleJuice();
+
+            Assert.PropertyChanged(c, "DrinkName", () =>
+            {
+                c.Drink.Size = Size.Medium;
+            });
+
+            c.Drink = new CandlehearthCoffee();
+
+            if (c.Drink is CandlehearthCoffee cc)
+            {
+                Assert.PropertyChanged(c, "DrinkName", () =>
+                {
+                    cc.Decaf = true;
+                });
+            }
+
+            c.Drink = new SailorSoda();
+
+            if (c.Drink is SailorSoda ss)
+            {
+                Assert.PropertyChanged(c, "DrinkName", () =>
+                {
+                    ss.Flavor = SodaFlavor.Blackberry;
+                });
+            }
+
+            if (c.Drink is SailorSoda ss2)
+            {
+                Assert.PropertyChanged(c, "SpecialInstructions", () =>
+                {
+                    ss2.Ice = false;
+                });
+            }
+
+            c.Side = new DragonbornWaffleFries();
+
+            Assert.PropertyChanged(c, "SideName", () =>
+            {
+                c.Side.Size = Size.Medium;
+            });
+
+
+
+
+        }
     }
 }

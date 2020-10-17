@@ -13,227 +13,146 @@ namespace PointOfSale
     {
         public event PropertyChangedEventHandler PropertyChanged;
 
-        OrderComponent oc;
-        Order o;
-
         /// <summary>
         /// Number of $100 bills we have in drawer
         /// </summary>
-        private int registerHundredDollars = 0;
         public int RegisterHundredDollars
         {
             get
             {
-                return registerHundredDollars;
-            }
-            set
-            {
-                registerHundredDollars = value;
-                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("RegisterHundredDollars"));
+                return RoundRegister.CashDrawer.Hundreds;
             }
         }
 
         /// <summary>
         /// Number of $50 bills we have in drawer
         /// </summary>
-        private int registerFiftyDollars = 0;
         public int RegisterFiftyDollars
         {
             get
             {
-                return registerFiftyDollars;
-            }
-            set
-            {
-                registerFiftyDollars = value;
-                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("RegisterFiftyDollars"));
+                return RoundRegister.CashDrawer.Fifties;
             }
         }
 
         /// <summary>
         /// Number of $20 bills we have in drawer
         /// </summary>
-        private int registerTwentyDollars = 0;
         public int RegisterTwentyDollars
         {
             get
             {
-                return registerTwentyDollars;
-            }
-            set
-            {
-                registerTwentyDollars = value;
-                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("RegisterTwentyDollars"));
+                return RoundRegister.CashDrawer.Twenties;
             }
         }
 
         /// <summary>
         /// Number of $100 bills we have in drawer
         /// </summary>
-        private int registerTenDollars = 0;
         public int RegisterTenDollars
         {
             get
             {
-                return registerTenDollars;
-            }
-            set
-            {
-                registerTenDollars = value;
-                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("RegisterTenDollars"));
+                return RoundRegister.CashDrawer.Tens;
             }
         }
 
         /// <summary>
         /// Number of $5 bills we have in drawer
         /// </summary>
-        private int registerFiveDollars = 0;
         public int RegisterFiveDollars
         {
             get
             {
-                return registerFiveDollars;
-            }
-            set
-            {
-                registerFiveDollars = value;
-                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("RegisterFiveDollars"));
+                return RoundRegister.CashDrawer.Fives;
             }
         }
 
         /// <summary>
         /// Number of $2 bills we have in drawer
         /// </summary>
-        private int registerTwoDollars = 0;
         public int RegisterTwoDollars
         {
             get
             {
-                return registerTwoDollars;
-            }
-            set
-            {
-                registerTwoDollars = value;
-                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("RegisterTwoDollars"));
+                return RoundRegister.CashDrawer.Twos;
             }
         }
 
         /// <summary>
         /// Number of $1 bills we have in drawer
         /// </summary>
-        private int registerOneDollars = 0;
         public int RegisterOneDollars
         {
             get
             {
-                return registerOneDollars;
-            }
-            set
-            {
-                registerOneDollars = value;
-                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("RegisterOneDollars"));
+                return RoundRegister.CashDrawer.Ones;
             }
         }
 
         /// <summary>
         /// Number of $1 coins we have in drawer
         /// </summary>
-        private int registerOneDollarCoin = 0;
         public int RegisterOneDollarCoin
         {
             get
             {
-                return registerOneDollarCoin;
-            }
-            set
-            {
-                registerOneDollarCoin = value;
-                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("RegisterOneDollarCoin"));
+                return RoundRegister.CashDrawer.Dollars;
             }
         }
 
         /// <summary>
         /// Number of $0.50 coins we have in drawer
         /// </summary>
-        private int registerHalfDollarCoin = 0;
         public int RegisterHalfDollarCoin
         {
             get
             {
-                return registerHalfDollarCoin;
-            }
-            set
-            {
-                registerHalfDollarCoin = value;
-                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("RegisterHalfDollarCoin"));
+                return RoundRegister.CashDrawer.HalfDollars;
             }
         }
 
         /// <summary>
         /// Number of quarters we have in drawer
         /// </summary>
-        private int registerQuarters = 0;
         public int RegisterQuarters
         {
             get
             {
-                return registerQuarters;
-            }
-            set
-            {
-                registerQuarters = value;
-                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("RegisterQuarters"));
+                return RoundRegister.CashDrawer.Quarters;
             }
         }
 
         /// <summary>
         /// Number of dimes we have in drawer
         /// </summary>
-        private int registerDimes = 0;
         public int RegisterDimes
         {
             get
             {
-                return registerDimes;
-            }
-            set
-            {
-                registerDimes = value;
-                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("RegisterDimes"));
+                return RoundRegister.CashDrawer.Dimes;
             }
         }
 
         /// <summary>
         /// Number of nickels we have in drawer
         /// </summary>
-        private int registerNickels = 0;
         public int RegisterNickels
         {
             get
             {
-                return registerNickels;
-            }
-            set
-            {
-                registerNickels = value;
-                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("RegisterNickels"));
+                return RoundRegister.CashDrawer.Nickels;
             }
         }
 
         /// <summary>
         /// Number of pennies we have in drawer
         /// </summary>
-        private int registerPennies = 0;
         public int RegisterPennies
         {
             get
             {
-                return registerPennies;
-            }
-            set
-            {
-                registerPennies = value;
-                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("RegisterPennies"));
+                return RoundRegister.CashDrawer.Pennies;
             }
         }
 
@@ -809,7 +728,7 @@ namespace PointOfSale
         {
             get
             {
-                return Math.Round(TotalCost - GivenAmount, 2);
+                return TotalCost - GivenAmount;
             }
         }
 
@@ -822,7 +741,7 @@ namespace PointOfSale
             {
                 if (AmountDue < 0)
                 {
-                    return AmountDue * -1;
+                    return Math.Round(AmountDue * -1, 2);
                 }
                 else
                 {
@@ -879,8 +798,44 @@ namespace PointOfSale
 
             OwedNickels = (int)(change / 0.05);
             change = change % 0.05;
-
+            
             OwedPennies = (int)(change / 0.01);
+        }
+
+        /// <summary>
+        /// Opens the drawer, adds the money we receive from customer, deducts money we give as change
+        /// </summary>
+        public void FinalizeOrder()
+        {
+            CashDrawer.OpenDrawer();
+
+            CashDrawer.Hundreds += CustomerHundredDollars;
+            CashDrawer.Fifties += CustomerFiftyDollars;
+            CashDrawer.Twenties += CustomerTwentyDollars;
+            CashDrawer.Tens += CustomerTenDollars;
+            CashDrawer.Fives += CustomerFiveDollars;
+            CashDrawer.Twos += CustomerTwoDollars;
+            CashDrawer.Ones += CustomerOneDollars;
+            CashDrawer.Dollars += CustomerOneDollarCoin;
+            CashDrawer.HalfDollars += CustomerHalfDollarCoin;
+            CashDrawer.Quarters += CustomerQuarters;
+            CashDrawer.Dimes += CustomerDimes;
+            CashDrawer.Nickels += CustomerNickels;
+            CashDrawer.Pennies += CustomerPennies;
+
+            CashDrawer.Hundreds -= OwedHundredDollars;
+            CashDrawer.Fifties -= OwedFiftyDollars;
+            CashDrawer.Twenties -= OwedTwentyDollars;
+            CashDrawer.Tens -= OwedTenDollars;
+            CashDrawer.Fives -= OwedFiveDollars;
+            CashDrawer.Twos -= OwedTwoDollars;
+            CashDrawer.Ones -= OwedOneDollars;
+            CashDrawer.Dollars -= OwedOneDollarCoin;
+            CashDrawer.HalfDollars -= OwedHalfDollarCoin;
+            CashDrawer.Quarters -= OwedQuarters;
+            CashDrawer.Dimes -= OwedDimes;
+            CashDrawer.Nickels -= OwedNickels;
+            CashDrawer.Pennies -= OwedPennies;
         }
     }
 }

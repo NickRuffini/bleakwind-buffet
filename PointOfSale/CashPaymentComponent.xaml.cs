@@ -27,10 +27,34 @@ namespace PointOfSale
             this.DataContext = rvm;
         }
 
+        /// <summary>
+        /// Handler for clicking the return button, which brings you back to the menu selection screen
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void returnButton_Click(object sender, RoutedEventArgs e)
         {
             OrderComponent oc = this.FindAncestor<OrderComponent>();
             oc.containerBorder.Child = new MenuSelectionComponent();
+        }
+
+        /// <summary>
+        /// Handler for clicking the finalize button, which finalizes the sale and creates a new order!
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void finalizeSaleButton_Click(object sender, RoutedEventArgs e)
+        {
+            if (this.DataContext is RegisterViewModel rvm)
+            {
+                rvm.FinalizeOrder();
+
+                OrderComponent oc = this.FindAncestor<OrderComponent>();
+
+                oc.orderList.Items.Clear();
+                oc.DataContext = new Order();
+                oc.containerBorder.Child = new MenuSelectionComponent();
+            }
         }
     }
 }
