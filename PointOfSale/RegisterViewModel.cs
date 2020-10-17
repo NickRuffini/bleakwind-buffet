@@ -253,6 +253,10 @@ namespace PointOfSale
                 PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("CustomerHundredDollars"));
                 PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("GivenAmount"));
                 PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("AmountDue"));
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("AmountDueTotal"));
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("ChangeDue"));
+
+                CalculateChange();
             }
         }
 
@@ -272,6 +276,10 @@ namespace PointOfSale
                 PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("CustomerFiftyDollars"));
                 PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("GivenAmount"));
                 PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("AmountDue"));
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("AmountDueTotal"));
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("ChangeDue"));
+
+                CalculateChange();
             }
         }
 
@@ -291,6 +299,10 @@ namespace PointOfSale
                 PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("CustomerTwentyDollars"));
                 PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("GivenAmount"));
                 PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("AmountDue"));
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("AmountDueTotal"));
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("ChangeDue"));
+
+                CalculateChange();
             }
         }
 
@@ -310,6 +322,10 @@ namespace PointOfSale
                 PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("CustomerTenDollars"));
                 PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("GivenAmount"));
                 PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("AmountDue"));
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("AmountDueTotal"));
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("ChangeDue"));
+
+                CalculateChange();
             }
         }
 
@@ -329,6 +345,10 @@ namespace PointOfSale
                 PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("CustomerFiveDollars"));
                 PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("GivenAmount"));
                 PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("AmountDue"));
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("AmountDueTotal"));
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("ChangeDue"));
+
+                CalculateChange();
             }
         }
 
@@ -348,6 +368,10 @@ namespace PointOfSale
                 PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("CustomerTwoDollars"));
                 PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("GivenAmount"));
                 PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("AmountDue"));
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("AmountDueTotal"));
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("ChangeDue"));
+
+                CalculateChange();
             }
         }
 
@@ -367,6 +391,10 @@ namespace PointOfSale
                 PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("CustomerOneDollars"));
                 PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("GivenAmount"));
                 PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("AmountDue"));
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("AmountDueTotal"));
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("ChangeDue"));
+
+                CalculateChange();
             }
         }
 
@@ -386,6 +414,10 @@ namespace PointOfSale
                 PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("CustomerOneDollarCoin"));
                 PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("GivenAmount"));
                 PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("AmountDue"));
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("AmountDueTotal"));
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("ChangeDue"));
+
+                CalculateChange();
             }
         }
 
@@ -405,6 +437,10 @@ namespace PointOfSale
                 PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("CustomerHalfDollarCoin"));
                 PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("GivenAmount"));
                 PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("AmountDue"));
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("AmountDueTotal"));
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("ChangeDue"));
+
+                CalculateChange();
             }
         }
 
@@ -424,6 +460,10 @@ namespace PointOfSale
                 PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("CustomerQuarters"));
                 PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("GivenAmount"));
                 PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("AmountDue"));
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("AmountDueTotal"));
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("ChangeDue"));
+
+                CalculateChange();
             }
         }
 
@@ -443,6 +483,10 @@ namespace PointOfSale
                 PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("CustomerDimes"));
                 PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("GivenAmount"));
                 PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("AmountDue"));
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("AmountDueTotal"));
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("ChangeDue"));
+
+                CalculateChange();
             }
         }
 
@@ -462,6 +506,10 @@ namespace PointOfSale
                 PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("CustomerNickels"));
                 PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("GivenAmount"));
                 PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("AmountDue"));
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("AmountDueTotal"));
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("ChangeDue"));
+
+                CalculateChange();
             }
         }
 
@@ -481,6 +529,10 @@ namespace PointOfSale
                 PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("CustomerPennies"));
                 PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("GivenAmount"));
                 PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("AmountDue"));
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("AmountDueTotal"));
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("ChangeDue"));
+
+                CalculateChange();
             }
         }
 
@@ -732,6 +784,27 @@ namespace PointOfSale
             }
         }
 
+        /// <summary>
+        /// Amount due that is dipslayed; doesn't go below 0!
+        /// </summary>
+        public double AmountDueTotal
+        {
+            get
+            {
+                if (AmountDue < 0)
+                {
+                    return 0;
+                }
+                else
+                {
+                    return Math.Round(TotalCost - GivenAmount, 2);
+                }
+            }
+        }
+
+        /// <summary>
+        /// Amount due that isn't displayed; goes below 0 so we can see how much change we owe the customer
+        /// </summary>
         public double AmountDue
         {
             get
@@ -740,9 +813,74 @@ namespace PointOfSale
             }
         }
 
+        /// <summary>
+        /// Keeps track of how much change we owe the customer
+        /// </summary>
+        public double ChangeDue
+        {
+            get
+            {
+                if (AmountDue < 0)
+                {
+                    return AmountDue * -1;
+                }
+                else
+                {
+                    return 0;
+                }
+
+            }
+        }
+
         public RegisterViewModel(double totalCost)
         {
             TotalCost = totalCost;
+        }
+
+        /// <summary>
+        /// Calculates the type of each coin/dollar we need to return in change!
+        /// </summary>
+        public void CalculateChange()
+        {
+            double change = ChangeDue;
+
+            OwedHundredDollars = (int)(change / 100);
+            change = change % 100;
+
+            OwedFiftyDollars = (int)(change / 50);
+            change = change % 50;
+
+            OwedTwentyDollars = (int)(change / 20);
+            change = change % 20;
+
+            OwedTenDollars = (int)(change / 10);
+            change = change % 10;
+
+            OwedFiveDollars = (int)(change / 5);
+            change = change % 5;
+
+            OwedTwoDollars = (int)(change / 2);
+            change = change % 2;
+
+            OwedOneDollars = (int)(change / 1);
+            change = change % 1;
+
+            OwedOneDollarCoin = (int)(change / 1);
+            change = change % 1;
+
+            OwedHalfDollarCoin = (int)(change / 0.5);
+            change = change % 0.5;
+
+            OwedQuarters = (int)(change / 0.25);
+            change = change % 0.25;
+
+            OwedDimes = (int)(change / 0.1);
+            change = change % 0.1;
+
+            OwedNickels = (int)(change / 0.05);
+            change = change % 0.05;
+
+            OwedPennies = (int)(change / 0.01);
         }
     }
 }

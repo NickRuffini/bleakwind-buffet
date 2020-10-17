@@ -29,42 +29,49 @@
 
         <local:CurrencyControl MoneyAmount="$100"
                                AmountFromCustomer="{Binding Path=CustomerHundredDollars}"
+                               AmountToGiveBack="{Binding Path=OwedHundredDollars}"
                                Grid.Row="1" Grid.ColumnSpan="2"
                                HorizontalAlignment="Center">
 
         </local:CurrencyControl>
         <local:CurrencyControl MoneyAmount="  $50"
                                AmountFromCustomer="{Binding Path=CustomerFiftyDollars}"
+                               AmountToGiveBack="{Binding Path=OwedFiftyDollars}"
                                Grid.Row="2" Grid.ColumnSpan="2"
                                HorizontalAlignment="Center">
 
         </local:CurrencyControl>
         <local:CurrencyControl MoneyAmount="  $20"
                                AmountFromCustomer="{Binding Path=CustomerTwentyDollars}"
+                               AmountToGiveBack="{Binding Path=OwedTwentyDollars}"
                                Grid.Row="3" Grid.ColumnSpan="2"
                                HorizontalAlignment="Center">
 
         </local:CurrencyControl>
         <local:CurrencyControl MoneyAmount="  $10"
                                AmountFromCustomer="{Binding Path=CustomerTenDollars}"
+                               AmountToGiveBack="{Binding Path=OwedTenDollars}"
                                Grid.Row="4" Grid.ColumnSpan="2"
                                HorizontalAlignment="Center">
 
         </local:CurrencyControl>
         <local:CurrencyControl MoneyAmount="    $5"
                                AmountFromCustomer="{Binding Path=CustomerFiveDollars}"
+                               AmountToGiveBack="{Binding Path=OwedFiveDollars}"
                                Grid.Row="5" Grid.ColumnSpan="2"
                                HorizontalAlignment="Center">
 
         </local:CurrencyControl>
         <local:CurrencyControl MoneyAmount="    $2"
                                AmountFromCustomer="{Binding Path=CustomerTwoDollars}"
+                               AmountToGiveBack="{Binding Path=OwedTwoDollars}"
                                Grid.Row="6" Grid.ColumnSpan="2"
                                HorizontalAlignment="Center">
 
         </local:CurrencyControl>
         <local:CurrencyControl MoneyAmount="    $1"
                                AmountFromCustomer="{Binding Path=CustomerOneDollars}"
+                               AmountToGiveBack="{Binding Path=OwedOneDollars}"
                                Grid.Row="7" Grid.ColumnSpan="2"
                                HorizontalAlignment="Center">
 
@@ -72,6 +79,7 @@
 
         <local:CurrencyControl MoneyAmount="     $1"
                                AmountFromCustomer="{Binding Path=CustomerOneDollarCoin}"
+                               AmountToGiveBack="{Binding Path=OwedOneDollarCoin}"
                                Grid.Row="1" Grid.Column="2"
                                Grid.ColumnSpan="3"
                                HorizontalAlignment="Center">
@@ -79,6 +87,7 @@
         </local:CurrencyControl>
         <local:CurrencyControl MoneyAmount="$0.50"
                                AmountFromCustomer="{Binding Path=CustomerHalfDollarCoin}"
+                               AmountToGiveBack="{Binding Path=OwedHalfDollarCoin}"
                                Grid.Row="2" Grid.Column="2"
                                Grid.ColumnSpan="3"
                                HorizontalAlignment="Center">
@@ -86,6 +95,7 @@
         </local:CurrencyControl>
         <local:CurrencyControl MoneyAmount="$0.25"
                                AmountFromCustomer="{Binding Path=CustomerQuarters}"
+                               AmountToGiveBack="{Binding Path=OwedQuarters}"
                                Grid.Row="3" Grid.Column="2"
                                Grid.ColumnSpan="3"
                                HorizontalAlignment="Center">
@@ -93,6 +103,7 @@
         </local:CurrencyControl>
         <local:CurrencyControl MoneyAmount="$0.10"
                                AmountFromCustomer="{Binding Path=CustomerDimes}"
+                               AmountToGiveBack="{Binding Path=OwedDimes}"
                                Grid.Row="4" Grid.Column="2"
                                Grid.ColumnSpan="3"
                                HorizontalAlignment="Center">
@@ -100,6 +111,7 @@
         </local:CurrencyControl>
         <local:CurrencyControl MoneyAmount="$0.05"
                                AmountFromCustomer="{Binding Path=CustomerNickels}"
+                               AmountToGiveBack="{Binding Path=OwedNickels}"
                                Grid.Row="5" Grid.Column="2"
                                Grid.ColumnSpan="3"
                                HorizontalAlignment="Center">
@@ -107,6 +119,7 @@
         </local:CurrencyControl>
         <local:CurrencyControl MoneyAmount="$0.01"
                                AmountFromCustomer="{Binding Path=CustomerPennies}"
+                               AmountToGiveBack="{Binding Path=OwedPennies}"
                                Grid.Row="6" Grid.Column="2"
                                Grid.ColumnSpan="3"
                                HorizontalAlignment="Center">
@@ -171,7 +184,7 @@
                    FontSize="25"
                    HorizontalAlignment="Center"
                    VerticalAlignment="Center"
-                   Text="{Binding Path=AmountDue}"
+                   Text="{Binding Path=AmountDueTotal}"
                    TextWrapping="Wrap">
             
         </TextBlock>
@@ -186,8 +199,8 @@
                    FontSize="25"
                    HorizontalAlignment="Center"
                    VerticalAlignment="Center"
+                   Text="{Binding Path=ChangeDue}"
                    TextWrapping="Wrap">
-            $0.00
         </TextBlock>
 
     </Grid>
