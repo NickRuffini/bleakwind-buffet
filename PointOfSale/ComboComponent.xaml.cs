@@ -1,4 +1,10 @@
-﻿using BleakwindBuffet.Data.Generic;
+﻿/*
+ * Author: Nick Ruffini
+ * Class name: ComboComponent.xaml.cs
+ * Purpose: Class used to represent the GUI of a Combo!
+ */
+
+using BleakwindBuffet.Data.Generic;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -73,7 +79,11 @@ namespace PointOfSale
             sideContainerBorder.Visibility = Visibility.Collapsed;
         }
 
-        
+        /// <summary>
+        /// Click event for editing the drink; hides everything but the drink customization
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void editDrinkButton_Click(object sender, RoutedEventArgs e)
         {
             drinkContainerBorder.Visibility = Visibility.Visible;
@@ -131,6 +141,11 @@ namespace PointOfSale
             }
         }
 
+        /// <summary>
+        /// Click event for adding a entree; hides everything but the entree choices
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void addEntreeButton_Click(object sender, RoutedEventArgs e)
         {
             drinkStackPanel.Visibility = Visibility.Collapsed;
@@ -141,6 +156,11 @@ namespace PointOfSale
             sideContainerBorder.Visibility = Visibility.Collapsed;
         }
 
+        /// <summary>
+        /// Click event for editing the entree; hides everything but the entree customization
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void editEntreeButton_Click(object sender, RoutedEventArgs e)
         {
             drinkStackPanel.Visibility = Visibility.Collapsed;
@@ -207,6 +227,11 @@ namespace PointOfSale
             }
         }
 
+        /// <summary>
+        /// Click event for adding a side; hides everything but the side choices
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void addSideButton_Click(object sender, RoutedEventArgs e)
         {
             drinkStackPanel.Visibility = Visibility.Collapsed;
@@ -217,6 +242,11 @@ namespace PointOfSale
             sideContainerBorder.Visibility = Visibility.Collapsed;
         }
 
+        /// <summary>
+        /// Click event for editing the side; hides everything but the side customization
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void editSideButton_Click(object sender, RoutedEventArgs e)
         {
             drinkStackPanel.Visibility = Visibility.Collapsed;
@@ -259,96 +289,176 @@ namespace PointOfSale
             }
         }
 
+        /// <summary>
+        /// Click event for changing the combo drink to an aretino apple juice
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void aaComboButton_Click(object sender, RoutedEventArgs e)
         {
             (this.DataContext as Combo).Drink = new AretinoAppleJuice();
             drinkStackPanel.Visibility = Visibility.Collapsed;
         }
 
+        /// <summary>
+        /// Click event for changing the combo drink to an candlehearth coffee
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void ccComboButton_Click(object sender, RoutedEventArgs e)
         {
             (this.DataContext as Combo).Drink = new CandlehearthCoffee();
             drinkStackPanel.Visibility = Visibility.Collapsed;
         }
 
+        /// <summary>
+        /// Click event for changing the combo drink to a markarth milk
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void mmComboButton_Click(object sender, RoutedEventArgs e)
         {
             (this.DataContext as Combo).Drink = new MarkarthMilk();
             drinkStackPanel.Visibility = Visibility.Collapsed;
         }
 
+        /// <summary>
+        /// Click event for changing the combo drink to an sailor soda
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void ssComboButton_Click(object sender, RoutedEventArgs e)
         {
             (this.DataContext as Combo).Drink = new SailorSoda();
             drinkStackPanel.Visibility = Visibility.Collapsed;
         }
 
+        /// <summary>
+        /// Click event for changing the combo drink to an warrior water
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void wwComboButton_Click(object sender, RoutedEventArgs e)
         {
             (this.DataContext as Combo).Drink = new WarriorWater();
             drinkStackPanel.Visibility = Visibility.Collapsed;
         }
 
+        /// <summary>
+        /// Click event for changing the combo entree to a double draugr
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void ddComboButton_Click(object sender, RoutedEventArgs e)
         {
             (this.DataContext as Combo).Entree = new DoubleDraugr();
             entreeStackPanel.Visibility = Visibility.Collapsed;
         }
 
+        /// <summary>
+        /// Click event for changing the combo entree to a briarheart burger
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void bbComboButton_Click(object sender, RoutedEventArgs e)
         {
             (this.DataContext as Combo).Entree = new BriarheartBurger();
             entreeStackPanel.Visibility = Visibility.Collapsed;
         }
 
+        /// <summary>
+        /// Click event for changing the combo entree to a garden orc omelette
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void gooComboButton_Click(object sender, RoutedEventArgs e)
         {
             (this.DataContext as Combo).Entree = new GardenOrcOmelette();
             entreeStackPanel.Visibility = Visibility.Collapsed;
         }
 
+        /// <summary>
+        /// Click event for changing the combo entree to a philly poacher
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void ppComboButton_Click(object sender, RoutedEventArgs e)
         {
             (this.DataContext as Combo).Entree = new PhillyPoacher();
             entreeStackPanel.Visibility = Visibility.Collapsed;
         }
 
+        /// <summary>
+        /// Click event for changing the combo entree to a smokehouse skeleton
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void smComboButton_Click(object sender, RoutedEventArgs e)
         {
             (this.DataContext as Combo).Entree = new SmokehouseSkeleton();
             entreeStackPanel.Visibility = Visibility.Collapsed;
         }
 
+        /// <summary>
+        /// Click event for changing the combo entree to a thalmor triple
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void ttComboButton_Click(object sender, RoutedEventArgs e)
         {
             (this.DataContext as Combo).Entree = new ThalmorTriple();
             entreeStackPanel.Visibility = Visibility.Collapsed;
         }
 
+        /// <summary>
+        /// Click event for changing the combo entree to a thugs tbone
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void ttbComboButton_Click(object sender, RoutedEventArgs e)
         {
             (this.DataContext as Combo).Entree = new ThugsTBone();
             entreeStackPanel.Visibility = Visibility.Collapsed;
         }
 
+        /// <summary>
+        /// Click event for changing the combo side to a dragonborn waffle fries
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void dwfComboButton_Click(object sender, RoutedEventArgs e)
         {
             (this.DataContext as Combo).Side = new DragonbornWaffleFries();
             sideStackPanel.Visibility = Visibility.Collapsed;
         }
 
+        /// <summary>
+        /// Click event for changing the combo side to a fried miraak
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void fmComboButton_Click(object sender, RoutedEventArgs e)
         {
             (this.DataContext as Combo).Side = new FriedMiraak();
             sideStackPanel.Visibility = Visibility.Collapsed;
         }
 
+        /// <summary>
+        /// Click event for changing the combo side to a mad otar grit
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void mogComboButton_Click(object sender, RoutedEventArgs e)
         {
             (this.DataContext as Combo).Side = new MadOtarGrits();
             sideStackPanel.Visibility = Visibility.Collapsed;
         }
 
+        /// <summary>
+        /// Click event for changing the combo side to a vokun salad
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void vsComboButton_Click(object sender, RoutedEventArgs e)
         {
             (this.DataContext as Combo).Side = new VokunSalad();

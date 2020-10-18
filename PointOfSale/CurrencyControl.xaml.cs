@@ -1,4 +1,10 @@
-﻿using System;
+﻿/*
+ * Author: Nick Ruffini
+ * Class name: CurrencyControl.xaml.cs
+ * Purpose: Custom Control used in our Cash Payment GUI to consolidate all the info we need into 1 control
+ */
+
+using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Windows;

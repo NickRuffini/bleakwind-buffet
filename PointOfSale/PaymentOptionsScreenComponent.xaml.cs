@@ -1,4 +1,10 @@
-﻿using BleakwindBuffet.Data.Generic;
+﻿/*
+ * Author: Nick Ruffini
+ * Class name: PaymentOptionsScreenComponent.xaml.cs
+ * Purpose: Code behind for the screen that asks the user if they want to use Cash or Card
+ */
+
+using BleakwindBuffet.Data.Generic;
 using PointOfSale.ExtensionMethod;
 using System;
 using System.Collections.Generic;
@@ -79,7 +85,7 @@ namespace PointOfSale
         }
 
         /// <summary>
-        /// 
+        /// Handler for the cash button click that brings us to the Cash Payment Component!
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>

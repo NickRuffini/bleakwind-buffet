@@ -1,4 +1,10 @@
-﻿using System;
+﻿/*
+ * Author: Nick Ruffini
+ * Class name: CashPaymentComponent.xaml.cs
+ * Purpose: Class used to represent the GUI of the Cash Payment Process!
+ */
+
+using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Windows;
@@ -50,6 +56,8 @@ namespace PointOfSale
                 rvm.FinalizeOrder();
 
                 OrderComponent oc = this.FindAncestor<OrderComponent>();
+
+                oc.printReceipt("Cash");
 
                 oc.orderList.Items.Clear();
                 oc.DataContext = new Order();

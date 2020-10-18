@@ -82,7 +82,7 @@ namespace PointOfSale
         /// </summary>
         /// <param name="sender"> ListBoxItem we are clicking on </param>
         /// <param name="e"></param>
-        void EditItem(object sender, SelectionChangedEventArgs e)
+        private void EditItem(object sender, SelectionChangedEventArgs e)
         {
             IOrderItem lbi = (sender as ListBox).SelectedItem as IOrderItem;
             //IOrderItem item = lbi.DataContext as IOrderItem;
@@ -247,41 +247,43 @@ namespace PointOfSale
                     //Prints the order number
                     int orderNumber = o.Number;
                     string orderNumberString = orderNumber.ToString();
-                    printWithLineBreaks(orderNumberString, 40);
+                    printWithLineBreaks("Order Number: " + orderNumberString, 40);
 
                     //Prints time Orde was finalized (now)
                     DateTime now = DateTime.Now;
                     string timeString = now.ToString();
-                    printWithLineBreaks(timeString, 40);
+                    printWithLineBreaks("Time Finalized: " + timeString, 40);
 
                     //Prints each item in the listbox
                     foreach(IOrderItem item in o)
                     {
                         printWithLineBreaks(item.ToString(), 40);
-                        printWithLineBreaks(item.Price.ToString(), 40);
+                        printWithLineBreaks("$" + item.Price.ToString(), 40);
                         foreach(string s in item.SpecialInstructions)
                         {
-                            printWithLineBreaks(s, 40);
+                            printWithLineBreaks("- " + s, 40);
                         }
                     }
 
                     //Prints the subtotal of the order
                     double subtotal = o.Subtotal;
                     string subtotalString = "$" + subtotal.ToString();
-                    printWithLineBreaks(subtotalString, 40);
+                    printWithLineBreaks("Subtotal: " + subtotalString, 40);
 
                     //Prints the tax of the order
                     double tax = o.Tax;
                     string taxString = "$" + tax.ToString();
-                    printWithLineBreaks(taxString, 40);
+                    printWithLineBreaks("Tax: " + taxString, 40);
 
                     //Prints the total of the order
                     double total = o.Total;
                     string totalString = "$" + total.ToString();
-                    printWithLineBreaks(totalString, 40);
+                    printWithLineBreaks("Total: " + totalString, 40);
 
                     //Prints the payment method of the order
-                    printWithLineBreaks(paymentMethod, 40);
+                    printWithLineBreaks("Payment Method: " + paymentMethod, 40);
+
+                    RoundRegister.RecieptPrinter.CutTape();
                 }
             }
             if (paymentMethod == "Cash")
@@ -291,48 +293,52 @@ namespace PointOfSale
                     //Prints the order number
                     int orderNumber = o.Number;
                     string orderNumberString = orderNumber.ToString();
-                    printWithLineBreaks(orderNumberString, 40);
+                    printWithLineBreaks("Order Number: " + orderNumberString, 40);
 
                     //Prints time Order was finalized (now)
                     DateTime now = DateTime.Now;
                     string timeString = now.ToString();
-                    printWithLineBreaks(timeString, 40);
+                    printWithLineBreaks("Time Finalized: " + timeString, 40);
 
                     //Prints each item in the listbox
                     foreach (IOrderItem item in o)
                     {
                         printWithLineBreaks(item.ToString(), 40);
-                        printWithLineBreaks(item.Price.ToString(), 40);
+                        printWithLineBreaks("$" + item.Price.ToString(), 40);
                         foreach (string s in item.SpecialInstructions)
                         {
-                            printWithLineBreaks(s, 40);
+                            printWithLineBreaks("- " + s, 40);
                         }
                     }
 
                     //Prints the subtotal of the order
                     double subtotal = o.Subtotal;
                     string subtotalString = "$" + subtotal.ToString();
-                    printWithLineBreaks(subtotalString, 40);
+                    printWithLineBreaks("Subtotal: " + subtotalString, 40);
 
                     //Prints the tax of the order
                     double tax = o.Tax;
                     string taxString = "$" + tax.ToString();
-                    printWithLineBreaks(taxString, 40);
+                    printWithLineBreaks("Tax: " + taxString, 40);
 
                     //Prints the total of the order
                     double total = o.Total;
                     string totalString = "$" + total.ToString();
-                    printWithLineBreaks(totalString, 40);
+                    printWithLineBreaks("Total: " + totalString, 40);
 
                     //Prints the payment method of the order
-                    printWithLineBreaks(paymentMethod, 40);
+                    printWithLineBreaks("Payment Method: " + paymentMethod, 40);
 
                     //Needs to print change owed as well!!!!
+                    if (this.containerBorder.Child is CashPaymentComponent cpc)
+                    {
+                        if (cpc.DataContext is RegisterViewModel rvm)
+                        {
+                            printWithLineBreaks("Change Due: $" + rvm.ChangeDue.ToString(), 40);
+                        }
+                    }
 
-
-
-
-
+                    RoundRegister.RecieptPrinter.CutTape();
                 }
             }
         }

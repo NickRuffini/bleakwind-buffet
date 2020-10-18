@@ -1,4 +1,10 @@
-﻿using RoundRegister;
+﻿/*
+ * Author: Nick Ruffini
+ * Class name: RegisterViewModel.cs
+ * Purpose: Class that serves as the view model between the RoundRegister dll and our GUI
+ */
+
+using RoundRegister;
 using System;
 using System.Collections.Generic;
 using System.Text;
