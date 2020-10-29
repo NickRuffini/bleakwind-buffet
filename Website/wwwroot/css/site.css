@@ -69,3 +69,42 @@ body {
   white-space: nowrap;
   line-height: 60px; /* Vertically center the text there */
 }
+
+/*Nick CSS Corner
+------------------------------------------------------*/
+.grid-container {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    padding: 10px;
+}
+
+.grid-item {
+    /*border: 1px solid rgba(0, 0, 0, 0.8);*/
+    /*padding: 20px;*/
+    /*font-size: 30px;*/
+    text-align: center;
+    color: darkslategray;
+}
+
+.menu-item {
+    border-bottom: 3px solid darkslategray;
+}
+
+h1 {
+    font-size: 4.0rem;
+    font-weight: bold;
+}
+
+h2, #price-policy-header {
+    font-size: 3.0rem;
+    font-weight: bold;
+}
+
+h3 {
+    font-size: 2.0rem;
+}
+
+#soda-flavor, p {
+    font-size: 1.5rem;
+    color: darkslategray;
+}

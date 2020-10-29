@@ -1,4 +1,10 @@
-﻿using System;
+﻿/*
+ * Author: Nick Ruffini
+ * Class name: Index.cshtml.cs
+ * Purpose: C# codebehind for our Index Razor Page
+ */
+
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
