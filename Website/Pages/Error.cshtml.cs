@@ -1,3 +1,9 @@
+/*
+ * Edited By: Nick Ruffini
+ * Class name: Error.cshtml.cs
+ * Purpose: Class that represents the codebehind for an Error
+ */
+
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;

@@ -1,4 +1,10 @@
-﻿using System;
+﻿/*
+ * Edited By: Nick Ruffini
+ * Class name: Privacy.cshtml.cs
+ * Purpose: Class that represents the codebehind for the Privacy page
+ */
+
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
