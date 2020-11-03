@@ -125,5 +125,31 @@ namespace BleakwindBuffet.Data.Generic
 
             return list2;
         }
+
+        /// <summary>
+        /// Searches all the items for matches!
+        /// </summary>
+        /// <param name="Items"> Items we are searching through </param>
+        /// <param name="SearchTerms"> What term we are looking for </param>
+        /// <returns> IEnumerable of the values we get back from this search </returns>
+        public static IEnumerable<IOrderItem> Search(IEnumerable<IOrderItem> Items, string SearchTerms)
+        {
+            List<IOrderItem> results = new List<IOrderItem>();
+
+            if (SearchTerms == null)
+            {
+                return FullMenu();
+            }
+
+            foreach(IOrderItem item in Items)
+            {
+                if(item.ToString() != null && item.ToString().ToLower().Contains(SearchTerms.ToLower()))
+                {
+                    results.Add(item);
+                }
+            }
+
+            return results;
+        }
     }
 }

@@ -101,10 +101,35 @@ h2, #price-policy-header {
 }
 
 h3 {
-    font-size: 2.0rem;
+    font-size: 1.5rem;
 }
 
 #soda-flavor, p {
     font-size: 1.5rem;
     color: darkslategray;
+}
+
+#index-intro-text {
+    border-bottom: 3px solid darkslategray;
+}
+
+form#menu-database {
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    grid-template-rows: auto auto;
+}
+
+#search {
+    grid-column-start: 1;
+    grid-column-end: 3;
+    text-align: center;
+}
+
+#filters {
+    display: flex;
+    flex-direction: column;
+}
+
+#filters h4 {
+    margin-top: 1.2rem;
 }

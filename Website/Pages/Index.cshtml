@@ -7,7 +7,7 @@
 <!-- Title of the page and lists some extra info -->
 <div class="text-center">
 	<h1>Welcome to Bleakwind Buffet!</h1>
-	<p>
+	<p id="index-intro-text">
 		We at Bleakwind Buffet are proud to bring you authentic fantasy meals straight from the world of Skyrim.
 		Shake the blood off your sword and sake your thirst with one of our old-fashioned sailor sodas. Hack into a
 		Smokehouse Skeleton with your dagger. Or vanquish the the mighty Thalmor Triple Burger! You’ve had a hard
@@ -15,217 +15,260 @@
 	</p>
 </div>
 
-<h2>
-	Entrees
-</h2>
-<div class="grid-container">
-	<!-- Adds the grid elements for our entrees -->
-	<div class="grid-item">
-		@foreach (BleakwindBuffet.Data.Generic.IOrderItem item in BleakwindBuffet.Data.Generic.Menu.Entrees())
-		{
-			<div class="menu-item">
-				<h3>
-					@item.ToString()
-				</h3>
-				<div>
-					$@item.Price
-				</div>
-				<div>
-					@item.Calories calories
-				</div>
-			</div>
-		}
-	</div>
-</div>
+<form id="menu-database">
+    <div id="search">
+        <input type="text" name="SearchTerms" />
+        <input type="submit" value="Search" />
+    </div>
 
-<h2>
-	Sides
-</h2>
-<div class="grid-container">
-	<!-- Adds the grid elements for our small sides -->
-	<div class="grid-item">
-		@for (int i = 0; i < 4; i++)
-		{
-			List<BleakwindBuffet.Data.Generic.IOrderItem> list = BleakwindBuffet.Data.Generic.Menu.Sides() as List<BleakwindBuffet.Data.Generic.IOrderItem>;
-			BleakwindBuffet.Data.Generic.IOrderItem item = list[i];
-			<div class="menu-item">
-				<h3>
-					@item.ToString()
-				</h3>
-				<div>
-					$@item.Price
-				</div>
-				<div>
-					@item.Calories calories
-				</div>
-			</div>
-		}
-	</div>
-	<!-- Adds the grid elements for our medium sides -->
-	<div class="grid-item">
-		@for (int i = 4; i < 8; i++)
-		{
-			List<BleakwindBuffet.Data.Generic.IOrderItem> list = BleakwindBuffet.Data.Generic.Menu.Sides() as List<BleakwindBuffet.Data.Generic.IOrderItem>;
-			BleakwindBuffet.Data.Generic.IOrderItem item = list[i];
-			<div class="menu-item">
-				<h3>
-					@item.ToString()
-				</h3>
-				<div>
-					$@item.Price
-				</div>
-				<div>
-					@item.Calories calories
-				</div>
-			</div>
-		}
-	</div>
-	<!-- Adds the grid elements for our large sides -->
-	<div class="grid-item">
-		@for (int i = 8; i < 12; i++)
-		{
-			List<BleakwindBuffet.Data.Generic.IOrderItem> list = BleakwindBuffet.Data.Generic.Menu.Sides() as List<BleakwindBuffet.Data.Generic.IOrderItem>;
-			BleakwindBuffet.Data.Generic.IOrderItem item = list[i];
-			<div class="menu-item">
-				<h3>
-					@item.ToString()
-				</h3>
-				<div>
-					$@item.Price
-				</div>
-				<div>
-					@item.Calories calories
-				</div>
-			</div>
-		}
-	</div>
-</div>
+    <div id="filters">
+        <h4>Types of Items</h4>
+        <label>
+            <input type="checkbox" name="TypeOfItem" value="Entrees" />
+            Entrees
+        </label>
+        <label>
+            <input type="checkbox" name="TypeOfItem" value="Drinks" />
+            Drinks
+        </label>
+        <label>
+            <input type="checkbox" name="TypeOfItem" value="Sides" />
+            Sides
+        </label>
 
-<h2>
-	Drinks
-</h2>
-<div class="grid-container">
-	<!-- Adds the grid elements for our small drinks -->
-	<div class="grid-item">
-		@for (int i = 0; i < 6; i++)
-		{
-			List<BleakwindBuffet.Data.Generic.IOrderItem> list = BleakwindBuffet.Data.Generic.Menu.Drinks() as List<BleakwindBuffet.Data.Generic.IOrderItem>;
-			BleakwindBuffet.Data.Generic.IOrderItem item = list[i];
-			if (item is BleakwindBuffet.Data.Drinks.SailorSoda)
-			{
-				<div class="menu-item">
-					<h3>
-						Small Sailor Soda
-					</h3>
-					<div>
-						$@item.Price
-					</div>
-					<div>
-						@item.Calories calories
-					</div>
-				</div>
-			}
-			else
-			{
-				<div class="menu-item">
-					<h3>
-						@item.ToString()
-					</h3>
-					<div>
-						$@item.Price
-					</div>
-					<div>
-						@item.Calories calories
-					</div>
-				</div>
-			}
-		}
-	</div>
-	<!-- Adds the grid elements for our medium drinks -->
-	<div class="grid-item">
-		@for (int i = 11; i < 17; i++)
-		{
-			List<BleakwindBuffet.Data.Generic.IOrderItem> list = BleakwindBuffet.Data.Generic.Menu.Drinks() as List<BleakwindBuffet.Data.Generic.IOrderItem>;
-			BleakwindBuffet.Data.Generic.IOrderItem item = list[i];
-			if (item is BleakwindBuffet.Data.Drinks.SailorSoda)
-			{
-				<div class="menu-item">
-					<h3>
-						Medium Sailor Soda
-					</h3>
-					<div>
-						$@item.Price
-					</div>
-					<div>
-						@item.Calories calories
-					</div>
-				</div>
-			}
-			else
-			{
-				<div class="menu-item">
-					<h3>
-						@item.ToString()
-					</h3>
-					<div>
-						$@item.Price
-					</div>
-					<div>
-						@item.Calories calories
-					</div>
-				</div>
-			}
-		}
-	</div>
-	<!-- Adds the grid elements for our large drinks -->
-	<div class="grid-item">
-		@for (int i = 22; i < 28; i++)
-		{
-			List<BleakwindBuffet.Data.Generic.IOrderItem> list = BleakwindBuffet.Data.Generic.Menu.Drinks() as List<BleakwindBuffet.Data.Generic.IOrderItem>;
-			BleakwindBuffet.Data.Generic.IOrderItem item = list[i];
-			if (item is BleakwindBuffet.Data.Drinks.SailorSoda)
-			{
-				<div class="menu-item">
-					<h3>
-						Large Sailor Soda
-					</h3>
-					<div>
-						$@item.Price
-					</div>
-					<div>
-						@item.Calories calories
-					</div>
-				</div>
-			}
-			else
-			{
-				<div class="menu-item">
-					<h3>
-						@item.ToString()
-					</h3>
-					<div>
-						$@item.Price
-					</div>
-					<div>
-						@item.Calories calories
-					</div>
-				</div>
-			}
-		}
-	</div>
-</div>
-<!-- Lists the Soda flavors the customer can order -->
-<div>
-	<h3 id="soda-flavor">
-		*Sailor Soda comes in Blackberry, Cherry, Grapefruit, Lemon, Peach, Watermelon
-	</h3>
-</div>
-<!-- Adds information regarding the option to create a combo -->
-<div>
-	<h2>
-		Combo
-	</h2>
-	<p>
-		Any Entree, Side and Drink can be combined into a Combo with a $1 discount!
-	</p>
-</div>
+        <h4>Calorie Range</h4>
+        <div>
+            Between
+            <input name="CalMin" type="number" min="0" max="10000" step="1" placeholder="min" />
+            and
+            <input name="CalMax" type="number" min="0" max="10000" step="1" placeholder="max" />
+        </div>
+
+        <h4>Price Range</h4>
+        <div>
+            Between
+            <input name="PriceMin" type="number" min="0" max="20.00" step="0.01" placeholder="min" />
+            and
+            <input name="PriceMax" type="number" min="0" max="20.00" step="0.01" placeholder="max" />
+        </div>
+    </div>
+
+    <div id="results">
+        <h2>
+            Entrees
+        </h2>
+        <div class="grid-container">
+            <!-- Adds the grid elements for our entrees -->
+            <div class="grid-item">
+                @foreach (BleakwindBuffet.Data.Generic.IOrderItem item in BleakwindBuffet.Data.Generic.Menu.Entrees())
+                {
+                    <div class="menu-item">
+                        <h3>
+                            @item.ToString()
+                        </h3>
+                        <div>
+                            $@item.Price
+                        </div>
+                        <div>
+                            @item.Calories calories
+                        </div>
+                    </div>
+                }
+            </div>
+        </div>
+
+        <h2>
+            Sides
+        </h2>
+        <div class="grid-container">
+            <!-- Adds the grid elements for our small sides -->
+            <div class="grid-item">
+                @for (int i = 0; i < 4; i++)
+                {
+                    List<BleakwindBuffet.Data.Generic.IOrderItem> list = BleakwindBuffet.Data.Generic.Menu.Sides() as List<BleakwindBuffet.Data.Generic.IOrderItem>;
+                    BleakwindBuffet.Data.Generic.IOrderItem item = list[i];
+                    <div class="menu-item">
+                        <h3>
+                            @item.ToString()
+                        </h3>
+                        <div>
+                            $@item.Price
+                        </div>
+                        <div>
+                            @item.Calories calories
+                        </div>
+                    </div>
+                }
+            </div>
+            <!-- Adds the grid elements for our medium sides -->
+            <div class="grid-item">
+                @for (int i = 4; i < 8; i++)
+                {
+                    List<BleakwindBuffet.Data.Generic.IOrderItem> list = BleakwindBuffet.Data.Generic.Menu.Sides() as List<BleakwindBuffet.Data.Generic.IOrderItem>;
+                    BleakwindBuffet.Data.Generic.IOrderItem item = list[i];
+                    <div class="menu-item">
+                        <h3>
+                            @item.ToString()
+                        </h3>
+                        <div>
+                            $@item.Price
+                        </div>
+                        <div>
+                            @item.Calories calories
+                        </div>
+                    </div>
+                }
+            </div>
+            <!-- Adds the grid elements for our large sides -->
+            <div class="grid-item">
+                @for (int i = 8; i < 12; i++)
+                {
+                    List<BleakwindBuffet.Data.Generic.IOrderItem> list = BleakwindBuffet.Data.Generic.Menu.Sides() as List<BleakwindBuffet.Data.Generic.IOrderItem>;
+                    BleakwindBuffet.Data.Generic.IOrderItem item = list[i];
+                    <div class="menu-item">
+                        <h3>
+                            @item.ToString()
+                        </h3>
+                        <div>
+                            $@item.Price
+                        </div>
+                        <div>
+                            @item.Calories calories
+                        </div>
+                    </div>
+                }
+            </div>
+        </div>
+
+        <h2>
+            Drinks
+        </h2>
+        <div class="grid-container">
+            <!-- Adds the grid elements for our small drinks -->
+            <div class="grid-item">
+                @for (int i = 0; i < 6; i++)
+                {
+                    List<BleakwindBuffet.Data.Generic.IOrderItem> list = BleakwindBuffet.Data.Generic.Menu.Drinks() as List<BleakwindBuffet.Data.Generic.IOrderItem>;
+                    BleakwindBuffet.Data.Generic.IOrderItem item = list[i];
+                    if (item is BleakwindBuffet.Data.Drinks.SailorSoda)
+                    {
+                        <div class="menu-item">
+                            <h3>
+                                Small Sailor Soda
+                            </h3>
+                            <div>
+                                $@item.Price
+                            </div>
+                            <div>
+                                @item.Calories calories
+                            </div>
+                        </div>
+                    }
+                    else
+                    {
+                        <div class="menu-item">
+                            <h3>
+                                @item.ToString()
+                            </h3>
+                            <div>
+                                $@item.Price
+                            </div>
+                            <div>
+                                @item.Calories calories
+                            </div>
+                        </div>
+                    }
+                }
+            </div>
+            <!-- Adds the grid elements for our medium drinks -->
+            <div class="grid-item">
+                @for (int i = 11; i < 17; i++)
+                {
+                    List<BleakwindBuffet.Data.Generic.IOrderItem> list = BleakwindBuffet.Data.Generic.Menu.Drinks() as List<BleakwindBuffet.Data.Generic.IOrderItem>;
+                    BleakwindBuffet.Data.Generic.IOrderItem item = list[i];
+                    if (item is BleakwindBuffet.Data.Drinks.SailorSoda)
+                    {
+                        <div class="menu-item">
+                            <h3>
+                                Medium Sailor Soda
+                            </h3>
+                            <div>
+                                $@item.Price
+                            </div>
+                            <div>
+                                @item.Calories calories
+                            </div>
+                        </div>
+                    }
+                    else
+                    {
+                        <div class="menu-item">
+                            <h3>
+                                @item.ToString()
+                            </h3>
+                            <div>
+                                $@item.Price
+                            </div>
+                            <div>
+                                @item.Calories calories
+                            </div>
+                        </div>
+                    }
+                }
+            </div>
+            <!-- Adds the grid elements for our large drinks -->
+            <div class="grid-item">
+                @for (int i = 22; i < 28; i++)
+                {
+                    List<BleakwindBuffet.Data.Generic.IOrderItem> list = BleakwindBuffet.Data.Generic.Menu.Drinks() as List<BleakwindBuffet.Data.Generic.IOrderItem>;
+                    BleakwindBuffet.Data.Generic.IOrderItem item = list[i];
+                    if (item is BleakwindBuffet.Data.Drinks.SailorSoda)
+                    {
+                        <div class="menu-item">
+                            <h3>
+                                Large Sailor Soda
+                            </h3>
+                            <div>
+                                $@item.Price
+                            </div>
+                            <div>
+                                @item.Calories calories
+                            </div>
+                        </div>
+                    }
+                    else
+                    {
+                        <div class="menu-item">
+                            <h3>
+                                @item.ToString()
+                            </h3>
+                            <div>
+                                $@item.Price
+                            </div>
+                            <div>
+                                @item.Calories calories
+                            </div>
+                        </div>
+                    }
+                }
+            </div>
+        </div>
+    </div>
+    <!-- Lists the Soda flavors the customer can order -->
+    <div>
+        <h3 id="soda-flavor">
+            *Sailor Soda comes in Blackberry, Cherry, Grapefruit, Lemon, Peach, Watermelon
+        </h3>
+    </div>
+    <!-- Adds information regarding the option to create a combo -->
+    <div>
+        <h2>
+            Combo
+        </h2>
+        <p>
+            Any Entree, Side and Drink can be combined into a Combo with a $1 discount!
+        </p>
+    </div>
+
+</form>
+

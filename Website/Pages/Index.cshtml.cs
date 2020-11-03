@@ -17,6 +17,11 @@ namespace Website.Pages
 {
     public class IndexModel : PageModel
     {
+        /// <summary>
+        /// List of items we are displaying on our index page
+        /// </summary>
+        public IEnumerable<IOrderItem> Items { get; set; }
+
         private readonly ILogger<IndexModel> _logger;
 
         public IndexModel(ILogger<IndexModel> logger)
@@ -24,9 +29,9 @@ namespace Website.Pages
             _logger = logger;
         }
 
-        public void OnGet()
+        public void OnGet(string SearchTerms, string[] TypeOfItem, double? PriceMin, double? PriceMax, int? CalMin, int? CalMax)
         {
-
+            Items = Menu.Search(Menu.FullMenu(), SearchTerms);
         }
     }
 }
