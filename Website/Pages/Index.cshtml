@@ -60,19 +60,22 @@
         <div class="grid-container">
             <!-- Adds the grid elements for our entrees -->
             <div class="grid-item">
-                @foreach (BleakwindBuffet.Data.Generic.IOrderItem item in BleakwindBuffet.Data.Generic.Menu.Entrees())
+                @foreach (BleakwindBuffet.Data.Generic.IOrderItem item in Model.Items)
                 {
-                    <div class="menu-item">
-                        <h3>
-                            @item.ToString()
-                        </h3>
-                        <div>
-                            $@item.Price
+                    @if (item is BleakwindBuffet.Data.Entrees.Entree)
+                    {
+                        <div class="menu-item">
+                            <h3>
+                                @item.ToString()
+                            </h3>
+                            <div>
+                                $@item.Price
+                            </div>
+                            <div>
+                                @item.Calories calories
+                            </div>
                         </div>
-                        <div>
-                            @item.Calories calories
-                        </div>
-                    </div>
+                    }
                 }
             </div>
         </div>
@@ -83,59 +86,71 @@
         <div class="grid-container">
             <!-- Adds the grid elements for our small sides -->
             <div class="grid-item">
-                @for (int i = 0; i < 4; i++)
+                @foreach (BleakwindBuffet.Data.Generic.IOrderItem item in Model.Items)
                 {
-                    List<BleakwindBuffet.Data.Generic.IOrderItem> list = BleakwindBuffet.Data.Generic.Menu.Sides() as List<BleakwindBuffet.Data.Generic.IOrderItem>;
-                    BleakwindBuffet.Data.Generic.IOrderItem item = list[i];
-                    <div class="menu-item">
-                        <h3>
-                            @item.ToString()
-                        </h3>
-                        <div>
-                            $@item.Price
-                        </div>
-                        <div>
-                            @item.Calories calories
-                        </div>
-                    </div>
+                    @if (item is BleakwindBuffet.Data.Sides.Side side)
+                    {
+                        if (side.Size == BleakwindBuffet.Data.Enums.Size.Small)
+                        {
+                            <div class="menu-item">
+                                <h3>
+                                    @item.ToString()
+                                </h3>
+                                <div>
+                                    $@item.Price
+                                </div>
+                                <div>
+                                    @item.Calories calories
+                                </div>
+                            </div>
+                        }
+                    }
                 }
             </div>
             <!-- Adds the grid elements for our medium sides -->
             <div class="grid-item">
-                @for (int i = 4; i < 8; i++)
+                @foreach (BleakwindBuffet.Data.Generic.IOrderItem item in Model.Items)
                 {
-                    List<BleakwindBuffet.Data.Generic.IOrderItem> list = BleakwindBuffet.Data.Generic.Menu.Sides() as List<BleakwindBuffet.Data.Generic.IOrderItem>;
-                    BleakwindBuffet.Data.Generic.IOrderItem item = list[i];
-                    <div class="menu-item">
-                        <h3>
-                            @item.ToString()
-                        </h3>
-                        <div>
-                            $@item.Price
-                        </div>
-                        <div>
-                            @item.Calories calories
-                        </div>
-                    </div>
+                    @if (item is BleakwindBuffet.Data.Sides.Side side)
+                    {
+                        if (side.Size == BleakwindBuffet.Data.Enums.Size.Medium)
+                        {
+                            <div class="menu-item">
+                                <h3>
+                                    @item.ToString()
+                                </h3>
+                                <div>
+                                    $@item.Price
+                                </div>
+                                <div>
+                                    @item.Calories calories
+                                </div>
+                            </div>
+                        }
+                    }
                 }
             </div>
             <!-- Adds the grid elements for our large sides -->
             <div class="grid-item">
-                @for (int i = 8; i < 12; i++)
+                @foreach (BleakwindBuffet.Data.Generic.IOrderItem item in Model.Items)
                 {
-                    List<BleakwindBuffet.Data.Generic.IOrderItem> list = BleakwindBuffet.Data.Generic.Menu.Sides() as List<BleakwindBuffet.Data.Generic.IOrderItem>;
-                    BleakwindBuffet.Data.Generic.IOrderItem item = list[i];
-                    <div class="menu-item">
-                        <h3>
-                            @item.ToString()
-                        </h3>
-                        <div>
-                            $@item.Price
-                        </div>
-                        <div>
-                            @item.Calories calories
-                        </div>
-                    </div>
+                    @if (item is BleakwindBuffet.Data.Sides.Side side)
+                    {
+                        if (side.Size == BleakwindBuffet.Data.Enums.Size.Large)
+                        {
+                            <div class="menu-item">
+                                <h3>
+                                    @item.ToString()
+                                </h3>
+                                <div>
+                                    $@item.Price
+                                </div>
+                                <div>
+                                    @item.Calories calories
+                                </div>
+                            </div>
+                        }
+                    }
                 }
             </div>
         </div>
@@ -146,109 +161,127 @@
         <div class="grid-container">
             <!-- Adds the grid elements for our small drinks -->
             <div class="grid-item">
-                @for (int i = 0; i < 6; i++)
+                @foreach (BleakwindBuffet.Data.Generic.IOrderItem item in Model.Items)
                 {
-                    List<BleakwindBuffet.Data.Generic.IOrderItem> list = BleakwindBuffet.Data.Generic.Menu.Drinks() as List<BleakwindBuffet.Data.Generic.IOrderItem>;
-                    BleakwindBuffet.Data.Generic.IOrderItem item = list[i];
-                    if (item is BleakwindBuffet.Data.Drinks.SailorSoda)
+                    @if (item is BleakwindBuffet.Data.Drinks.Drink drink)
                     {
-                        <div class="menu-item">
-                            <h3>
-                                Small Sailor Soda
-                            </h3>
-                            <div>
-                                $@item.Price
-                            </div>
-                            <div>
-                                @item.Calories calories
-                            </div>
-                        </div>
-                    }
-                    else
-                    {
-                        <div class="menu-item">
-                            <h3>
-                                @item.ToString()
-                            </h3>
-                            <div>
-                                $@item.Price
-                            </div>
-                            <div>
-                                @item.Calories calories
-                            </div>
-                        </div>
+                        if (drink.Size == BleakwindBuffet.Data.Enums.Size.Small)
+                        {
+                            if (item is BleakwindBuffet.Data.Drinks.SailorSoda)
+                            {
+                                <div class="menu-item">
+                                    <h3>
+                                        Small Sailor Soda
+                                    </h3>
+                                    <div>
+                                        $@item.Price
+                                    </div>
+                                    <div>
+                                        @item.Calories calories
+                                    </div>
+                                </div>
+                                break;
+                            }
+                            else
+                            {
+                                <div class="menu-item">
+                                    <h3>
+                                        @item.ToString()
+                                    </h3>
+                                    <div>
+                                        $@item.Price
+                                    </div>
+                                    <div>
+                                        @item.Calories calories
+                                    </div>
+                                </div>
+                            }
+
+                        }
                     }
                 }
             </div>
             <!-- Adds the grid elements for our medium drinks -->
             <div class="grid-item">
-                @for (int i = 11; i < 17; i++)
+                @foreach (BleakwindBuffet.Data.Generic.IOrderItem item in Model.Items)
                 {
-                    List<BleakwindBuffet.Data.Generic.IOrderItem> list = BleakwindBuffet.Data.Generic.Menu.Drinks() as List<BleakwindBuffet.Data.Generic.IOrderItem>;
-                    BleakwindBuffet.Data.Generic.IOrderItem item = list[i];
-                    if (item is BleakwindBuffet.Data.Drinks.SailorSoda)
+                    @if (item is BleakwindBuffet.Data.Drinks.Drink drink)
                     {
-                        <div class="menu-item">
-                            <h3>
-                                Medium Sailor Soda
-                            </h3>
-                            <div>
-                                $@item.Price
-                            </div>
-                            <div>
-                                @item.Calories calories
-                            </div>
-                        </div>
-                    }
-                    else
-                    {
-                        <div class="menu-item">
-                            <h3>
-                                @item.ToString()
-                            </h3>
-                            <div>
-                                $@item.Price
-                            </div>
-                            <div>
-                                @item.Calories calories
-                            </div>
-                        </div>
+                        if (drink.Size == BleakwindBuffet.Data.Enums.Size.Medium)
+                        {
+                            if (item is BleakwindBuffet.Data.Drinks.SailorSoda)
+                            {
+                                <div class="menu-item">
+                                    <h3>
+                                        Medium Sailor Soda
+                                    </h3>
+                                    <div>
+                                        $@item.Price
+                                    </div>
+                                    <div>
+                                        @item.Calories calories
+                                    </div>
+                                </div>
+                                break;
+                            }
+                            else
+                            {
+                                <div class="menu-item">
+                                    <h3>
+                                        @item.ToString()
+                                    </h3>
+                                    <div>
+                                        $@item.Price
+                                    </div>
+                                    <div>
+                                        @item.Calories calories
+                                    </div>
+                                </div>
+                            }
+
+                        }
                     }
                 }
             </div>
             <!-- Adds the grid elements for our large drinks -->
             <div class="grid-item">
-                @for (int i = 22; i < 28; i++)
+                @foreach (BleakwindBuffet.Data.Generic.IOrderItem item in Model.Items)
                 {
-                    List<BleakwindBuffet.Data.Generic.IOrderItem> list = BleakwindBuffet.Data.Generic.Menu.Drinks() as List<BleakwindBuffet.Data.Generic.IOrderItem>;
-                    BleakwindBuffet.Data.Generic.IOrderItem item = list[i];
-                    if (item is BleakwindBuffet.Data.Drinks.SailorSoda)
+                    @if (item is BleakwindBuffet.Data.Drinks.Drink drink)
                     {
-                        <div class="menu-item">
-                            <h3>
-                                Large Sailor Soda
-                            </h3>
-                            <div>
-                                $@item.Price
-                            </div>
-                            <div>
-                                @item.Calories calories
-                            </div>
-                        </div>
-                    }
-                    else
-                    {
-                        <div class="menu-item">
-                            <h3>
-                                @item.ToString()
-                            </h3>
-                            <div>
-                                $@item.Price
-                            </div>
-                            <div>
-                                @item.Calories calories
-                            </div>
-                        </div>
+                        if (drink.Size == BleakwindBuffet.Data.Enums.Size.Large)
+                        {
+                            if (item is BleakwindBuffet.Data.Drinks.SailorSoda)
+                            {
+                                <div class="menu-item">
+                                    <h3>
+                                        Large Sailor Soda
+                                    </h3>
+                                    <div>
+                                        $@item.Price
+                                    </div>
+                                    <div>
+                                        @item.Calories calories
+                                    </div>
+                                </div>
+                                break;
+                            }
+                            else
+                            {
+                                <div class="menu-item">
+                                    <h3>
+                                        @item.ToString()
+                                    </h3>
+                                    <div>
+                                        $@item.Price
+                                    </div>
+                                    <div>
+                                        @item.Calories calories
+                                    </div>
+                                </div>
+                            }
+
+                        }
                     }
                 }
             </div>
