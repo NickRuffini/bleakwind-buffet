@@ -145,10 +145,169 @@ namespace BleakwindBuffet.Data.Generic
             {
                 if(item.ToString() != null && item.ToString().ToLower().Contains(SearchTerms.ToLower()))
                 {
-                    results.Add(item);
+                    if (item is SailorSoda soda)
+                    {
+                        if (soda.Size == Size.Small)
+                        {
+                            if ("Small Sailor Soda".Contains(SearchTerms))
+                            {
+                                results.Add(item);
+                            }
+                        }
+                        else if (soda.Size == Size.Medium)
+                        {
+                            if ("Medium Sailor Soda".Contains(SearchTerms))
+                            {
+                                results.Add(item);
+                            }
+                        }
+                        else
+                        {
+                            if ("Large Sailor Soda".Contains(SearchTerms))
+                            {
+                                results.Add(item);
+                            }
+                        }
+                    }
+                    else
+                    {
+                        results.Add(item);
+                    }
+                    
                 }
             }
 
+            return results;
+        }
+
+        /// <summary>
+        /// Filters the items by category (entree, drink or side)
+        /// </summary>
+        /// <param name="Items"> Items we are searching through </param>
+        /// <param name="categories"> What categories we are including (entree, drink or side) </param>
+        /// <returns> IEnumerable of the values we get back from this filter </returns>
+        public static IEnumerable<IOrderItem> FilterByCategory(IEnumerable<IOrderItem> Items, IEnumerable<string> categories)
+        {
+            List<IOrderItem> results = new List<IOrderItem>();
+
+            if (categories == null || categories.Count() == 0)
+            {
+                return Items;
+            }
+
+            foreach (IOrderItem item in Items)
+            {
+                if(item is Entree && categories.Contains("Entrees"))
+                {
+                    results.Add(item);
+                }
+                if (item is Side && categories.Contains("Sides"))
+                {
+                    results.Add(item);
+                }
+                if (item is Drink && categories.Contains("Drinks"))
+                {
+                    results.Add(item);
+                }
+            }
+            return results;
+        }
+
+        /// <summary>
+        /// Filters the items by calorie amounts
+        /// </summary>
+        /// <param name="Items"> Items we are searching through </param>
+        /// <param name="min"> Floor of the calorie amount </param>
+        /// <param name="max"> Ceiling of the calorie amount </param>
+        /// <returns> IEnumerable of the values we get back from this filter </returns>
+        public static IEnumerable<IOrderItem> FilterByCalories(IEnumerable<IOrderItem> Items, int? min, int? max)
+        {
+            List<IOrderItem> results = new List<IOrderItem>();
+
+            if (min == null && max == null)
+            {
+                return Items;
+            }
+
+            if (min == null)
+            {
+                foreach (IOrderItem item in Items)
+                {
+                    if (item.Calories <= max)
+                    {
+                        results.Add(item);
+                    }
+                }
+                return results;
+            }
+            if (max == null)
+            {
+                foreach (IOrderItem item in Items)
+                {
+                    if (item.Calories >= min)
+                    {
+                        results.Add(item);
+                    }
+                }
+                return results;
+            }
+
+            foreach (IOrderItem item in Items)
+            {
+                if (item.Calories >= min && item.Calories <= max)
+                {
+                    results.Add(item);
+                }
+            }
+            return results;
+        }
+
+        /// <summary>
+        /// Filters the items by price
+        /// </summary>
+        /// <param name="Items"> Items we are searching through </param>
+        /// <param name="min"> Floor of the price </param>
+        /// <param name="max"> Ceiling of the price </param>
+        /// <returns> IEnumerable of the values we get back from this filter </returns>
+        public static IEnumerable<IOrderItem> FilterByPrice(IEnumerable<IOrderItem> Items, double? min, double? max)
+        {
+            List<IOrderItem> results = new List<IOrderItem>();
+
+            if (min == null && max == null)
+            {
+                return Items;
+            }
+
+            if (min == null)
+            {
+                foreach (IOrderItem item in Items)
+                {
+                    if (item.Price <= max)
+                    {
+                        results.Add(item);
+                    }
+                }
+                return results;
+            }
+            if (max == null)
+            {
+                foreach (IOrderItem item in Items)
+                {
+                    if (item.Price >= min)
+                    {
+                        results.Add(item);
+                    }
+                }
+                return results;
+            }
+
+            foreach (IOrderItem item in Items)
+            {
+                if (item.Price >= min && item.Price <= max)
+                {
+                    results.Add(item);
+                }
+            }
             return results;
         }
     }
