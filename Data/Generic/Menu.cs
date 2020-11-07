@@ -18,6 +18,8 @@ namespace BleakwindBuffet.Data.Generic
 {
     public static class Menu
     {
+        public static IEnumerable<IOrderItem> fullMenu { get; } = FullMenu();
+
         /// <summary>
         /// Populates a list with all the available entrees at Bleakwind Buffet!
         /// </summary>
@@ -138,46 +140,51 @@ namespace BleakwindBuffet.Data.Generic
 
             if (SearchTerms == null)
             {
-                return FullMenu();
+                return fullMenu;
             }
 
-            foreach(IOrderItem item in Items)
+            if (Items != null)
             {
-                if(item.ToString() != null && item.ToString().ToLower().Contains(SearchTerms.ToLower()))
+                foreach (IOrderItem item in Items)
                 {
-                    if (item is SailorSoda soda)
+                    if (item.ToString() != null && item.ToString().ToLower().Contains(SearchTerms.ToLower()))
                     {
-                        if (soda.Size == Size.Small)
+                        if (item is SailorSoda soda)
                         {
-                            if ("Small Sailor Soda".Contains(SearchTerms))
+                            if (soda.Size == Size.Small)
                             {
-                                results.Add(item);
+                                if ("Small Sailor Soda".Contains(SearchTerms))
+                                {
+                                    results.Add(item);
+                                }
                             }
-                        }
-                        else if (soda.Size == Size.Medium)
-                        {
-                            if ("Medium Sailor Soda".Contains(SearchTerms))
+                            else if (soda.Size == Size.Medium)
                             {
-                                results.Add(item);
+                                if ("Medium Sailor Soda".Contains(SearchTerms))
+                                {
+                                    results.Add(item);
+                                }
+                            }
+                            else
+                            {
+                                if ("Large Sailor Soda".Contains(SearchTerms))
+                                {
+                                    results.Add(item);
+                                }
                             }
                         }
                         else
                         {
-                            if ("Large Sailor Soda".Contains(SearchTerms))
-                            {
-                                results.Add(item);
-                            }
+                            results.Add(item);
                         }
+
                     }
-                    else
-                    {
-                        results.Add(item);
-                    }
-                    
                 }
+                return results;
             }
 
-            return results;
+
+            return null;
         }
 
         /// <summary>
@@ -195,22 +202,27 @@ namespace BleakwindBuffet.Data.Generic
                 return Items;
             }
 
-            foreach (IOrderItem item in Items)
+            if (Items != null)
             {
-                if(item is Entree && categories.Contains("Entrees"))
+                foreach (IOrderItem item in Items)
                 {
-                    results.Add(item);
+                    if (item is Entree && categories.Contains("Entrees"))
+                    {
+                        results.Add(item);
+                    }
+                    if (item is Side && categories.Contains("Sides"))
+                    {
+                        results.Add(item);
+                    }
+                    if (item is Drink && categories.Contains("Drinks"))
+                    {
+                        results.Add(item);
+                    }
                 }
-                if (item is Side && categories.Contains("Sides"))
-                {
-                    results.Add(item);
-                }
-                if (item is Drink && categories.Contains("Drinks"))
-                {
-                    results.Add(item);
-                }
+                return results;
             }
-            return results;
+
+            return null;
         }
 
         /// <summary>
@@ -229,7 +241,7 @@ namespace BleakwindBuffet.Data.Generic
                 return Items;
             }
 
-            if (min == null)
+            if (min == null && Items != null)
             {
                 foreach (IOrderItem item in Items)
                 {
@@ -240,7 +252,7 @@ namespace BleakwindBuffet.Data.Generic
                 }
                 return results;
             }
-            if (max == null)
+            if (max == null && Items != null)
             {
                 foreach (IOrderItem item in Items)
                 {
@@ -252,14 +264,19 @@ namespace BleakwindBuffet.Data.Generic
                 return results;
             }
 
-            foreach (IOrderItem item in Items)
+            if (Items != null)
             {
-                if (item.Calories >= min && item.Calories <= max)
+                foreach (IOrderItem item in Items)
                 {
-                    results.Add(item);
+                    if (item.Calories >= min && item.Calories <= max)
+                    {
+                        results.Add(item);
+                    }
                 }
+                return results;
             }
-            return results;
+            
+            return null;
         }
 
         /// <summary>
@@ -278,7 +295,7 @@ namespace BleakwindBuffet.Data.Generic
                 return Items;
             }
 
-            if (min == null)
+            if (min == null && Items != null)
             {
                 foreach (IOrderItem item in Items)
                 {
@@ -289,7 +306,7 @@ namespace BleakwindBuffet.Data.Generic
                 }
                 return results;
             }
-            if (max == null)
+            if (max == null && Items != null)
             {
                 foreach (IOrderItem item in Items)
                 {
@@ -301,14 +318,19 @@ namespace BleakwindBuffet.Data.Generic
                 return results;
             }
 
-            foreach (IOrderItem item in Items)
+            if (Items != null) 
             {
-                if (item.Price >= min && item.Price <= max)
+                foreach (IOrderItem item in Items)
                 {
-                    results.Add(item);
+                    if (item.Price >= min && item.Price <= max)
+                    {
+                        results.Add(item);
+                    }
                 }
+                return results;
             }
-            return results;
+
+            return null;
         }
     }
 }
