@@ -31,5 +31,10 @@ namespace BleakwindBuffet.Data.Generic
         /// </summary>
         List<string> SpecialInstructions { get; }
 
+        /// <summary>
+        /// Description of the IOrderItem
+        /// </summary>
+        string Description { get; }
+
     }
 }

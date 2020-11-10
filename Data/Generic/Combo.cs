@@ -168,6 +168,17 @@ namespace BleakwindBuffet.Data.Generic
         }
 
         /// <summary>
+        /// Returns the string value of the item's description
+        /// </summary>
+        public string Description
+        {
+            get
+            {
+                return "It's a Combo, folks!";
+            }
+        }
+
+        /// <summary>
         /// Event Listener for when the ITEMS themselves change in our collection
         /// </summary>
         /// <param name="sender"></param>

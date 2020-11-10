@@ -175,5 +175,16 @@ namespace BleakwindBuffet.Data.Drinks
                 return String.Format("{0} Decaf Candlehearth Coffee", size.ToString());
             }
         }
+
+        /// <summary>
+        /// Returns the string value of the item's description
+        /// </summary>
+        public override string Description
+        {
+            get
+            {
+                return "Fair trade, fresh ground dark roast coffee.";
+            }
+        }
     }
 }

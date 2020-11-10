@@ -57,5 +57,10 @@ namespace BleakwindBuffet.Data.Sides
         /// Special instructions to prepare the side
         /// </summary>
         public abstract List<string> SpecialInstructions { get; }
+
+        /// <summary>
+        /// The description of the drink
+        /// </summary>
+        public abstract string Description { get; }
     }
 }

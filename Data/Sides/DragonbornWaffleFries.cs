@@ -96,6 +96,17 @@ namespace BleakwindBuffet.Data.Sides
         {
             return String.Format("{0} Dragonborn Waffle Fries", size.ToString());
         }
+
+        /// <summary>
+        /// Returns the string value of the item's description
+        /// </summary>
+        public override string Description
+        {
+            get
+            {
+                return "Crispy fried potato waffle fries.";
+            }
+        }
     }
 }
 
