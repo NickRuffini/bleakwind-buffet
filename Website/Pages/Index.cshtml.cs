@@ -52,6 +52,8 @@ namespace Website.Pages
         /// </summary>
         public int? calMax { get; set; }
 
+        public List<string> printed = new List<string>();
+
         private readonly ILogger<IndexModel> _logger;
 
         public IndexModel(ILogger<IndexModel> logger)

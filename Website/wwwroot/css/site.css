@@ -87,7 +87,16 @@ body {
 }
 
 .menu-item {
-    border-bottom: 3px solid darkslategray;
+    border-top: 3px solid darkslategrey
+}
+
+.description-item {
+
+}
+
+.invisible-item {
+    visibility: collapse;
+
 }
 
 h1 {

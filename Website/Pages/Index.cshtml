@@ -75,6 +75,23 @@
                                 @item.Calories calories
                             </div>
                         </div>
+                        @if (!Model.printed.Contains(item.Description))
+                        {
+                            <div class="description-item">
+                                <div>
+                                    @item.Description
+                                </div>
+                            </div>
+                            Model.printed.Add(item.Description);
+                        }
+                        else
+                        {
+                            <div class="invisible-item">
+                                <div>
+                                    @item.Description
+                                </div>
+                            </div>
+                        }
                     }
                 }
             </div>
@@ -103,6 +120,23 @@
                                     @item.Calories calories
                                 </div>
                             </div>
+                            @if (!Model.printed.Contains(item.Description))
+                            {
+                                <div class="description-item">
+                                    <div>
+                                        @item.Description
+                                    </div>
+                                </div>
+                                Model.printed.Add(item.Description);
+                            }
+                            else
+                            {
+                                <div class="invisible-item">
+                                    <div>
+                                        @item.Description
+                                    </div>
+                                </div>
+                            }
                         }
                     }
                 }
@@ -126,6 +160,23 @@
                                     @item.Calories calories
                                 </div>
                             </div>
+                            @if (!Model.printed.Contains(item.Description))
+                            {
+                                <div class="description-item">
+                                    <div>
+                                        @item.Description
+                                    </div>
+                                </div>
+                                Model.printed.Add(item.Description);
+                            }
+                            else
+                            {
+                                <div class="invisible-item">
+                                    <div>
+                                        @item.Description
+                                    </div>
+                                </div>
+                            }
                         }
                     }
                 }
@@ -149,6 +200,24 @@
                                     @item.Calories calories
                                 </div>
                             </div>
+                            @if (!Model.printed.Contains(item.Description))
+                            {
+                                <div class="description-item">
+                                    <div>
+                                        @item.Description
+                                    </div>
+                                </div>
+                                Model.printed.Add(item.Description);
+                            }
+                            else
+                            {
+                                <div class="invisible-item">
+                                    <div>
+                                        @item.Description
+                                    </div>
+                                </div>
+                            }
+
                         }
                     }
                 }
@@ -180,6 +249,23 @@
                                         @item.Calories calories
                                     </div>
                                 </div>
+                                @if (!Model.printed.Contains(item.Description))
+                                {
+                                    <div class="description-item">
+                                        <div>
+                                            @item.Description
+                                        </div>
+                                    </div>
+                                    Model.printed.Add(item.Description);
+                                }
+                                else
+                                {
+                                    <div class="invisible-item">
+                                        <div>
+                                            @item.Description
+                                        </div>
+                                    </div>
+                                }
                                 break;
                             }
                             else
@@ -193,6 +279,23 @@
                                     </div>
                                     <div>
                                         @item.Calories calories
+                                    </div>
+                                </div>
+                            }
+                            @if (!Model.printed.Contains(item.Description))
+                            {
+                                <div class="description-item">
+                                    <div>
+                                        @item.Description
+                                    </div>
+                                </div>
+                                Model.printed.Add(item.Description);
+                            }
+                            else
+                            {
+                                <div class="invisible-item">
+                                    <div>
+                                        @item.Description
                                     </div>
                                 </div>
                             }
@@ -222,6 +325,23 @@
                                         @item.Calories calories
                                     </div>
                                 </div>
+                                @if (!Model.printed.Contains(item.Description))
+                                {
+                                    <div class="description-item">
+                                        <div>
+                                            @item.Description
+                                        </div>
+                                    </div>
+                                    Model.printed.Add(item.Description);
+                                }
+                                else
+                                {
+                                    <div class="invisible-item">
+                                        <div>
+                                            @item.Description
+                                        </div>
+                                    </div>
+                                }
                                 break;
                             }
                             else
@@ -235,6 +355,23 @@
                                     </div>
                                     <div>
                                         @item.Calories calories
+                                    </div>
+                                </div>
+                            }
+                            @if (!Model.printed.Contains(item.Description))
+                            {
+                                <div class="description-item">
+                                    <div>
+                                        @item.Description
+                                    </div>
+                                </div>
+                                Model.printed.Add(item.Description);
+                            }
+                            else
+                            {
+                                <div class="invisible-item">
+                                    <div>
+                                        @item.Description
                                     </div>
                                 </div>
                             }
@@ -264,6 +401,23 @@
                                         @item.Calories calories
                                     </div>
                                 </div>
+                                @if (!Model.printed.Contains(item.Description))
+                                {
+                                    <div class="description-item">
+                                        <div>
+                                            @item.Description
+                                        </div>
+                                    </div>
+                                    Model.printed.Add(item.Description);
+                                }
+                                else
+                                {
+                                    <div class="invisible-item">
+                                        <div>
+                                            @item.Description
+                                        </div>
+                                    </div>
+                                }
                                 break;
                             }
                             else
@@ -277,6 +431,23 @@
                                     </div>
                                     <div>
                                         @item.Calories calories
+                                    </div>
+                                </div>
+                            }
+                            @if (!Model.printed.Contains(item.Description))
+                            {
+                                <div class="description-item">
+                                    <div>
+                                        @item.Description
+                                    </div>
+                                </div>
+                                Model.printed.Add(item.Description);
+                            }
+                            else
+                            {
+                                <div class="invisible-item">
+                                    <div>
+                                        @item.Description
                                     </div>
                                 </div>
                             }
