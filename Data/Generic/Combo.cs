@@ -179,6 +179,17 @@ namespace BleakwindBuffet.Data.Generic
         }
 
         /// <summary>
+        /// Returns what type of item it is in string form
+        /// </summary>
+        public string TypeOfItem
+        {
+            get
+            {
+                return "Combos";
+            }
+        }
+
+        /// <summary>
         /// Event Listener for when the ITEMS themselves change in our collection
         /// </summary>
         /// <param name="sender"></param>

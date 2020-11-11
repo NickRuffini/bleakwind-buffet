@@ -36,5 +36,10 @@ namespace BleakwindBuffet.Data.Generic
         /// </summary>
         string Description { get; }
 
+        /// <summary>
+        /// Returns that all Drinks are of type Drink in string form
+        /// </summary>
+        string TypeOfItem { get; }
+
     }
 }

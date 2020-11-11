@@ -94,10 +94,10 @@ body {
 
 }
 
-.invisible-item {
+/*.invisible-item {
     visibility: collapse;
 
-}
+}*/
 
 h1 {
     font-size: 4.0rem;
@@ -141,4 +141,10 @@ form#menu-database {
 
 #filters h4 {
     margin-top: 1.2rem;
+}
+
+@media (max-width: 490px) {
+    .grid-container {
+        grid-template-columns: 1fr;
+    }
 }

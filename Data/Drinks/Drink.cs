@@ -63,5 +63,16 @@ namespace BleakwindBuffet.Data.Drinks
         /// The description of the drink
         /// </summary>
         public abstract string Description { get; }
+
+        /// <summary>
+        /// Returns that all Drinks are of type Drink in string form
+        /// </summary>
+        public string TypeOfItem
+        {
+            get
+            {
+                return "Drinks";
+            }
+        }
     }
 }
