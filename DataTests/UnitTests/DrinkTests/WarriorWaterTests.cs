@@ -252,5 +252,12 @@ namespace BleakwindBuffet.DataTests.UnitTests.DrinkTests
             });
         }
 
+        [Fact]
+        public void DescriptionReturnsCorrectValue()
+        {
+            WarriorWater ww = new WarriorWater();
+            Assert.Equal("It’s water. Just water.", ww.Description);
+        }
+
     }
 }

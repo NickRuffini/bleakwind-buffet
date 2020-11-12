@@ -12,6 +12,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.Extensions.Logging;
 using BleakwindBuffet.Data.Generic;
+using BleakwindBuffet.Data.Drinks;
 
 namespace Website.Pages
 {
@@ -75,11 +76,25 @@ namespace Website.Pages
                 foreach(string word in words)
                 {
                     IEnumerable<IOrderItem> temp = from item in Items where item.ToString().Contains(word, StringComparison.InvariantCultureIgnoreCase) || item.Description.Contains(word, StringComparison.InvariantCultureIgnoreCase) select item;
+
                     foreach (IOrderItem item in temp)
                     {
+                        
                         if (!finalList.Contains(item))
                         {
-                            finalList.Add(item);
+                            // Compares to "Sailor Soda", not "Flavor Sailor Soda"
+                            if (item is SailorSoda soda)
+                            {
+                                string comparableString = String.Format("{0} Sailor Soda", soda.Size);
+                                if (comparableString.Contains(word, StringComparison.InvariantCultureIgnoreCase) || item.Description.Contains(word, StringComparison.InvariantCultureIgnoreCase))
+                                {
+                                    finalList.Add(item);
+                                }
+                            }
+                            else
+                            {
+                                finalList.Add(item);
+                            }
                         }
                     }
                 }

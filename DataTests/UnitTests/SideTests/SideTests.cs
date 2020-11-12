@@ -29,5 +29,15 @@ namespace BleakwindBuffet.DataTests.UnitTests.SideTests
             FriedMiraak fm = new FriedMiraak();
             Assert.Equal("Small Fried Miraak", fm.Name);
         }
+
+        [Fact]
+        public void TypeOfItemReturnsCorrectValue()
+        {
+            DragonbornWaffleFries dwf = new DragonbornWaffleFries();
+            Assert.Equal("Sides", dwf.TypeOfItem);
+
+            FriedMiraak fm = new FriedMiraak();
+            Assert.Equal("Sides", fm.TypeOfItem);
+        }
     }
 }

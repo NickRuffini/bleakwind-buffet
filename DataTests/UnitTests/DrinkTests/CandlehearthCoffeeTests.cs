@@ -335,5 +335,12 @@ namespace BleakwindBuffet.DataTests.UnitTests.DrinkTests
                 cc.Decaf = false;
             });
         }
+
+        [Fact]
+        public void DescriptionReturnsCorrectValue()
+        {
+            CandlehearthCoffee cc = new CandlehearthCoffee();
+            Assert.Equal("Fair trade, fresh ground dark roast coffee.", cc.Description);
+        }
     }
 }

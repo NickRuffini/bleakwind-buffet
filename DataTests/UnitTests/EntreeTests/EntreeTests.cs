@@ -30,5 +30,15 @@ namespace BleakwindBuffet.DataTests.UnitTests.EntreeTests
             SmokehouseSkeleton ss = new SmokehouseSkeleton();
             Assert.Equal("Smokehouse Skeleton", ss.Name);
         }
+
+        [Fact]
+        public void TypeOfItemReturnsCorrectValue()
+        {
+            BriarheartBurger bb = new BriarheartBurger();
+            Assert.Equal("Entrees", bb.TypeOfItem);
+
+            GardenOrcOmelette gom = new GardenOrcOmelette();
+            Assert.Equal("Entrees", gom.TypeOfItem);
+        }
     }
 }

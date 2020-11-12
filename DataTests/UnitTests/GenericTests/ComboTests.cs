@@ -564,10 +564,20 @@ namespace BleakwindBuffet.DataTests.UnitTests.GenericTests
             {
                 c.Side.Size = Size.Medium;
             });
+        }
 
+        [Fact]
+        public void DescriptionReturnsCorrectValue()
+        {
+            Combo c = new Combo();
+            Assert.Equal("It's a Combo, folks!", c.Description);
+        }
 
-
-
+        [Fact]
+        public void TypeOfItemReturnsCorrectValue()
+        {
+            Combo c = new Combo();
+            Assert.Equal("Combos", c.TypeOfItem);
         }
     }
 }

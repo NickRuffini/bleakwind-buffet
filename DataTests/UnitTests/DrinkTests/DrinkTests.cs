@@ -31,5 +31,17 @@ namespace BleakwindBuffet.DataTests.UnitTests.DrinkTests
             WarriorWater ww = new WarriorWater();
             Assert.Equal("Small Warrior Water", ww.Name);
         }
+
+        [Fact]
+        public void TypeOfItemReturnsCorrectValue()
+        {
+            AretinoAppleJuice aj = new AretinoAppleJuice();
+            Assert.Equal("Drinks", aj.TypeOfItem);
+
+            SailorSoda ss = new SailorSoda();
+            Assert.Equal("Drinks", ss.TypeOfItem);
+        }
     }
+
+
 }

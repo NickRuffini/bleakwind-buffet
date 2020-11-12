@@ -167,5 +167,12 @@ namespace BleakwindBuffet.DataTests.UnitTests.SideTests
             });
         }
 
+        [Fact]
+        public void DescriptionReturnsCorrectValue()
+        {
+            DragonbornWaffleFries dwf = new DragonbornWaffleFries();
+            Assert.Equal("Crispy fried potato waffle fries.", dwf.Description);
+        }
+
     }
 }
